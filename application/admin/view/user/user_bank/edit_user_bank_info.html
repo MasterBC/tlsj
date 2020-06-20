@@ -1,0 +1,61 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">银行</label>
+                            <div class="layui-input-block">
+                                <select name="opening_id" autocomplete="off">
+                                    {foreach $bankNames as $k=>$v}
+                                    <option value="{$v['id']}" {$info['opening_id'] == $v['id'] ? 'selected' : ''}>{$v['name_cn']}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开户名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="bank_name" value="{$info['bank_name']}" placeholder="请输入开户名" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">银行账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="bank_account" value="{$info['bank_account']}" placeholder="请输入银行账号" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">分行支行</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="bank_address" value="{$info['bank_address']}" placeholder="请输入分行支行" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">默认</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="bank_default" autocomplete="off" {$info['bank_default'] == 1 ? 'checked' : ''} value="1" title="是" />
+                                <input type="radio" name="bank_default" autocomplete="off" {$info['bank_default'] == 2 ? 'checked' : ''} value="2" title="否" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+    });
+</script>
+{/block}

@@ -1,0 +1,110 @@
+{extend name="public:base" /}
+{block name="title"}地址添加{/block}
+{block name="other_css"}
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.picker.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.poppicker.css" />
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        地址添加
+    </h1>
+</header>
+<div class="mui-content">
+    <form id="addressInfo">
+    <div class="adresadmInput">
+        <input type="text" name="username" class="cadInput" placeholder="收货人">
+    </div>
+    <div class="adresadmInput">
+        <input type="text"  class="cadInput" name="mobile" placeholder="手机号码">
+    </div>
+    <div class="adresadmInput" id='showCityPicker3'>
+        <input type="text" class="cadInput" id='cityResult3' placeholder="所在地区">
+    </div>
+    <div class="adresadmInput">
+        <input type="text" class="cadInput" name="address" placeholder="详细地址">
+    </div>
+    <input type="hidden" name="province" autocomplete="off" value="" />
+    <input type="hidden" name="city" autocomplete="off" value="" />
+    <input type="hidden" name="district" autocomplete="off" value="" />
+    <input type="hidden" name="twon" autocomplete="off" value="0" />
+    <input type="hidden" name="id" autocomplete="off" value="0" />
+        <div class="adresadmsmr df">
+        <div class="fx1 adresadmsmrtx" >设为默认地址</div>
+        <div>
+            <div class="mui-switch mui-switch-mini">
+                <div class="mui-switch-handle aaa" data-id="1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="gonggButtonda" style="padding: 15px 10px;">
+        <button type="button" class="mui-btn gonggButton subFor">保存</button>
+    </div>
+    </form>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/data.city.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('body').on('tap', '.aaa', function(){
+        var id =  $(this).attr('data-id');
+        $('input[name="id"]').val(id);
+    });
+
+    var mask=mui.createMask();
+    mui('body').on('tap', '.subFor', function(){
+        var data = $('#addressInfo').serialize();
+        var url = "{:U('')}";
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.post(url, data, function (data) {
+            mask.close();//关闭遮罩层
+            mui.hideLoading();
+            if (data.code != 1) {
+                $(obj).removeAttr('disabled');
+                mui.toast(data.msg,{ duration:'long', type:'div' })
+            } else {
+                mui.toast(data.msg,{ duration:'2000', type:'div' });
+                $('#addressInfo')[0].reset();
+                setTimeout(function () {
+                    window.location.href = "{:U('Address/addressIndex')}?type="+{$type}+"&cart_id="+{$catId};
+                }, 1000);
+            }
+        });
+    });
+</script>
+<script>
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //					//级联示例
+            var cityPicker3 = new $.PopPicker({
+                layer: 3
+            });
+            cityPicker3.setData(cityData3);
+            var showCityPickerButton = doc.getElementById('showCityPicker3');
+            var cityResult3 = doc.getElementById('cityResult3');
+            showCityPickerButton.addEventListener('tap', function(event) {
+                cityPicker3.show(function(items) {
+                    cityResult3.value = _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+                    document.getElementsByName("province")[0].value = _getParam(items[0], 'value');
+                    document.getElementsByName("city")[0].value = _getParam(items[1], 'value');
+                    document.getElementsByName("district")[0].value = _getParam(items[2], 'value');
+                    // cityResult3.value = _getParam(items[0], 'value') + " " + _getParam(items[1], 'value') + " " + _getParam(items[2], 'value');
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }, false);
+        });
+    })(mui, document);
+</script>
+{/block}

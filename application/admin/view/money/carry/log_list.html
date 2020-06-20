@@ -1,0 +1,265 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card">
+            <ul class="layui-tab-title carry_log_status">
+                <li data-type="0">
+                    全部<span class="layui-badge all_user_num">0</span>
+                </li>
+                <li class="layui-this" data-type="1">
+                    待审核<span class="layui-badge day_new_user_num">0</span>
+                </li>
+                <li data-type="2">
+                    已审核<span class="layui-badge no_activate_user_num">0</span>
+                </li>
+                <li data-type="3">
+                    已拒绝<span class="layui-badge activate_user_num">0</span>
+                </li>
+             	<li data-type="9">
+                    已完成<span class="layui-badge activate_user_num">0</span>
+                </li>
+            </ul>
+            <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">提现账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="kwd" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="time" readonly id="time" placeholder="请选择" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <input type="hidden" name="status" value="1" />
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card-body">
+                <table id="carry_log_list" lay-filter="carry_log_list"></table>
+                <script type="text/html" id="receipt_info">
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="check_pay_info">查看</a>
+                </script>
+                <script type="text/html" id="toolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm" lay-event="affirm">
+                            <i class="layui-icon layui-icon-edit"></i>确认
+                        </button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="refuse">
+                            <i class="layui-icon layui-icon-edit"></i>拒绝
+                        </button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">
+                            <i class="layui-icon layui-icon-delete"></i>删除
+                        </button>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'carry_log_list';
+        laydate.render({
+            elem: '#time'
+            , range: true,
+            format: 'yyyy/MM/dd'
+        });
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbarDemo',
+            height: 'full-200',
+            cols: [[
+                {type: 'checkbox', fixed: 'left', rowspan: 2},
+                {field: 'id', title: 'ID'},
+                {field: 'status', title: '状态'},
+                {field: 'uid', title: '提现会员'},
+                {field: 'mid', title: '钱包'},
+                {field: 'add_time', title: '提现时间'},
+                {field: 'add_money', title: '提现金额'},
+                {field: 'fee', title: '手续费汇率'},
+                {field: 'fee_money', title: '手续费金额'},
+                {field: 'out_money', title: '到账'},
+                {title: '银行信息', templet: '#receipt_info'},
+                // {field: 'affirm_time', title: '确认时间'},
+                // {field: 'refuse_time', title: '拒绝时间'},
+                // {field: 'refuse', title: '拒绝理由'}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num',
+            },
+            where: {status: $('input[name="status"]').val()},
+            done: function(res, curr, count){
+                for(var i in res.statusNum) {
+                    $('.carry_log_status').find('li[data-type="'+i+'"]').find('span').html(res.statusNum[i]);
+                }
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 20, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                , page: {
+                    curr: 1
+                }
+            });
+        });
+
+        table.render(options);
+        $(document).on('click', '.carry_log_status li', function () {
+            $('input[name="status"]').val($(this).data('type'));
+            $(this).addClass('layui-this').siblings('li').removeClass('layui-this');
+            $('button[lay-filter="search_btn"]').trigger('click');
+        });
+
+        table.on('tool(carry_log_list)', function (obj) {
+            var data = obj.data;
+            switch (obj.event) {
+                case 'check_pay_info':
+                    var receipt_info = '';
+                    if(data.receipt_type == 'weixin') {
+                        receipt_info += '微信信息<br />';
+                        receipt_info += '姓名: ' + data.receipt_info.wx_name + '<br />';
+                        receipt_info += '收款码: <a style="width:100px;" href="{:get_img_domain()}'+data.receipt_info.wx_code+'" target="_blank"><img  style="width:100px;" src="{:get_img_domain()}'+data.receipt_info.wx_code+'"></a><br />';
+                    } else if(data.receipt_type == 'alipay') {
+                        receipt_info += '支付宝信息<br />';
+                        receipt_info += '姓名: ' + data.receipt_info.zfb_name + '<br />';
+                        receipt_info += '收款码: <a style="width:100px;" href="{:get_img_domain()}'+data.receipt_info.zfb_code+'" target="_blank"><img style="width:100px;" src="{:get_img_domain()}'+data.receipt_info.zfb_code+'"></a><br />';
+                    } else if(data.receipt_type == 'bank') {
+                        receipt_info += '银行信息<br />';
+                        receipt_info += '姓名: ' + data.receipt_info.bank_name + '<br />';
+                        receipt_info += '账号: ' + data.receipt_info.bank_account + '<br />';
+                        receipt_info += '开户行: ' + data.receipt_info.opening_id + '<br />';
+                        receipt_info += '分行支行: ' + data.receipt_info.bank_address + '<br />';
+                    }
+                    layer.open({
+                        title:'ID为'+data.id+'的银行信息',
+                        btn:false,
+                        shadeClose:true,
+                        content: receipt_info
+                    });
+                    break;
+            }
+        });
+
+        table.on('toolbar('+tableId+')', function (obj) {
+            console.log(obj);
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'affirm':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                    }
+                    id = id.join(',');
+                    if(id == '') {
+                        return layer.msg('请选择要确认的数据');
+                    }
+
+                    var url = '{:url("confirmCarry")}?id=' + id;
+                    layer.confirm('是否确认已付款?', {icon: 3}, function () {
+                        var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: data.id}, function (res) {
+                            console.log(res);
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload(tableId); //数据刷新
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+                case 'refuse':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                    }
+                    id = id.join(',');
+                    if(id == '') {
+                        return layer.msg('请选择要拒绝的数据');
+                    }
+
+
+                    var url = '{:url("refuseCarry")}?id=' + id;
+                    layer.prompt({formType:2,title:'请输入拒绝原因'}, function (value, index, elem) {
+                        var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: data.id, note:value}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload(tableId); //数据刷新
+                                layer.close(index); //关闭弹层
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+                case 'del':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                    }
+                    id = id.join(',');
+                    if(id == '') {
+                        return layer.msg('请选择要删除的数据');
+                    }
+
+                    var url = '{:url("delCarryLog")}?id=' + id;
+                    layer.confirm('是否确认删除?', {icon: 3}, function () {
+                        var loadAdd = layer.msg('操作中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: data.id}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload(tableId); //数据刷新
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+            }
+        });
+
+    });
+</script>
+{/block}
+
+

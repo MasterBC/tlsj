@@ -1,0 +1,11 @@
+language: php
+
+dist: precise
+
+php:
+  - 7.0
+  - 5.6
+  - 5.5
+  - 5.4
+
+script: phpunit --configuration phpunit.xml.dist

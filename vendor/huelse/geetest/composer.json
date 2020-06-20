@@ -1,0 +1,19 @@
+{
+    "name": "huelse/geetest",
+    "description": "Geetest For ThinkPHP5.1",
+    "version" : "1.0.1",
+    "license": "MIT",
+    "autoload" : {
+        "psr-4" : {
+            "think\\geetest\\" : "src/"
+        },
+        "files" : [ "src/Geetest.php" ]
+    },
+    "authors": [
+        {
+            "name": "Huelse",
+            "email": "huelse@oini.top"
+        }
+    ],
+    "minimum-stability": "stable"
+}

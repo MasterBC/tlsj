@@ -1,0 +1,39 @@
+{extend name="public:base" /}
+{block name="title"}设置社交信息{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        设置社交信息
+    </h1>
+</header>
+<div class="mui-content muiContentTwo">
+    <div class="socialBox">
+        <form action="">
+            <div class="socialHe df">
+                <img src="__STATIC__/centImages/2019a071_133.png" alt="">
+                <div class="socialtle">微信号：</div>
+                <div class="socialtinput">
+                    <input type="text" placeholder="请输入您的微信号信息" class="soinput">
+                </div>
+            </div>
+            <div class="socialHe df">
+                <img src="__STATIC__/centImages/2019a071_134.png" alt="">
+                <div class="socialtle">Q Q号：</div>
+                <div class="socialtinput">
+                    <input type="text" placeholder="请输入您的QQ号信息" class="soinput">
+                </div>
+            </div>
+            <div class="socialtshi">提示：至少填写一个信息才能保存成功</div>
+            <div class="gonggButtonda" style="margin-top: 30px;">
+                <button type="button" class="mui-btn gonggButton">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

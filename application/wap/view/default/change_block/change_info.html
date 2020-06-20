@@ -1,0 +1,34 @@
+{extend name="public:base" /}
+{block name="title"}货币转账列表{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        货币转账列表
+    </h1>
+</header>
+<div class="mui-content" >
+    <ul id="content" class="tradparUl">
+        {foreach $changeBlockData as $v}
+            <li class="noticeLi df likeA" data-url="{:U('BlockChange/changeAdd', ['id' => $v['id']])}">
+                <div class="fx1">
+                    <div class="df">
+                        <div class="recomendImg">
+                            <img src="{$v['logo']|default='__STATIC__/centImages/k002_38.png'}" alt="">
+                        </div>
+                        <div class="fx1 noticeLiMmend">&nbsp;{$blockNames[$v['bid']]} &nbsp;&nbsp;&nbsp;&nbsp;转账金额<span style="color: red;">{$v['low']}</span>起且是<span style="color: red;">{$v['bei']}</span>倍数,并且单笔最高<span style="color: red;">{$v['out']}</span> &nbsp;&nbsp;手续费为<span style="color: red;">{$v['fee']} %</span></div>
+                    </div>
+                </div>
+                <div class="noticeLiright">
+                    <span class="mui-icon icon-font">&#xe95c;</span>
+                </div>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

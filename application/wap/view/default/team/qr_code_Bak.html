@@ -1,0 +1,38 @@
+{extend name="public:base" /}
+{block name="title"}我的推荐码{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        推荐码
+    </h1>
+    <div class="mui-pull-right youbiande likeA" data-url="{:U('Team/tjrFriendAdd')}">海报</div>
+</header>
+<div class="mui-content">
+    <div class="mycodetTxsha">推广链接：{$tgUrl}</div>
+    <div class="recodeBox">
+        <div class="receiptImg">
+            <img src="{:U('Team/qrcode', ['value' => base64_encode($tgUrl)])}" alt="">
+        </div>
+    </div>
+    <div class="recodeAnbox">
+        <button type="button" class="mui-btn blockcaczann" id="copyTgUrl" data-clipboard-text="{$tgUrl}">复制分享</button>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+<script src="__STATIC__/js/clipboard.min.js"></script>
+{__block__}
+<script>
+    var clipboard = new Clipboard('#copyTgUrl');
+    clipboard.on('success', function (e) {
+        e.clearSelection();
+        mui.toast('复制成功', {duration: 'long', type: 'div'});
+    });
+    clipboard.on('error', function (e) {
+        mui.toast('复制失败', {duration: 'long', type: 'div'});
+    });
+</script>
+
+{/block}

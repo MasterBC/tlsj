@@ -1,0 +1,9 @@
+{foreach ($list as $v)}
+<li class="tradparLi df">
+    <div class="fx1">
+        <div class="tradparLitx">{$v['note']}</div>
+        <div class="tradparLitime">{:date('Y-m-d H:i:s', $v['edit_time'])}</div>
+    </div>
+    <div class="tradparLishu_1">{$v['money']}</div>
+</li>
+{/foreach}

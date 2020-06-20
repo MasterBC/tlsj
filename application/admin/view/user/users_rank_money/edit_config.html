@@ -1,0 +1,51 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                       
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">阶段名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="target_title" value="{$info['target_title']}" placeholder="请输入阶段名称" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">目标收入</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="target_money" value="{$info['target_money']}" placeholder="请输入目标收入" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">加速倍率</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="up_per" value="{$info['up_per']}" placeholder="请输入加速倍率" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                       <div class="layui-form-item">
+                            <label class="layui-form-label">排序数值</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="sort" value="{$info['sort']}" placeholder="请输入排序数值" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+    var upload = layui.upload;
+});
+</script>
+{/block}

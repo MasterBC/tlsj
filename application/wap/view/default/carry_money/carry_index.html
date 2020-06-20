@@ -1,0 +1,114 @@
+{extend name="public:base" /}
+{block name="title"}提现日志{/block}
+{block name="other_css"}
+<!--刷新加载插件 s-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mescroll.min.css" />
+<style>
+    .mescroll{
+        position: fixed;
+        top: 88px;
+        left: 0px;
+        width: 100%;
+        bottom: 0;
+        height: auto;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        提现日志
+    </h1>
+</header>
+<div class="raisenavigTop">
+    <div class="df">
+        <div class="fx1 myBankNav myBankNavBG" data-id="0">
+            全部
+        </div>
+        <div class="fx1 myBankNav " data-id="1">
+            待审核
+        </div>
+        <div class="fx1 myBankNav" data-id="2">
+            已审核
+        </div>
+        <div class="fx1 myBankNav" data-id="3">
+            已拒绝
+        </div>
+      	<div class="fx1 myBankNav" data-id="9">
+            已完成
+        </div>
+    </div>
+</div>
+
+<div class="mescroll" data-id="1" id="mescroll" >
+    <ul class="tradparUl" id="content">
+    </ul>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<!--刷新加载插件 s-->
+<script src="__STATIC__/js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var status = $('.myBankNavBG').attr('data-id');
+    mui("body").on('tap', '.myBankNav', function () {
+        $('.myBankNav').removeClass('myBankNavBG');
+        $(this).addClass('myBankNavBG');
+        var id = $(this).attr('data-id');
+        status = id;
+        downCallback();
+    });
+
+    //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
+    var mescroll = new MeScroll("mescroll", {
+        up: {
+            callback: getListDataFromNet, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+            isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+            clearEmptyId: "content", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+            noMoreSize: 1,
+            htmlNodata: '<p class="upwarp-nodata">-- END --</p>',
+            page:{
+                size:10
+            },
+            empty: {
+                //列表第一页无任何数据时,显示的空提示布局; 需配置warpId才显示
+                warpId:	"mescroll", //父布局的id (1.3.5版本支持传入dom元素)
+                icon: "__STATIC__/centImages/no_data.png", //图标,默认null,支持网络图
+                tip: "暂无提现记录" //提示
+            },
+            toTop:{ //配置回到顶部按钮
+                src : "__STATIC__/centImages/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                //offset : 1000
+            },
+            lazyLoad: {
+                use: true // 是否开启懒加载,默认false
+            }
+        }
+    });
+
+    function downCallback() {
+        mescroll.resetUpScroll();//重新搜索,重置列表数据
+    }
+
+    function getListDataFromNet(page) {
+        //延时一秒,模拟联网
+        $.ajax({
+            type: 'GET',
+            url: '{:U("MoneyCarry/indexCarry")}?p='+(page.num - 1)+'&status='+status+'&size='+page.size,
+            success: function(data){
+                var count = parseInt(($(data).length+1)/2);
+                if(data == '') {
+                    mescroll.endSuccess(count, false);
+                } else {
+                    mescroll.endSuccess(count);
+                }
+                $('#content').append(data);
+            },
+            error: function (){
+                mescroll.endErr();
+            }
+        });
+    }
+</script>
+{/block}

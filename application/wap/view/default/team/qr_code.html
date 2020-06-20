@@ -1,0 +1,158 @@
+{extend name="public:base" /}
+{block name="title"}邀请好友{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop myAssetTopqb">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        邀请好友
+    </h1>
+    <div class="mui-pull-right youbiande wodesfuan">我的师父</div>
+</header>
+<div class="mui-content muiContentTwo">
+    <div class="sbyqmtopBox">
+        <img src="__STATIC__/centImages/2019a071_128.png" alt="" class="dsjimg">
+        <div class="nagesatoptx">我的邀请码</div>
+        <div class="nagesatoshu"><span class="span_2">{$user['reg_code'] ?? ''}</span></div>
+    </div>
+    <div class="sbyqmtel">我的邀请码</div>
+    <div class="sbyqmljiBox">
+        <span class="span_1">累积共</span>
+        <span class="span_2">0</span>
+        <span class="span_1">算力</span>
+    </div>
+    <div class="sbyqmfxsBox df">
+        <div class="fx1">
+            <div class="sbyqmfxsHe">
+                <div class="df">
+                    <div class="sbyqmfxstp fx1">徒弟数</div>
+                    <div class="sbyqmfxstp">1</div>
+                    <div class="sbyqmfxstpimg"><img src="__STATIC__/centImages/2019a071_129.png" alt=""></div>
+                </div>
+                <div class="sbyqmfxsCont likeA"  data-url="{:U('Team/firstTjrList')}">
+                    <div class="sbyqmfxsConttx">累计获得算力</div>
+                    <div class="sbyqmfxsContshu">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="fx1">
+            <div class="sbyqmfxsHe">
+                <div class="df">
+                    <div class="sbyqmfxstp fx1">徒孙数</div>
+                    <div class="sbyqmfxstp">1</div>
+                    <div class="sbyqmfxstpimg"><img src="__STATIC__/centImages/2019a071_129.png" alt=""></div>
+                </div>
+                <div class="sbyqmfxsCont likeA" data-url="{:U('Team/secondTjrList')}">
+                    <div class="sbyqmfxsConttx">累计获得算力</div>
+                    <div class="sbyqmfxsContshu">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sbyqmyqgzTle">
+        <div class="sbyqmyqgzTletz">邀请奖励规则</div>
+    </div>
+    <div class="sbyqmyqgzCont">
+        有效徒弟定义:完成实名认证和徒弟恐龙等级达到4级。<br/>
+        1、每邀请一个有效徒弟，你就可以获得10算力奖励;<br/>
+        2、你邀请的有效徒弟,其邀请一个有效徒弟,即徒孙，你将获
+        得5算力奖励;<br/>
+        3、你需要完成实名认证才能获得算力奖励;<br/>
+        4、系统会自动计算，只要达到有效用户条件，算力会自动会发
+        放到您的账号，可能有几分钟延迟，请稍后再查看。如果一直
+        没有收到，请在APP里联系客服。<br/>
+        5、陀螺世界保留对本活动的最终解释权，并将严查恶意刷徒
+        弟等虚假邀请行为，一经发现将取消奖励资格。
+    </div>
+
+    <div class="sbyqmbtnBox df">
+        <div class="sbyqmbtnffya" id="copyTgUrl" data-clipboard-text="{$tgUrl}">复制邀请链接</div>
+        <div class="sbyqmbtnscyqk fx1 likeA" data-url="{:U('Team/tjrFriendAdd')}">生成邀请卡</div>
+    </div>
+
+</div>
+
+<!--师父弹窗 s-->
+<div class="masterupBox">
+    <div class="masterupyiny"></div>
+    <div class="masterupCont">
+        <div class="masteruptl">我的师父</div>
+        <div class="df">
+            <div class="masteruptimg">
+                <img src="__STATIC__/centImages/2019a063_24.png" alt="">
+            </div>
+            <div class="fx1">
+                <div class="masteruptmc">
+                    <span>吉吉</span>
+                    <img src="__STATIC__/centImages/2019a071_130.png" alt="">
+                </div>
+                <div class="masteruptdh">182****4567</div>
+            </div>
+            <div class="masteruptdj">29级</div>
+        </div>
+        <div class="masterupmshu likeA" data-url="{:U('test/privacyys')}">
+            <i class="mui-icon mui-icon-info i"></i>
+            如何设置社交信息？戳这里&gt;&gt;
+        </div>
+        <div class="masterupmdzan">
+            <img src="__STATIC__/centImages/2019a071_131.png" alt="" class="zy_1">
+            <img src="__STATIC__/centImages/2019a071_132.png" alt="" class="zy_2">
+            靠谱
+        </div>
+    </div>
+</div>
+
+
+
+<!--师父弹窗 e-->
+
+
+
+{/block}
+{block name="footer"}
+<script src="__STATIC__/js/clipboard.min.js"></script>
+{__block__}
+<script>
+    var clipboard = new Clipboard('#copyTgUrl');
+    clipboard.on('success', function (e) {
+        e.clearSelection();
+        mui.toast('复制成功', {duration: 'long', type: 'div'});
+    });
+    clipboard.on('error', function (e) {
+        mui.toast('复制失败', {duration: 'long', type: 'div'});
+    });
+    mui('body').on('tap', '.wodesfuan', function() {
+        $('.masterupBox').addClass('masterupBoxActive');
+    });
+    mui('body').on('tap', '.masterupyiny', function() {
+        $('.masterupBox').removeClass('masterupBoxActive');
+    });
+
+    mui('body').on('tap', '.masterupmdzan', function() {
+        if($(this).hasClass('masterupmdzanActive')){
+            $(this).removeClass('masterupmdzanActive');
+        }else{
+            $(this).addClass('masterupmdzanActive');
+        }
+    });
+</script>
+<script>
+    function getUserOwnedMoney() {
+        $.ajax({
+            url: "{:U('Team/getAjaxUserTjrData')}",
+            type: "post",
+            success: function (res) {
+//                $('.user-money-one').html(res.userOwnedMoneyAll[1]);
+            },
+            error: function (e) {
+                alert("网络错误，请重试！！");
+            }
+        });
+    }
+    getUserOwnedMoney();
+    setInterval(function () {
+        getUserOwnedMoney();
+    }, 10000);
+</script>
+{/block}

@@ -1,0 +1,76 @@
+<script src="__STATIC__/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/style.js?v=2.0.1" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="__STATIC__/css/intl-tel-input-master/build/js/intlTelInput.js"></script>-->
+<script src="__STATIC__/js/jquery.slider.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    function moneyTransformation(money)
+    {
+        var show_money = 0;
+        if (money >= 1000000000000) {
+            show_money = (parseInt(money) / 1000000000000).toFixed(2)+'t';
+        } else if (money >= 1000000000) {
+            show_money = (parseInt(money) / 1000000000).toFixed(2)+'b';
+        } else if (money >= 1000000) {
+            show_money = (parseInt(money) / 1000000).toFixed(2)+'m';
+        } else if (money >= 1000) {
+            show_money = (parseInt(money) / 1000).toFixed(2)+'k';
+        }
+
+        return show_money;
+    }
+    function getNoticeNum() {
+        $.ajax({
+            url: "{:U('Message/getNoticeNum')}",
+            type: "post",
+            dataType: 'json',
+            success: function (res) {
+                $('.noticeNum').html(res.num);
+            },
+            error: function (e) {
+                console.log("网络错误，请重试！！");
+            }
+        });
+    }
+    function getUserOwnedMoney() {
+        $.ajax({
+            url: "{:U('Money/getAjaxUserOwnedMoneyArr')}",
+            type: "post",
+            dataType: 'json',
+            success: function (res) {
+                $('.user-money-two').attr('data-money', res.userOwnedMoneyAll[2]);
+                $('.user-money-one').html(res.userOwnedMoneyAll[1]);
+                $('.user-money-two').html(moneyTransformation(res.userOwnedMoneyAll[2]));
+                $('.user-money-three').html(res.userOwnedMoneyAll[3]);
+                if(res.webDayMoney) {
+                    $('.web-day-money').html(res.userOwnedMoneyAll[3]);
+                }
+            },
+            error: function (e) {
+                console.log("网络错误，请重试！！");
+            }
+        });
+    }
+    function getUserOwnedBlock() {
+        $.ajax({
+            url: "{:U('Block/getAjaxUserOwnedBlockArr')}",
+            type: "post",
+            dataType: 'json',
+            success: function (res) {
+                $('.user-block-one').html(res.userOwnedBlockAll[1]);
+            },
+            error: function (e) {
+                console.log("网络错误，请重试！！");
+            }
+        });
+    }
+    getNoticeNum();
+    getUserOwnedMoney();
+    getUserOwnedBlock();
+    setInterval(function () {
+        getNoticeNum();
+        getUserOwnedMoney();
+        getUserOwnedBlock();
+    }, 10000);
+</script>

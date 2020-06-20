@@ -1,0 +1,74 @@
+{extend name="public:base" /}
+{block name="title"}奖金详情{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        奖金详情
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="billTop">
+        <div class="billTopshu">奖金金额：{$bonusInfo['money']}</div>
+    </div>
+    <div class="billContBox">
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">奖金名称</div>
+            <div class="billConrit">{$bonusName}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">来源账号</div>
+            <div class="billConrit">{$comeUserName['account']|default="null"}</div>
+        </div>
+        {if $bonusInfo['status']  == 9}
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">结算至</div>
+            <div class="billConrit">
+                {foreach $bonusMoneyLog as $k=>$v}
+                {php}echo $moneyNames[$v['mid']] ?? '';{/php} : {$v['money']}
+                {/foreach}
+            </div>
+        </div>
+        {/if}
+        <!--<div class="df billConlethz">
+            <div class="fx1 billConlet">奖金未结算金额</div>
+            <div class="billConrit">{$bonusInfo['stay_money']|default="null"}</div>
+        </div>-->
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">结算状态</div>
+            {switch name="bonusInfo['status']"}
+            {case value='1'}
+            <div class="billTopztai">未结算</div>
+            {/case}
+            {case value='2'}
+            <div class="billTopztai">结算中</div>
+            {/case}
+            {case value='3'}
+            <div class="billTopztai">已烧伤 烧伤金额: {$bonusInfo['stay_money']}</div>
+            {/case}
+            {case value='9'}
+            <div class="billTopztai">已结算</div>
+            {/case}
+            {/switch}
+        </div>
+        <div class="billContxia">
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">产生时间</div>
+                <div class="billConrit">{$bonusInfo['add_time']|date="Y-m-d H:i"}</div>
+            </div>
+            {if $bonusInfo['status']  == 9}
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">结算时间</div>
+                <div class="billConrit">{$bonusInfo['out_time']|date="Y-m-d H:i"}</div>
+            </div>
+            {/if}
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+
+</script>

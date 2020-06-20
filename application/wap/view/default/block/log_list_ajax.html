@@ -1,0 +1,24 @@
+{foreach $list as $v}
+<li class="recordPageLi" data-url="{:U('Money/logDetail', ['id' => $v['id']])}">
+    <div class="df recordPageTx">
+        <div class="fx1 recordPageTxleft"></div>
+    </div>
+    <div class="df">
+        <div class="recordPaImg">
+            <img src="{:get_img_domain()}{$blockInfo[$v['bid']]|default='__STATIC__/centImages/x_1.png'}" alt="">
+        </div>
+        <div class="fx1">
+            <div class="recordPagezhi">{$blockLogTypes[$v['is_type']]|default=''}</div>
+            <div class="recordPagezhi">{$v['edit_time']|friend_date}</div>
+        </div>
+        <div class="recordPashu">
+            {if condition="$v['money'] > 0"}
+            <span style="color:red;">{$v['money'] > 0 ? '+' : ''}{$v['money']}</span>
+            {else/}
+            <span style="color:#80c8dc;">{$v['money']}</span>
+            {/if}
+        </div>
+    </div>
+    <div class="recordPageTime"></div>
+</li>
+{/foreach}

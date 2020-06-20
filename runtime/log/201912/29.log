@@ -1,0 +1,1968 @@
+---------------------------------------------------------------
+
+[2019-12-29T14:53:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.043836s] [吞吐率：22.81req/s] [内存消耗：4,515.53kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.052078s] [吞吐率：19.20req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.045855s] [吞吐率：21.81req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.062493s] [吞吐率：16.00req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.043351s] [吞吐率：23.07req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.051303s] [吞吐率：19.49req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046544s] [吞吐率：21.49req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:53:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.052956s] [吞吐率：18.88req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.048525s] [吞吐率：20.61req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.056153s] [吞吐率：17.81req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046153s] [吞吐率：21.67req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.053545s] [吞吐率：18.68req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046640s] [吞吐率：21.44req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.053270s] [吞吐率：18.77req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045335s] [吞吐率：22.06req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051942s] [吞吐率：19.25req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.047800s] [吞吐率：20.92req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.055563s] [吞吐率：18.00req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045558s] [吞吐率：21.95req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:54:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.060010s] [吞吐率：16.66req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046999s] [吞吐率：21.28req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.052861s] [吞吐率：18.92req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045306s] [吞吐率：22.07req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.054605s] [吞吐率：18.31req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045272s] [吞吐率：22.09req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.050557s] [吞吐率：19.78req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.044781s] [吞吐率：22.33req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.050123s] [吞吐率：19.95req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046149s] [吞吐率：21.67req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051860s] [吞吐率：19.28req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045649s] [吞吐率：21.91req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:55:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.052077s] [吞吐率：19.20req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045950s] [吞吐率：21.76req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.052254s] [吞吐率：19.14req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.044750s] [吞吐率：22.35req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.050716s] [吞吐率：19.72req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046061s] [吞吐率：21.71req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:24+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051618s] [吞吐率：19.37req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045475s] [吞吐率：21.99req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:34+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051403s] [吞吐率：19.45req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.043726s] [吞吐率：22.87req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:44+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.055927s] [吞吐率：17.88req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.044162s] [吞吐率：22.64req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:56:54+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.051602s] [吞吐率：19.38req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045605s] [吞吐率：21.93req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:04+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.053092s] [吞吐率：18.84req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.045086s] [吞吐率：22.18req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:14+08:00] 122.66.175.71 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051852s] [吞吐率：19.29req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:46+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.044329s] [吞吐率：22.56req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:46+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.050120s] [吞吐率：19.95req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:46+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.043894s] [吞吐率：22.78req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:46+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.050659s] [吞吐率：19.74req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.043236s] [吞吐率：23.13req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:57:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.058163s] [吞吐率：17.19req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.042612s] [吞吐率：23.47req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.054855s] [吞吐率：18.23req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.039572s] [吞吐率：25.27req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.052113s] [吞吐率：19.19req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:24+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046997s] [吞吐率：21.28req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:24+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.059290s] [吞吐率：16.87req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:34+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.044699s] [吞吐率：22.37req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:34+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.059812s] [吞吐率：16.72req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:44+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.038366s] [吞吐率：26.06req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:44+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.050189s] [吞吐率：19.92req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.042059s] [吞吐率：23.78req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:58:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.057760s] [吞吐率：17.31req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.046516s] [吞吐率：21.50req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.057007s] [吞吐率：17.54req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.050159s] [吞吐率：19.94req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.061682s] [吞吐率：16.21req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:24+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.045283s] [吞吐率：22.08req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:24+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.058945s] [吞吐率：16.96req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:34+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.041152s] [吞吐率：24.30req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:34+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.051043s] [吞吐率：19.59req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:44+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.055640s] [吞吐率：17.97req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:44+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.066338s] [吞吐率：15.07req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.048385s] [吞吐率：20.67req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T14:59:54+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.060186s] [吞吐率：16.62req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T15:00:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.039236s] [吞吐率：25.49req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T15:00:04+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.055120s] [吞吐率：18.14req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T15:00:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getmessagenum.html
+[运行时间：0.044308s] [吞吐率：22.57req/s] [内存消耗：4,515.58kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-29T15:00:14+08:00] 122.66.175.92 GET ww2.sdsxkj.com/zfadmin.php/index/getstatistics.html
+[运行时间：0.056206s] [吞吐率：17.79req/s] [内存消耗：4,591.37kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=6k6jus2gqmhsl7u9ti0061dr7n',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://ww2.sdsxkj.com/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'ww2.sdsxkj.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql

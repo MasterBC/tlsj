@@ -1,0 +1,28 @@
+{foreach $cateInfo as $k=>$v}
+<div class="helpTextTl">
+    <i class="fa fa-question-circle-o"></i> {$v}
+</div>
+<ul>
+    {foreach $helpInfo as $key=>$val}
+    {if $val['cate_id'] == $k}
+    <li class="helpTextLi">
+        <div class="helpTextbti df">
+            <div class="helpTextbtitx fx1">{$val['title']}</div>
+            <div class="jiantou">
+                <i class="fa fa-angle-down i jiantouzxia"></i>
+                <i class="fa fa-angle-up i jiantouzshang"></i>
+            </div>
+        </div>
+        <div class="helpTextms">
+            <div class="wenzi textove2">
+               {$val['desc']}
+            </div>
+            <div class="helpTextmsLinkBox">
+                <a href='javaScript:void(0);' data-url="{:U('Help/helpDetails',['id' =>$val['id']])}" class="helpTextmsLink likeA">查看详情</a>
+            </div>
+        </div>
+    </li>
+    {/if}
+    {/foreach}
+</ul>
+{/foreach}

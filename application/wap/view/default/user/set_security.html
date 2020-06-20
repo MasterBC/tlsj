@@ -1,0 +1,95 @@
+{extend name="public:base" /}
+{block name="title"}设置密保{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        设置密保
+    </h1>
+</header>
+    <div class="mui-content">
+        <div class="neirongText">
+            <form class="contentForm">
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题一</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="p_one" value="{$UsersSecurityInfo['p_one']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题一">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题答案一</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="d_one" value="{$UsersSecurityInfo['d_one']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题答案一">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题二</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="p_two" value="{$UsersSecurityInfo['p_two']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题二">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题答案二</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="d_two" value="{$UsersSecurityInfo['d_two']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题答案二">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题三</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="p_three" value="{$UsersSecurityInfo['p_three']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题三">
+                    </div>
+                </div>
+
+                <div class="muiInputRowsan">
+                    <div class="sanTl">问题答案三</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="d_three" value="{$UsersSecurityInfo['d_three']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入问题答案三">
+                    </div>
+                </div>
+                <div class="gonggButtonda">
+                    <input type="hidden" name="id" value="{$UsersSecurityInfo['id']}">
+                    <button type="button" class="mui-btn gonggButton">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function () {
+        var obj = $(this);
+        var data = $('.contentForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('User/setup')}";
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+</script>
+{/block}

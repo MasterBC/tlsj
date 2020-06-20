@@ -1,0 +1,54 @@
+{extend name="public:base" /}
+{block name="title"}货币转账详情{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        货币转账详情
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="billTop">
+        <div class="billTopwen">
+            <div class="billTopimg"><img src="{$userInfo['head']|default='__STATIC__/centImages/tou.png'}" alt=""></div>
+            <div class="billToptx">账号：{$user['account']|default="无"}</div>
+        </div>
+    </div>
+    <div class="billContBox">
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">转出金额</div>
+            <div class="billTopztai">{$changeBlockInfo['money']|default='0.00'}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">收款账号</div>
+            <div class="billConrit">{$toUserAccount|default="无"}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">实际到账</div>
+            <div class="billConrit">{$changeBlockInfo['to_money']|default='0.00'}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">手续费比例</div>
+            <div class="billConrit">{$changeBlockInfo['fee']|default='0.00'}%</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">转账货币</div>
+            <div class="billConrit">{$blockNames[$changeBlockInfo['bid']]|default="无"}</div>
+        </div>
+        <div class="billContxia">
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">创建时间</div>
+                <div class="billConrit">{$changeBlockInfo['add_time']|date="Y-m-d H:i:s"}</div>
+            </div>
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">备注</div>
+                <div class="billConrit">{$changeBlockInfo['note']|default='无'}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

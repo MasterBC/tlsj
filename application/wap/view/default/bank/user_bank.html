@@ -1,0 +1,90 @@
+{extend name="public:base" /}
+{block name="title"}我的银行卡{/block}
+{include file="public/header" /}
+
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        我的银行卡
+    </h1>
+    <div class="mui-icon mui-icon-plusempty mui-pull-right likeA i" data-url="{:U('Bank/addBank')}"></div>
+</header>
+    <div class="mui-content">
+        <ul class="bindBankUl">
+            {foreach $bank as $v}
+            <li class="bindBankLi">
+                <div class="bindBanktx">
+                    <div class="bindBankdelete delBank" data-id="{$v['id']}">
+                        <i class="fa fa-trash-o"></i>
+                    </div>
+                    <div class="df">
+                        <div class="banktxImg">
+                        </div>
+                        <div class="fx1">
+                            <div class="banktext_1">{$banks[$v["opening_id"]]}</div>
+                            <div class="banktextShu">
+                                <span class="span_1">****</span>
+                                <span class="span_1">****</span>
+                                <span class="span_1">****</span>
+                                <span class="span_1">****</span>
+                                <span class="span_2">{$v['bank_account']|substr=-3}</span>
+                            </div>
+                            <div class="bindBankCz df">
+                                {if $v['bank_default'] == 1}
+                                <div class="fx1 bindBankCzleft ">默认</div>
+                                {else/}
+                                <div class="fx1 bindBankCzleft setDefault" data-id="{$v['id']}">设为默认</div>
+                                {/if}
+                                <div class="fx1 bindBankCzright likeA" data-url="{:U('Bank/editBank', ['id' => $v['id']])}">编辑</div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    mui('body').on('tap', '.delBank', function(){
+        var _this = $(this);
+        mui.confirm('是否确认删除?', '提示', ['确认', '取消'], function(e){
+            if(e.index == 0) {
+                var id = _this.data('id');
+                $.post("{:U('Bank/delBank')}", {id:id}, function(res){
+                    if(res.code == 1) {
+                        mui.toast(res.msg);
+                        setTimeout(function(){
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        mui.alert(res.msg);
+                    }
+                });
+            }
+        });
+    });
+    $('.setDefault').click( function(){
+        var _this = $(this);
+        mui.confirm('是否将该条设置成默认?', '提示', ['确认', '取消'], function(e){
+            if(e.index == 0) {
+                var id = _this.data('id');
+                $.post("{:U('Bank/setDefaultBank')}", {id:id}, function(res){
+                    if(res.code == 1) {
+                        mui.toast(res.msg);
+                        setTimeout(function(){
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        mui.alert(res.msg);
+                    }
+                });
+            }
+        });
+    });
+
+</script>
+{/block}

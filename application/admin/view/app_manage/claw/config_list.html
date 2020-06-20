@@ -1,0 +1,93 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="config_list" lay-filter="config_list"></table>
+            <script type="text/html" id="imgTpl">
+                <img style="display: inline-block; width: 50%; height: 100%;" src={{ d.img }}>
+            </script>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form'], function () {
+        var table = layui.table, form = layui.form;
+        var tableId = 'config_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            cols: [[
+                {field: 'id', title: 'ID'},
+                {field: 'name', title: '奖品名称'},
+                {field: 'img', title: '图片', templet: '#imgTpl',rowspan:2},
+                {field: 'num', title: '奖品数量'},
+                {field: 'is_per', title: '中奖几率'},
+                {field: 'day_total', title: '每日中奖次数'},
+                {field: 'status', title: '状态'},
+                {field: 'message', title: '中奖提示语'},
+                {title: '操作', templet: '#options', rowspan:3, align: 'center', fixed:'right', width:100}
+            ]],
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+                var tr = $(obj.tr);
+
+                var url = '{:url("editClawConfig")}?id=' + data.id;
+                layer.open({
+                    type: 2
+                    , title: '编辑'
+                    , content: url
+                    , area: ['735px', '650px']
+                    , shadeClose: true
+                    , btnAlign: 'c'
+                    , maxmin: true
+                    , btn: ['确定', '取消']
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index]
+                            , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                        //监听提交
+                        iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                            var field = data.field; //获取提交的字段
+
+                            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                            $.post(url, field, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    table.reload(tableId); //数据刷新
+                                    layer.close(index); //关闭弹层
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+
+                        submit.trigger('click');
+                    }
+                    , success: function (layero, index) {
+
+                    }
+                })
+
+            }
+        });
+    });
+</script>
+{/block}
+
+

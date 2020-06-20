@@ -1,0 +1,318 @@
+{extend name="public:base" /}
+{block name="title"}网站设置{/block}
+{block name="body"}
+<div class="layui-form layui-fluid layui-form-pane">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm12">
+                     <div class="layui-card">
+                        <div class="layui-card-header">安全性验证设置</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">会员登录后</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="web_past_due_time" value="{:isset($config['web_past_due_time']) ? (int)$config['web_past_due_time'] : ''}" placeholder="请输入会员未操作自动退出时间" autocomplete="off" class="layui-input"/>
+                                    <input type="hidden" name="description[web_past_due_time]" value="会员未操作自动退出时间 单位: 分钟" />
+                                </div>
+                                <div class="layui-form-mid">M(分钟)不操作 自动退出账号，黙认为 : 10 分钟</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">管理登录后</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="admin_past_due_time" value="{:isset($config['admin_past_due_time']) ? (int)$config['admin_past_due_time'] : ''}" placeholder="请输入管理员未操作自动退出时间" autocomplete="off" class="layui-input"/>
+                                    <input type="hidden" name="description[admin_past_due_time]" value="会员未操作自动退出时间 单位: 分钟" />
+                                </div>
+                                <div class="layui-form-mid">M(分钟)不操作 自动退出账号，黙认为 : 10 分钟</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">密码长度为</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="web_pass_min" value="{:isset($config['web_pass_min']) ? $config['web_pass_min'] : ''}" placeholder="会员密码最少位数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> -</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="web_pass_max" value="{:isset($config['web_pass_max']) ? $config['web_pass_max'] : ''}" placeholder="会员密码最多位数" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-inline layui-form-item" pane="">
+                                <label class="layui-form-label">实名认证</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="auth_username_type" autocomplete="off" value="1" title="人工审核" {:isset($config['auth_username_type']) ? $config['auth_username_type'] == 1 ? 'checked' : '' : ''}>
+                                    <input type="radio" name="auth_username_type" autocomplete="off" value="9" title="自动审核" {:isset($config['auth_username_type']) ? $config['auth_username_type'] == 9 ? 'checked' : '' : ''}>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">全网产出限</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="web_totao_level" value="{:isset($config['web_totao_level']) ? (int)$config['web_totao_level'] : ''}" placeholder="全网产出限制数量" autocomplete="off" class="layui-input"/>
+                                    <input type="hidden" name="description[web_totao_level]" value="全网产出限制数量" />
+                                </div>
+                                <div class="layui-form-mid">只，超出后即不生产</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-card-header">会员留言分类</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">中文界面</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="message_cate" value="{:isset($config['message_cate']) ? $config['message_cate'] : ''}" placeholder="请输入留言分类" autocomplete="off" class="layui-input"/>
+                                    <input type="hidden" name="description[message_cate]" value="留言分类 "/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="layui-col-sm12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">红包参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">签到红包</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="sign_rand_arr_money" value="{:isset($config['sign_rand_arr_money']) ? $config['sign_rand_arr_money'] : ''}" placeholder="随机红包参数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 最高</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="sign_total_hongbao_money" value="{:isset($config['sign_total_hongbao_money']) ? $config['sign_total_hongbao_money'] : ''}" placeholder="最高红包金额" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 人</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">打工红包</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="work_rand_arr_money" value="{:isset($config['work_rand_arr_money']) ? $config['work_rand_arr_money'] : ''}" placeholder="随机红包参数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 最高</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="work_total_hongbao_money" value="{:isset($config['work_total_hongbao_money']) ? $config['work_total_hongbao_money'] : ''}" placeholder="最高红包金额" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 人</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">随机红包</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="random_rand_arr_money" value="{:isset($config['random_rand_arr_money']) ? $config['random_rand_arr_money'] : ''}" placeholder="随机红包参数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 最高</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="random_total_hongbao_money" value="{:isset($config['random_total_hongbao_money']) ? $config['random_total_hongbao_money'] : ''}" placeholder="最高红包金额" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 人</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">升级红包</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="upgrade_rand_arr_money" value="{:isset($config['upgrade_rand_arr_money']) ? $config['upgrade_rand_arr_money'] : ''}" placeholder="随机红包参数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 最高</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="upgrade_total_hongbao_money" value="{:isset($config['upgrade_total_hongbao_money']) ? $config['upgrade_total_hongbao_money'] : ''}" placeholder="最高红包金额" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 人</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">奖励级别</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="upgrade_red_envelope" value="{$config['upgrade_red_envelope'] ?? ''}" placeholder="升级级别" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">注: 多个使用 “-” 隔开</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">牛郎织女奖励</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="niuliang_zhinv_reward" value="{$config['niuliang_zhinv_reward'] ?? ''}" placeholder="牛郎织女奖励" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">元</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">推荐奖参数</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="bonus_config" value="{:isset($config['bonus_config']) ? $config['bonus_config'] : ''}" placeholder="推荐奖参数" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="layui-col-sm12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">摇一摇参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">视频广告</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="video_day_total_num" value="{:isset($config['video_day_total_num']) ? $config['video_day_total_num'] : ''}" placeholder="视频广告每天最次数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> 次/天</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">摇一摇每天</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_day_total_num" value="{:isset($config['shake_day_total_num']) ? $config['shake_day_total_num'] : ''}" placeholder="每天最高摇一摇参数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid">次</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">随机牛币</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_block_num" value="{:isset($config['shake_rand_block_num']) ? $config['shake_rand_block_num'] : ''}" placeholder="随机牛币" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 概率</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_block_per" value="{:isset($config['shake_rand_block_per']) ? $config['shake_rand_block_per'] : ''}" placeholder="随机牛币概率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">随机金币</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_money_two_num" value="{:isset($config['shake_rand_money_two_num']) ? $config['shake_rand_money_two_num'] : ''}" placeholder="随机金币" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 概率</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_money_two_per" value="{:isset($config['shake_rand_money_two_per']) ? $config['shake_rand_money_two_per'] : ''}" placeholder="随机金币概率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">随机算力</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_money_one_num" value="{:isset($config['shake_rand_money_one_num']) ? $config['shake_rand_money_one_num'] : ''}" placeholder="随机算力" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> / 概率</div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="shake_rand_money_one_per" value="{:isset($config['shake_rand_money_one_per']) ? $config['shake_rand_money_one_per'] : ''}" placeholder="随机算力概率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm6">
+                     <div class="layui-card">
+                        <div class="layui-card-header">转盘抽奖参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">每日赠送</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="turn_day_give_num" value="{:isset($config['turn_day_give_num']) ? $config['turn_day_give_num'] : ''}" placeholder="转盘每天赠送次数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> 次</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">观看视频送</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="turn_video_give_num" value="{:isset($config['turn_video_give_num']) ? $config['turn_video_give_num'] : ''}" placeholder="观看视频赠送次数" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> 次</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+                
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm6">
+                     <div class="layui-card">
+                        <div class="layui-card-header">我的分红牛</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">推荐一个加</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="tjr_num_plus" value="{:isset($config['tjr_num_plus']) ? $config['tjr_num_plus'] : ''}" placeholder="推荐一个加速比率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">签到加</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="sign_num_plus" value="{:isset($config['sign_num_plus']) ? $config['sign_num_plus'] : ''}" placeholder="签到加速比率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">合成38级加</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="close_num_plus" value="{:isset($config['close_num_plus']) ? $config['close_num_plus'] : ''}" placeholder="合成38级加速率" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid"> %</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+    });
+</script>
+{/block}

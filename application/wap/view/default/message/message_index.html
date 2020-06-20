@@ -1,0 +1,156 @@
+{extend name="public:base" /}
+{block name="title"}留言{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        留言
+    </h1>
+    <div class="mui-pull-right likeA" data-url="{:U('Message/messageDetail')}" style="line-height: 44px;color:#fff;font-size:14px;">查看留言</div>
+</header>
+<div class="mui-content">
+    <div class="neirongText">
+        <form class="contentForm">
+            <div class="messalRowsan">
+                <div class="sanTl">标题</div>
+                <div class="mui-input-row">
+                    <input type="text" value="" name="title" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入留言标题">
+                </div>
+            </div>
+            <div class="messalRowsan">
+                <div class="sanTl">类型</div>
+                <div class="mui-input-row">
+                    <select name="type" id="messCate">
+                        <option value ="0">-请选择-</option>
+                        {foreach $messageCate as $k=>$v}
+                        <option value ="{$k}">{$v}</option>
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="messtextsan">
+                <textarea name="content" id="content" cols="30" rows="4" placeholder="输入留言内容" class="textareawbk"></textarea>
+                <div class="textareawbktshishu"><span  id="result">0</span>/150</div>
+            </div>
+            <div class="avmesBoxbb">
+                <div class="avmesBox uploadImgHeadOne" data-show_id="show_img_one">
+                    <img src=" " alt="" id="show_img_one">
+                    <input type="hidden" name="img[]" class="show_img_one" autocomplete="off">
+                    <input type='file' name='img' style='display:none' class='img' />
+                </div>
+                <div class="avmesBox uploadImgHeadTow" data-show_id="show_img_two">
+                    <img src=" " alt="" id="show_img_two">
+                    <input type="hidden" name="img[]" class="show_img_two" autocomplete="off">
+                </div>
+                <div class="avmesBox uploadImgHeadThree" data-show_id="show_img_three">
+                    <img src=" " alt="" id="show_img_three">
+                    <input type="hidden" name="img[]" class="show_img_three" autocomplete="off">
+                </div>
+            </div>
+            <div class="gonggButtonda">
+                <button class="blockcaczann submit">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    var imgObj = [];
+    mui('body').on('change', '.img', function(){
+        var formData = new FormData();
+        var img = $(this).val();
+        if(img) {
+            formData.append("img", $(this)[0].files[0]);
+            formData.append("field", 'img');
+            mui.showLoading("上传中");
+            $.ajax({
+                url: "/uploadImg",
+                type: "post",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                async:false,
+                success: function(res) {
+                    console.log(res);
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if(res.code != 1) {
+                        mui.alert(res.msg);
+                    } else {
+                        $('#'+$(imgObj).data('show_id')).attr('src', '{:get_img_domain()}'+res.data.src);
+                        $('.'+$(imgObj).data('show_id')).val(res.data.src);
+                    }
+                },
+                error: function(e) {
+                    alert("网络错误，请重试！！");
+                }
+            });
+        }
+    });
+    mui('body').on('tap', '.uploadImgHeadOne', function(){
+        imgObj = $(this);
+        $('.img').click();
+    });
+    mui('body').on('tap', '.uploadImgHeadTow', function(){
+
+        imgObj = $(this);
+        $('.img').click();
+    });
+    mui('body').on('tap', '.uploadImgHeadThree', function(){
+        imgObj = $(this);
+        $('.img').click();
+    });
+</script>
+<script>
+    $('.textareawbk').keyup(function () {
+        var bb=$('.textareawbk').val();
+        var cc=bb.substring(0,150);
+        $('.textareawbk').val(cc);
+        var aa=($(this).val().length);
+        console.log(aa);
+        if(aa<150){
+            $('#result').html($(this).val().length);
+        }else{
+            $('#result').html("0");
+        }
+    });
+
+    var mask = mui.createMask();
+    mui('body').on('tap', '.submit', function() {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        var data = $('.contentForm').serialize();
+        console.log(data);
+        var url = "{:U('')}";
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast(res.msg, {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('Message/messageDetail')}";
+                    }, 1000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+</script>
+{/block}

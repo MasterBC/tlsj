@@ -1,0 +1,86 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">国际代码</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='code' value='{$info["code"]}' autocomplete="off" placeholder="国际代码"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">中文名</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='name_cn' value='{$info["name_cn"]}' autocomplete="off" placeholder="中文名"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">英语名</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='name_en' value='{$info["name_en"]}' autocomplete="off" placeholder="英语名"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">国际区号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='area_code' value='{$info["area_code"]}' autocomplete="off" placeholder="国际区号"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+
+        upload.render({
+            elem: '.uploadImg',
+            url: '/uploadImg',
+            before: function () {
+            }
+            , done: function (res, index, upload) {
+                if (res.code == 1) {
+                    $('#' + this.data.field).val(res.data.src);
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            }
+        });
+        $(document).on('click', '.checkImg', function () {
+            var src = "{:get_img_domain()}" + $('#' + $(this).data('type')).val();
+            layer.photos({
+                photos: {
+                    "title": "查看图片" //相册标题
+                    , "data": [{
+                        "src": src //原图地址
+                    }]
+                }
+                , shade: 0.01
+                , closeBtn: 1
+                , anim: 5
+            });
+        });
+    });
+</script>
+{/block}

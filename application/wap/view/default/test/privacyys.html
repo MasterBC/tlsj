@@ -1,0 +1,49 @@
+{extend name="public:base" /}
+{block name="title"}隐私{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        隐私
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="stpricygx">师徒关系</div>
+    <div class="stpricylinkBox df likeA" data-url="{:U('test/socialcan')}">
+        <div class="fx1">设置社会信息</div>
+        <div><i class="mui-icon mui-icon-arrowright i"></i></div>
+    </div>
+    <div class="stpricylinkBox df">
+        <div class="fx1">
+            <div>我的师父可见</div>
+            <div class="stpricylinkms">开启后，您的师父可以看见您的社交信息。</div>
+        </div>
+        <div class="mui-switch">
+            <div class="mui-switch-handle"></div>
+        </div>
+    </div>
+    <div class="stpricylinkBox df">
+        <div class="fx1">
+            <div>我的师公可见</div>
+            <div class="stpricylinkms">开启后，您的师公可以看见您的社交信息。</div>
+        </div>
+        <div class="mui-switch">
+            <div class="mui-switch-handle"></div>
+        </div>
+    </div>
+    <div class="stpricylinkBox df">
+        <div class="fx1">
+            <div>我的徒弟可见</div>
+            <div class="stpricylinkms">开启后，您的徒弟可以看见您的社交信息。</div>
+        </div>
+        <div class="mui-switch">
+            <div class="mui-switch-handle"></div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

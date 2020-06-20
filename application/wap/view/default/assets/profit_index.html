@@ -1,0 +1,98 @@
+{extend name="public:base" /}
+{block name="title"}收益说明{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        收益说明
+    </h1>
+</header>
+<div class="mui-content muiContentben">
+    <div class="benefdaBox">
+        <div class="benefdatle">
+            亲爱的各位御牛师，欢迎来到全民收益系统，以下为大家介绍细则：
+        </div>
+        <div class="benefdatext">
+            1、首先明确的一点是，牛魔帝国是没有充值入口，不需要用户花一分钱使用的。
+        </div>
+        <div class="benefdatext">
+            2、全民收益系统是开放给所有用户，目的是让用户在玩游戏的同时收益最大化，娱乐和赚钱两不误。
+        </div>
+        <div class="benefdatext">
+            3、关于活跃收益和有牛同享收益说明：
+        </div>
+
+        <div class="df benshyshmBox">
+            <div class="benshysmc">
+                <div class="benshysmctx">
+                    <div class="benshysmzi">
+                        <div class="benshysmzitx">活跃</div>
+                        <div class="benshysmzitx">收益</div>
+                    </div>
+                </div>
+                <div class="benshysmctx">
+                    <div class="benshysmzi">
+                        <div class="benshysmzitx">有牛同</div>
+                        <div class="benshysmzitx">享收益</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fx1 benshymsBox">
+                <div class="benshymsdata">
+                    根据徒弟们的【活跃时长】、【任务完成情况】、【看视频贡献比例】、【邀请有效好友数】等因素综合计算；徒弟越多，每天坐享活跃收益越多；
+                </div>
+                <div class="benshymsdata">
+                    根据徒孙们的【活跃时长】、【任务完成情况】、【看视频贡献比例】、【邀请有效好友数】等因素综合计算；徒孙越多，每天坐享活跃收益越多;收益比例：1个徒弟 = 2个徒孙
+                </div>
+                <div class="benshymsdata">
+                    根据徒弟们每天拥有的分红牛总收益，您可以坐享20%提成；即如果您的徒弟们拥有5只分红牛，那么您每天坐享1只分红牛的收益；
+                </div>
+                <div class="benshymsdata">
+                    根据徒孙们每天拥有的分红牛总收益，您可以坐享10%提成；即如果您的徒孙们拥有10只分红牛，那么您每天坐享1只分红牛的收益。
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="benefdatext">
+            4、关于目标金额说明：
+        </div>
+        <div class="benefdadata">
+            ① 完成目标金额，用户确认后收益自动划转到您的钱包，可立即提现，并且自动晋级下一个阶段。
+        </div>
+
+        <div class="jiedmbianBox">
+            <div class="jiedmbiantle df">
+                <div class="fx1 jiedmbibdd">阶段</div>
+                <div class="fx1">目标</div>
+            </div>
+            <ul class="jiedmbiaUl">
+                {foreach $rankList as $v}
+                <li class="jiedmbLi df">
+                    <div class="fx1 jiedmbibdd">{$v['target_title']}</div>
+                    <div class="fx1">{$v['target_money']}</div>
+                </li>
+                {/foreach}
+                <li class="jiedmbLi df">
+                    <div class="fx1 jiedmbibdd">最终阶段</div>
+                    <div class="fx1">请联系平台</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="benefdatext">
+            5、若发现用户有恶意作弊行为，一律封禁账号并扣除账户所有余额；
+        </div>
+        <div class="benefdatext">
+            6、官方保留最终解释权，有疑问请到【APP-联系我们】联系客服。
+        </div>
+
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

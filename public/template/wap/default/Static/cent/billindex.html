@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>账单详情</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/centStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.showLoading.css" />
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        账单详情
+    </h1>
+</header>
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <div class="billTop">
+            <div class="billTopwen">
+                <div class="billTopimg"><img src="../centImages/tou.png" alt=""></div>
+                <div class="billToptx">XXXXX网络科技有限公司</div>
+            </div>
+            <div class="billTopshu">+10000.00</div>
+            <div class="billTopztai">交易成功</div>
+        </div>
+        <div class="billContBox">
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">收款方式</div>
+                <div class="billConrit">余额</div>
+            </div>
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">转账备注</div>
+                <div class="billConrit">转账</div>
+            </div>
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">对方账户</div>
+                <div class="billConrit">5423 4534 6787 45678</div>
+            </div>
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">账单分类</div>
+                <div class="billConrit">收益</div>
+            </div>
+            <div class="billContxia">
+                <div class="df billConlethz">
+                    <div class="fx1 billConlet">创建时间</div>
+                    <div class="billConrit">2018-09-12 06:23:56</div>
+                </div>
+                <div class="df billConlethz">
+                    <div class="fx1 billConlet">订单号</div>
+                    <div class="billConrit">4357636756786789783452</div>
+                </div>
+            </div>
+        </div>
+        <div class="billconNavbox df">
+            <div class="billconNav fx1">标签和备注</div>
+            <div><i class="mui-icon mui-icon-arrowright"></i></div>
+        </div>
+        <div class="billconNavbox df">
+            <div class="billconNav fx1">申请电子回单</div>
+            <div><i class="mui-icon mui-icon-arrowright"></i></div>
+        </div>
+        <div class="billconNavbox df">
+            <div class="billconNav fx1">查看往来记录</div>
+            <div><i class="mui-icon mui-icon-arrowright"></i></div>
+        </div>
+        <div class="billconNavbox df">
+            <div class="billconNav fx1">对此订单有疑问</div>
+            <div><i class="mui-icon mui-icon-arrowright"></i></div>
+        </div>
+    </div>
+</div>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/style.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005
+    });
+</script>
+</body>
+
+</html>

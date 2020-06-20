@@ -1,0 +1,286 @@
+<?php
+
+namespace app\admin\controller;
+
+use think\db;
+use app\facade\Password;
+use app\common\server\Log;
+use think\Request;
+use org\DbManage as DbManageServer;
+use app\common\model\AdminLog;
+
+class DbManage extends Base
+{
+
+    public $operationPassword = 'XXjVvTQApgSZnUJk';
+
+    /**
+     * 清除测试数据
+     */
+    public function clearTestData(Request $request)
+    {
+        $password = $request->param('password', '', 'trim');
+        if ($password != $this->operationPassword) {
+            return json()->data([
+                        'code' => -1,
+                        'msg' => '密码错误'
+            ]);
+        }
+        try {
+            // 所有数据表
+            $tables = [];
+            $tpTtables = db::query('show tables');
+            foreach ($tpTtables as $val) {
+                foreach ($val as $v) {
+                    $tables[] = $v;
+                }
+            }
+
+            $notClearTables = [
+                'admin_user', 'auth_group', 'auth_group_access', 'auth_rule', 'bank',
+                'block', 'block_change', 'block_transform',
+                'bonus', 'country', 'region', 'product',
+                'help', 'help_cate', 'news', 'news_cate', 'notice', 'about',
+                'goods', 'goods_cate', 'goods_attribute', 'goods_spec', 'goods_spec_item', 'goods_spec_price',
+                'money', 'money_change', 'money_carry', 'money_transform',
+                'agent', 'leader', 'level', 'service'
+            ];
+            $prefix = zf_cache('database.prefix');
+            foreach ($notClearTables as $key => $val) {
+                $notClearTables[$key] = $prefix . $val;
+            }
+
+            foreach ($tables as $v) {
+                if (!in_array($v, $notClearTables)) {
+                    db::execute("truncate table " . $v);
+                }
+            }
+
+            $this->generateRawData();
+
+            return json()->data(['code' => 1, 'msg' => '操作成功']);
+        } catch (\Exception $e) {
+            Log::exceptionWrite('清除测试数据失败', $e);
+            return json()->data(['code' => 1, 'msg' => '操作失败']);
+        }
+    }
+
+    /**
+     * 数据库备份列表
+     *
+     * @param Request $request
+     * @param DbManageServer $dbManageServer
+     * @return void
+     */
+    public function backupList(Request $request, DbManageServer $dbManageServer)
+    {
+        if ($request->isAjax()) {
+            try {
+                $list = $dbManageServer->getBackupList();
+
+                if (count($list) > 0) {
+                    return json()->data([
+                                'code' => 1,
+                                'data' => $list
+                    ]);
+                } else {
+                    return json()->data([
+                                'code' => -1,
+                                'msg' => '暂时没有备份文件'
+                    ]);
+                }
+            } catch (\Exception $e) {
+                Log::exceptionWrite('获取数据库备份列表失败', $e);
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '查询数据库备份列表失败，请联系管理员'
+                ]);
+            }
+        } else {
+            return view('db_manage/backup_list');
+        }
+    }
+
+    /**
+     * 下载备份文件
+     *
+     * @param Request $request
+     * @param DbManageServer $dbManageServer
+     * @return void
+     */
+    public function downloadBackFile(Request $request, DbManageServer $dbManageServer)
+    {
+        $operationFileName = $request->param('file');
+        $operationFileName = str_replace(' ', '+', $operationFileName);
+        if ($operationFileName == '') {
+            $this->error('参数错误');
+        }
+
+        $res = $dbManageServer->downloadFile($operationFileName);
+        if ($res) {
+            AdminLog::addLog('下载数据库备份文件', [
+                'operationFileName' => $operationFileName
+            ]);
+            return $res;
+        } else {
+            $this->error('文件不存在');
+        }
+    }
+
+    /**
+     * 删除备份文件
+     *
+     * @param Request $request
+     * @param DbManageServer $dbManageServer
+     * @return void
+     */
+    public function delBackFile(Request $request, DbManageServer $dbManageServer)
+    {
+        if ($request->isPost()) {
+            $operationFileName = $request->param('file');
+            $operationFileName = str_replace(' ', '+', $operationFileName);
+            if ($operationFileName == '') {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '参数错误'
+                ]);
+            }
+            $password = $request->param('password', '', 'trim');
+            if ($password != $this->operationPassword) {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '密码错误'
+                ]);
+            }
+
+            $res = $dbManageServer->delBackFile($operationFileName, 2);
+            if ($res) {
+                AdminLog::addLog('删除数据库备份文件', [
+                    'operationFileName' => $operationFileName
+                ]);
+                return json()->data([
+                            'code' => 1,
+                            'msg' => '删除成功'
+                ]);
+            } else {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '删除失败'
+                ]);
+            }
+        }
+    }
+
+    /**
+     * 备份
+     *
+     * @param Request $request
+     * @param DbManageServer $dbManageServer
+     * @return void
+     */
+    public function backup(Request $request, DbManageServer $dbManageServer)
+    {
+        if ($request->isPost()) {
+            $description = $request->param('description', '', 'htmlspecialchars');
+
+            $res = $dbManageServer->back('', $description);
+            if ($res) {
+                AdminLog::addLog('备份数据库', [
+                    'description' => $description
+                ]);
+                return json()->data([
+                            'code' => 1,
+                            'msg' => '备份成功'
+                ]);
+            } else {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '备份失败'
+                ]);
+            }
+        }
+    }
+
+    /**
+     * 数据库还原
+     *
+     * @param Request $request
+     * @param DbManageServer $dbManageServer
+     * @return \think\response\Json
+     */
+    public function revertBackFile(Request $request, DbManageServer $dbManageServer)
+    {
+        if ($request->isPost()) {
+            $operationFileName = $request->param('file');
+            $operationFileName = str_replace(' ', '+', $operationFileName);
+            if ($operationFileName == '') {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '参数错误'
+                ]);
+            }
+            $password = $request->param('password', '', 'trim');
+            if ($password != $this->operationPassword) {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => '密码错误'
+                ]);
+            }
+
+            try {
+                $res = $dbManageServer->import($operationFileName, 2);
+                if ($res) {
+                    AdminLog::addLog('还原数据库', [
+                        'operationFileName' => $operationFileName
+                    ]);
+                    return json()->data([
+                                'code' => 1,
+                                'msg' => '还原成功'
+                    ]);
+                } else {
+                    return json()->data([
+                                'code' => -1,
+                                'msg' => '还原失败'
+                    ]);
+                }
+            } catch (\Exception $e) {
+                return json()->data([
+                            'code' => -1,
+                            'msg' => $e->getMessage()
+                ]);
+            }
+        }
+    }
+
+    /**
+     * 生成原始数据
+     */
+    private function generateRawData()
+    {
+
+        // 添加会员数据
+        $salt = Password::getPasswordSalt();
+        $password = Password::getPassword(zf_cache('reg_info.default_login_pass'), $salt);
+        $secpwd = Password::getPassword(zf_cache('reg_info.default_pay_pass'), $salt);
+        $data = [
+            'user_id' => zf_cache('reg_info.default_reg_user_id') > 0 ? zf_cache('reg_info.default_reg_user_id') : '',
+            'nickname' => zf_cache('web_info.web_name'),
+            'account' => zf_cache('reg_info.default_account'),
+            'password' => $password,
+            'secpwd' => $secpwd,
+            'pass_salt' => $salt,
+            'level' => 1,
+            'reg_time' => time(),
+            'activate' => 1,
+            'jh_time' => time(),
+            'tjr_path' => 0,
+            'tjr_id' => 0,
+            'reg_code' => '888888'
+        ];
+
+        $userId = model('Users')->insertGetId($data);
+        (new \app\common\model\money\Money())->addUserMoney($userId);
+        (new \app\common\model\block\Block())->addUserBlock($userId);
+    }
+
+}

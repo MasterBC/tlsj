@@ -1,0 +1,98 @@
+{extend name="public:base" /}
+{block name="title"}设置银行卡{/block}
+{include file="public/header" /}
+
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        设置银行卡
+    </h1>
+</header>
+    <div class="mui-content">
+        <div class="neirongText">
+            <form class="contentForm">
+                <div class="muiInputRowsan">
+                    <div class="sanTl">开户名</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="bank_name" value="{$userBank['bank_name'] ? $userBank['bank_name'] : $userBank['username']}" autocomplete="off"  class="mui-input-clear muiInput" placeholder="请输入开户名">
+
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">银行账号</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="bank_account" id="zhanghao" value="{$userBank['bank_account']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入银行账号">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">开户银行</div>
+                    <div class="mui-input-row">
+                        <select name="opening_id"  id="">
+                            <option value="0">-请选择开户银行-</option>
+                            {foreach $banks as $k => $v}
+                            <option value="{$v['id']}" {if $userBank['opening_id'] == $v['id']}selected{/if}>{$v['name_cn']}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">分行支行</div>
+                    <div class="mui-input-row">
+                        <input type="text" value="{$userBank['bank_address']}" name="bank_address" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入分行支行">
+                    </div>
+                </div>
+                <div class="gonggButtonda">
+                    <input type="hidden" name='id' value="{$userBank['id']}" autocomplete="off" />
+                    <button type="button" class="mui-btn gonggButton">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    $(function(){
+        $('#zhanghao').keyup(function(){
+            var value=$(this).val().replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 "); $(this).val(value);
+        });
+    });
+</script>
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function() {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        var data = $('.contentForm').serialize();
+        console.log(data);
+        var url = "{:U('Bank/editBank')}";
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast(res.msg, {duration: '1000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('Bank/userBank')}";
+                    }, 1000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+
+</script>
+{/block}

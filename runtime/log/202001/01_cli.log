@@ -1,0 +1,8 @@
+[2020-01-01T01:10:08+08:00][ error ] 会员金额变动错误 会员id(1),钱包(2),金额(483000),类型(176),备注(奖励): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'total' cannot be null
+error
+[2020-01-01T01:10:08+08:00][ info ] [ DB ] INIT mysql
+info
+[2020-01-01T01:12:58+08:00][ error ] 会员金额变动错误 会员id(1),钱包(2),金额(483000),类型(176),备注(奖励): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'total' cannot be null
+error
+[2020-01-01T01:12:58+08:00][ info ] [ DB ] INIT mysql
+info

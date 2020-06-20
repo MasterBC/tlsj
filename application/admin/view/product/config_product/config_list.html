@@ -1,0 +1,202 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <script type="text/html" id="toolbar">
+                <div class="layui-btn-container">
+<!--                    <button class="layui-btn layui-btn-sm" lay-event="add">
+                        <i class="layui-icon layui-icon-add-1"></i>添加
+                    </button>-->
+<!--                    <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">
+                        <i class="layui-icon layui-icon-delete"></i>删除
+                    </button>-->
+                </div>
+            </script>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+            </script>
+            <table id="bank_list" lay-filter="bank_list"></table>
+            <script type="text/html" id="imgTpl">
+                <img style="display: inline-block; width: 50%; height: 100%;" src={{ d.picture }}>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="check_picture_img">查看</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'bank_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbar',
+            defaultToolbar:false,
+            cols: [[
+//                {type: 'checkbox', fixed: 'left', rowspan: 2},
+//                {field: 'id', title: 'ID'},
+                {field: 'product_name', title: '人物名称'},
+                {field: 'picture', title: '人物头像', templet: '#imgTpl',rowspan:2},
+                {field: 'amount', title: '基础价格'},
+                {field: 'next_per', title: '涨价倍率'},
+                {field: 'total_amount', title: '最高价格'},
+                {field: 'number', title: '人物编号'},
+                {field: 'income', title: '金币收益'},
+                {field: 'offline_income', title: '离线收益'},
+                {field: 'recovery_amount', title: '回收价格'},
+//                {field: 'product_release', title: '限制开放'},
+                {field: 'status', title: '商店状态'},
+                {title: '操作', templet: '#options', width: 90}
+            ]],
+        };
+        table.render(options);
+        //头工具栏事件
+        table.on('toolbar('+tableId+')', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'add':
+                    var url = '{:url("addProductConfig")}';
+                    layer.open({
+                        type: 2
+                        , title: '添加'
+                        , content: url
+                        , area: ['80%', '80%']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submit = layero.find('iframe').contents().find("#submitBtn");
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+
+                                var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                    } else {
+                                        layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                    }
+                                });
+                            });
+
+                            submit.trigger('click');
+                        }
+                    });
+                    break;
+                case 'del':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    var num = 0;
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                        num++;
+                    }
+                    id = id.join(',');
+                    if(id == '') {
+                        return layer.msg('请选择要删除的数据');
+                    }
+                    layer.confirm('是否确认删除?', {icon:3}, function(){
+                        var url = '{:url("delProductConfig")}';
+                        var loadAdd = layer.msg('删除中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: id}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload(tableId); //数据刷新
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+            };
+        });
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            switch(obj.event) {
+                case 'edit':
+                    var tr = $(obj.tr);
+                    var url = '{:url("editProductConfig")}?id=' + data.id;
+                    layer.open({
+                        type: 2
+                        , title: '编辑'
+                        , content: url
+                        , area: ['80%', '80%']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submit = layero.find('iframe').contents().find("#submitBtn");
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+                                var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                    } else {
+                                        layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                    }
+                                });
+                            });
+
+                            submit.trigger('click');
+                        }
+                    })
+                    break;
+                     case 'check_picture_img':
+                        var imgs = [];
+                        for (elem in data.picture) {
+                            imgs.push({
+                               "pid": 'img', //图片id
+                                "src": data.picture, //原图地址
+                            });
+                        }
+                        var pay_img = {
+                            "title": "人物头像",
+                            "id": 11,
+                            "start": 0,
+                            "data" : imgs
+                        };
+                        layer.photos({
+                            photos: pay_img
+                            ,anim: 5
+                        });
+                    break;
+            }
+        });
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                , page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}
+
+

@@ -1,0 +1,216 @@
+{extend name="public:base" /}
+{block name="title"}上班{/block}
+{block name="body"}
+<div class="mui-content" style="padding-bottom: 55px;">
+
+    <div class="apseuptopBoxBa">
+        <div class="apseuptopBox">
+            <div class="apseuptopdataBox">
+                <div class="diyijifd">{$rankInfo['target_title']}</div>
+                <div class="diyijifdshu">{$rankInfo['target_money']}</div>
+<!--                <img src="__STATIC__/centImages/nt.png"  class="likeA appniutou"  data-url="{:U('Team/firstTjrList')}"alt="">-->
+                <img src="__STATIC__/centImages/nt.png"  class="likeA appniutou"  data-url="{:U('Assets/profitAndBonus')}"alt="">
+            </div>
+            
+        </div>
+    </div>
+    <div class="sepbtBox">
+        <div class="assetbbBox">
+            <div class="assetbbHe">
+                <div class="df assetbCont">
+                    <div class="fx1">
+                        <div class="assetbbshu">{$dynamicBonusAmount ?? '0.00'}</div>
+                        <div class="assetbbtx">总活跃收益</div>
+                    </div>
+                    <div class="fx1">
+                        <div class="assetbbshu">{$cattleBonusAmount ?? '0.00'}</div>
+                        <div class="assetbbtx">有牛同享收益</div>
+                    </div>
+                </div>
+                <div class="huyjinduBox">
+                    <div class="huyjindu" style="width:{$lockPer ?? 0.00}%;"></div>
+                </div>
+                <div class="huyjindums">
+                    <span class="text_1">已解锁</span>
+                    <span class="text_2">{$unsettlementBonusAmount}元、</span>
+                    <span class="text_1">进度</span>
+                    <span class="text_2">{$lockPer ?? 0.00}%</span>
+                    <!--<span class="text_1">X1.0 倍加速中</span>-->
+                </div>
+            </div>
+        </div>
+        <div class="assetbbBox">
+            <div class="assetbbHe">
+                <div class="assetbbTletx">今日预估收益</div>
+                <div class="df assetbCont">
+                    <div class="fx1">
+                        <div class="assetbbshu">{$dayBonus ?? '0.00'}</div>
+                        <div class="assetbbtx">总收益</div>
+                    </div>
+                    <div class="fx1">
+                        <div class="assetbbshu">{$day_first_bonus ?? '0.00'}</div>
+                        <div class="assetbbtx">徒弟为你贡献</div>
+                    </div>
+                    <div class="fx1">
+                        <div class="assetbbshu">{$day_second_bonus ?? '0.00'}</div>
+                        <div class="assetbbtx">徒孙为你贡献</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="assetbbBox">
+            <div class="assetbbHe">
+                <div class="assetbbTletx">昨日预估收益</div>
+                <div class="df assetbCont">
+                    <div class="fx1">
+                        <div class="assetbbshu">{$zuorBonus ?? '0.00'}</div>
+                        <div class="assetbbtx">总收益</div>
+                    </div>
+                    <div class="fx1">
+                        <div class="assetbbshu">{$zuor_first_bonus ?? '0.00'}</div>
+                        <div class="assetbbtx">徒弟为你贡献</div>
+                    </div>
+                    <div class="fx1">
+                        <div class="assetbbshu">{$zuor_second_bonus ?? '0.00'}</div>
+                        <div class="assetbbtx">徒孙为你贡献</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mermaidBox">
+            <div class="mermaidCont df">
+                <div class="mermaidimg">
+                    <img src="https://2019-a071-img.oss-cn-shenzhen.aliyuncs.com/2019-a071-niuB/product-logo/v_45.png" alt="">
+                </div>
+                <div class="fx1">
+                    <div class="mermaimc">
+                        <span class="text_1">我的分红牛：</span>
+                        <span class="text_2">{$per}%</span>
+                    </div>
+                    <div class="mermjinduBox">
+                        <div class="mermjindu" style="width:{$per}%;"></div>
+                    </div>
+                    <div class="mermaimcms">限量 {:zf_cache('security_info.web_totao_level')}只，先到先得，领完即止</div>
+                </div>
+            </div>
+        </div>
+        <div class="mermlinkBox">
+            <div class="mermlinkCont df">
+                <div class="fx1">
+                    <div class="mermlinkBd likeA"  data-url="{:U('Team/firstTjrList')}">
+                        <div class="mermlink">
+                            <img src="__STATIC__/centImages/2019a071_55.png" alt="">
+                            <span class="mermlinktx">团队列表</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fx1">
+                    <div class="mermlinkBd likeA" data-url="{:U('Bonus/logBonus')}">
+                        <div class="mermlink">
+                            <img src="__STATIC__/centImages/2019a071_41.png" alt="">
+                            <span class="mermlinktx">推广收益</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="babrwmyqBtn likeA"  data-url="{:U('Team/tjrFriendAdd')}">
+                <div class="mermlink">
+                    <img src="__STATIC__/centImages/2019a071_159.png" alt="">
+                    <span class="mermliewmx">邀请二维码</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{if $rankInfo && $unsettlementBonusAmount > $rankInfo['target_money']}
+<!--达成目标弹窗 s  dcmbopBoxActive  -->
+    <div class="dcmbopBox dcmbopBoxActive">
+        <div class="dcmboppoyin"></div>
+        <div class="dcmbopContHe">
+            <div class="df">
+                <div class="dcmbopCzwei"></div>
+                <div class="dcmbopConttle fx1">恭喜您达成目标</div>
+                <div class="dcmbopCzwei dcmbopgban"><i class="mui-icon mui-icon-closeempty i"></i></div>
+            </div>
+            <div class="dcmbopCmshu">恭喜您，确认后请到【我的钱包】查看收益</div>
+            <div class="df">
+                <div class="fx1 dcmbopnshyBox">
+                    <div class="dcmbopnshy">
+                        <span class="span_1">{$unsettlementBonusAmount}</span>
+                        <span class="span_2">元</span>
+                    </div>
+                    <div class="dcmbowdqbtx">收益</div>
+                </div>
+                <div class="dcmbopnhuanz">
+                    <div class="dcmbopnhuanztx">划转</div>
+                    <div class="dcmbopnhuanimg"><img src="__STATIC__/centImages/2019a071_149.png" alt=""></div>
+                </div>
+                <div class="dcmbowdqb">
+                    <div class="dcmbowdqbimg"><img src="__STATIC__/centImages/2019a071_151.png" alt=""></div>
+                    <div class="dcmbowdqbtx">我的钱包</div>
+                </div>
+            </div>
+            {if $nextRankInfo}
+            <div class="dcmbopCmshu">下一段：</div>
+            <div class="df dcmbopxydBox">
+                <div class="fx1">
+                    <div class="dcmbopxydshu">
+                        <span class="span_1">{$nextRankInfo['target_money']}</span>
+                        <span class="span_2">元</span>
+                    </div>
+                    <div class="dcmbopxydtx">目标</div>
+                </div>
+                <div class="fx1">
+                    <div class="dcmbopxydshu">
+                        <span class="span_1">x1.6</span>
+                        <span class="span_2">倍</span>
+                    </div>
+                    <div class="dcmbopxydtx">加速权益</div>
+                </div>
+            </div>
+            {/if}
+
+            <div class="dcmbopCmBtn confirmBtn">确定</div>
+        </div>
+    </div>
+
+<!--达成目标弹窗 s  -->
+{/if}
+
+
+{/block}
+{block name="footer_nav"}
+{include file="public/footer_nav" /}
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    mui('body').on('tap', '.dcmbopgban', function () {
+        $('.dcmbopBox').removeClass('dcmbopBoxActive');
+    });
+    
+    mui('body').on('tap', '.confirmBtn', function () {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            dataType: 'json',
+            success: function (res) {
+                if(res.code == 1) {
+                    window.location.reload();
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $(obj).removeAttr('disabled');
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+    
+</script>
+{/block}

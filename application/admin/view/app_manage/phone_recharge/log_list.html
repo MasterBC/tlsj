@@ -1,0 +1,94 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sporder_id" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="time" readonly id="time" placeholder="请选择" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="phone_recharge_log_list" lay-filter="phone_recharge_log_list"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'phone_recharge_log_list';
+        laydate.render({
+            elem: '#time'
+            , range: true,
+            format: 'yyyy/MM/dd'
+        });
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: true,
+            height: 'full-200',
+            cols: [[
+                {field: 'id', title: 'ID'},
+                {field: 'user_id', title: '会员账号'},
+                {field: 'bid', title: '货币'},
+                {field: 'cardnum', title: '充值金额'},
+                {field: 'sporder_id', title: '订单号'},
+                {field: 'game_userid', title: '手机号'},
+                {field: 'money', title: '扣除金额'},
+                {field: 'add_time', title: '充值时间'},
+                {field: 'cardname', title: '备注'}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 20, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                ,page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}
+
+

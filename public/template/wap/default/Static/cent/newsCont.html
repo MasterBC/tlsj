@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>新闻详情</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/centStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.showLoading.css" />
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        新闻详情
+    </h1>
+</header>
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <div class="noticeDetaBox">
+            <div class="noticeDetaTitle">Notice</div>
+            <div class="noticeDetaTime">2018-08-11</div>
+            <div class="noticeDetaCont">Good News! We will start accepting Ethereum for our platform.  Below are An Mine InternationalGood News! We will start accepting Ethereum for our platform.  Below are An Mine International
+                <img src="../centImages/x_17.png" alt=""> Ethereum Smart Contract address。        大家好！现发布安矿国际ETH智能合约
+                <img src="../centImages/x_21.png" alt=""> 接收地址:0x4E8500b0B5144DF63bb669C1d91C5b6D4Ab2A36E  特此告知请惠存。</div>
+        </div>
+    </div>
+</div>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/style.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005
+    });
+</script>
+</body>
+
+</html>

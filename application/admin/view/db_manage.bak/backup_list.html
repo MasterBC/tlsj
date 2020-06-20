@@ -1,0 +1,144 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="bank_list" lay-filter="bank_list"></table>
+            <script type="text/html" id="toolbar">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-sm" lay-event="add">
+                        <i class="layui-icon layui-icon-add-1"></i>备份
+                    </button>
+                </div>
+            </script>
+            <script type="text/html" id="options">
+                <!-- <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="download">
+                    <i class="layui-icon layui-icon-download-circle"></i>下载
+                </a> -->
+                <a class="layui-btn layui-btn-normal layui-btn-xs" href="{:url('downloadBackFile')}?file={{d.operationFileName}}">
+                    <i class="layui-icon layui-icon-download-circle"></i>下载
+                </a>
+                <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="revert"><i class="layui-icon layui-icon-refresh-1"></i>还原</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'bank_list';
+        laydate.render({
+            elem: '#time'
+            , range: true,
+            format: 'yyyy/MM/dd'
+        });
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbar',
+            defaultToolbar: false,
+            height: 'full-100',
+            initSort: {
+                field: 'fileTime' //排序字段，对应 cols 设定的各字段名
+                ,type: 'desc' //排序方式  asc: 升序、desc: 降序、null: 默认排序
+            },
+            cols: [[
+                {field: 'fileName', title: '文件名', sort: true},
+                {field: 'description', title: '说明'},
+                {field: 'fileSize', title: '大小', sort: true},
+                {field: 'fileTime', title: '备份时间', sort: true},
+                {title: '操作', templet: '#options', width: 260}
+            ]],
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        //头工具栏事件
+        table.on('toolbar('+tableId+')', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'add':
+                    layer.prompt({
+                        formType: 2,
+                        title: '请输入备份说明'
+                    }, function(value, index, elem){
+                        var url = '{:url("backup")}';
+                        var loadAdd = layer.msg('数据备份中', {icon:16,shade:0.1,time:0, offset: '15px'});
+                        $.post(url, {description:value}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                layer.close(index);
+                                table.reload(tableId); //数据刷新
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+            };
+        });
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            switch(obj.event) {
+                case 'download':
+                    layer.alert('演示不支持下载', {title: '温馨提示'});
+                    break
+                case 'revert':
+                    var tr = $(obj.tr);
+                    layer.confirm('是否还原此文件?', {icon: 3}, function() {
+                        layer.prompt({
+                            formType: 1,
+                            title: '请输入操作密码'
+                        }, function(value, index, elem){
+                            var url = '{:url("revertBackFile")}';
+                            var loadAdd = layer.msg('数据还原中, 请不要关闭当前页', {icon:16,shade:0.1,time:0, offset: '15px'});
+                            $.post(url, {file:data.operationFileName, password: value}, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    layer.close(index);
+                                    table.reload(tableId); //数据刷新
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+                    });
+                    break;
+                case 'del':
+                    var tr = $(obj.tr);
+
+                    layer.confirm('是否确认删除此备份文件?', {icon: 3}, function() {
+                        layer.prompt({
+                            formType: 1,
+                            title: '请输入操作密码'
+                        }, function(value, index, elem){
+                            var url = '{:url("delBackFile")}';
+                            var loadAdd = layer.msg('删除中', {icon:16,shade:0.1,time:0, offset: '15px'});
+                            $.post(url, {file:data.operationFileName, password: value}, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    layer.close(index);
+                                    table.reload(tableId); //数据刷新
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+                    });
+                    break;
+            }
+        });
+    });
+</script>
+{/block}
+
+

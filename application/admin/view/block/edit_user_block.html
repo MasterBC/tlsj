@@ -1,0 +1,68 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>原</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">可用金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" disabled value="{$info['money']|floatval}" class="layui-input" lay-verify="required" autocomplete="off"/>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">冻结金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" disabled value="{$info['frozen']|floatval}" class="layui-input" lay-verify="required" autocomplete="off"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>修改</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">可用金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="number" name="money" value="{$info['money']|floatval}" class="layui-input" lay-verify="required" autocomplete="off"/>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">冻结金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="number" name="frozen" value="{$info['frozen']|floatval}" class="layui-input" lay-verify="required" autocomplete="off"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="layui-elem-field">
+                            <legend>备注</legend>
+                            <div class="layui-field-box">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </fieldset>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+    });
+</script>
+{/block}

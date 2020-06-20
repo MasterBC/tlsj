@@ -1,0 +1,57 @@
+{foreach $productList as $k=>$v}
+<!--正常可以买的-->
+<div class="ranklistHe">
+    <div class="ranklistnr df">
+        <div class="storeslsuzw">
+            <div class="storeslsuls">{$v['number']}</div>
+        </div>
+        <div class="ranklirwuHe">
+            {if $v['id'] <= $userBuyMaxProductInfo['id']} 
+            <div class="ranklirwu"><img src="https://2019-a071-img.oss-cn-shenzhen.aliyuncs.com/2019-a071-niuB/product-logo/v_{$v['id']}.png" alt=""></div>
+            {else/}
+             <div class="ranklirwu"><img src="https://2019-a071-img.oss-cn-shenzhen.aliyuncs.com/2019-a071-niuB/product-logo/v_{$v['id']}_no.png" alt=""></div>
+            {/if}
+        </div>
+        {if $v['id'] <= $userBuyMaxProductInfo['id']} 
+            <!--  达到了  此级别的 才能购买 -->
+            <div class="fx1 storeklimc">{$v['product_name']}</div>
+            <div class="storeshjone buyProduct btneffectansx" data-id="{$v['id']}" data-amount="{$v['amount']}">{$v['show_amount']}</div>
+        {else/}
+            <div class="fx1 storeklimc">{$v['product_name']}</div>
+            <div class="storeshjthre">{$v['show_amount']}</div>
+        {/if}
+        
+        
+    </div>
+</div>
+
+
+
+<!--可以用其他币买的-->
+<!--<div class="ranklistHe">
+    <div class="ranklistnr df">
+        <div class="storeslsuzw">
+            <div class="storeslsuls">4</div>
+        </div>
+        <div class="ranklirwuHe">
+            <div class="ranklirwu"><img src="__STATIC__/centImages/2019a071_120.png" alt=""></div>
+        </div>
+        <div class="fx1 storeklimc">龙4号</div>
+        <div class="storeshjtwo">26</div>
+        <div class="storeshjthre">8</div>
+    </div>
+</div>-->
+<!--不能买的-->
+<!-- <div class="ranklistHe">
+    <div class="ranklistnr df">
+        <div class="storeslsuzw">
+            <div class="storeslsuls">6</div>
+        </div>
+        <div class="ranklirwuHe">
+            <div class="ranklirwu"><img src="__STATIC__/centImages/2019a071_120.png" alt=""></div>
+        </div>
+        <div class="fx1 storeklimc">龙6号</div>
+        <div class="storeshjthre">659</div>
+    </div>
+</div> -->
+{/foreach}

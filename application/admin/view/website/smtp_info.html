@@ -1,0 +1,137 @@
+{extend name="public:base" /}
+{block name="title"}网站设置{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">邮件参数配置</div>
+                <div class="layui-card-body">
+                    <div class="layui-form" wid100 lay-filter="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开关</label>
+                            <div class="layui-input-inline">
+                                <input type="radio" name="user_send_mail_switch" autocomplete="off" value="true" title="开启" {:isset($config['user_send_mail_switch']) ? ($config['user_send_mail_switch'] == true ? 'checked' : '') : 'checked'} />
+                                <input type="radio" name="user_send_mail_switch" autocomplete="off" value="false" title="关闭" {:isset($config['user_send_mail_switch']) ? ($config['user_send_mail_switch'] == false ? 'checked' : '') : ''} />
+                                <input type="hidden" name="description[user_send_mail_switch]" value="邮件开关" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP服务器</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="smtp_server" value="{:isset($config['smtp_server']) ? $config['smtp_server'] : ''}" autocomplete="off" placeholder="请输入smtp服务器" class="layui-input">
+                                <input type="hidden" name="description[smtp_server]" value="SMTP服务器地址" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">如：smtp.163.com</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP端口号</label>
+                            <div class="layui-input-inline" style="width: 80px;">
+                                <input type="text" name="smtp_port" lay-verify="number" value="{:isset($config['smtp_port']) ? $config['smtp_port'] : ''}" class="layui-input">
+                                <input type="hidden" name="description[smtp_port]" value="SMTP服务器端口号" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">一般为 25 或 465</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人邮箱</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="send_email" value="{:isset($config['send_email']) ? $config['send_email'] : ''}" placeholder="请输入发件人邮箱" lay-verify="email" autocomplete="off" class="layui-input">
+                                <input type="hidden" name="description[send_email]" value="发件人邮箱" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人昵称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="send_nickname" value="{:isset($config['send_nickname']) ? $config['send_nickname'] : ''}" placeholder="请输入发件人昵称" autocomplete="off" class="layui-input">
+                                <input type="hidden" name="description[send_nickname]" value="发件人昵称" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱登入密码</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="send_pass" value="{:isset($config['send_pass']) ? $config['send_pass'] : ''}" placeholder="请输入邮箱登入密码" autocomplete="off" class="layui-input">
+                                <input type="hidden" name="description[send_pass]" value="邮箱SMTP密码" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发送过期时间</label>
+                            <div class="layui-input-inline">
+                                <select name="send_email_time_out" id="send_email_time_out">
+                                    <option value="60" {:isset($config['send_email_time_out']) ? ($config['send_email_time_out'] == 60 ? 'selected' : '') : 'selected'}>60 s</option>
+                                    <option value="120" {:isset($config['send_email_time_out']) ? ($config['send_email_time_out'] == 120 ? 'selected' : '') : ''}>120 s</option>
+                                    <option value="300" {:isset($config['send_email_time_out']) ? ($config['send_email_time_out'] == 300 ? 'selected' : '') : ''}>300 s</option>
+                                    <option value="600" {:isset($config['send_email_time_out']) ? ($config['send_email_time_out'] == 600 ? 'selected' : '') : ''}>600 s</option>
+                                </select>
+                                <input type="hidden" name="description[send_email_time_out]" value="邮件发送过期时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">有效时间</label>
+                            <div class="layui-input-inline">
+                                <select name="email_time_out" id="email_time_out">
+                                    <option value="60" {:isset($config['email_time_out']) ? ($config['email_time_out'] == 60 ? 'selected' : '') : 'selected'}>60 s</option>
+                                    <option value="120" {:isset($config['email_time_out']) ? ($config['email_time_out'] == 120 ? 'selected' : '') : ''}>120 s</option>
+                                    <option value="300" {:isset($config['email_time_out']) ? ($config['email_time_out'] == 300 ? 'selected' : '') : ''}>300 s</option>
+                                    <option value="600" {:isset($config['email_time_out']) ? ($config['email_time_out'] == 600 ? 'selected' : '') : ''}>600 s</option>
+                                </select>
+                                <input type="hidden" name="description[email_time_out]" value="邮件验证有效时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">测试邮箱账号</label>
+                            <div class="layui-input-inline">
+                                <input name="test_send_email" value="{:isset($config['test_send_email']) ? $config['test_send_email'] : ''}" autocomplete="off" placeholder="测试邮箱账号" class="layui-input"/>
+                                <input type="hidden" name="description[test_send_email]" value="测试邮箱号" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">请先保存再点击测试发送</div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button class="layui-btn layui-btn-primary sendEmail">测试发送</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+
+        $(document).on('click', '.sendEmail', function () {
+            var loadAdd = layer.msg('发送中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            var url = '{:url("Index/testEmail")}';
+            $.post(url, {}, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+    });
+</script>
+{/block}

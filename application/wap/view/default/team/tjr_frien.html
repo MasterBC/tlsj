@@ -1,0 +1,194 @@
+{extend name="public:base" /}
+{block name="title"}分享海报{/block}
+{block name="other_css"}
+<style>
+    .zgui-lb {
+        padding-bottom:40px;
+    }
+    .mui-slider .mui-slider-group {
+        left:1%;
+    }
+    .mui-slider .mui-slider-group .mui-slider-item {
+        width:98%;
+        padding: 10px;
+        left:5%;
+    }
+    .haibsbxBox {
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .haibsbxewmBox {
+        position: absolute;
+        left:10%;
+        bottom:10%;
+        width:80%;
+    }
+    .haibsleftimg {
+        width:25%;
+        float: left;
+    }
+    .haibsleftimg img {
+        width:100%;
+    }
+    .haibsrightBox {
+        width: 70%;
+        float: right;
+    }
+    .haibstotle {
+        font-weight: 700;
+        font-size:0.8em;
+        line-height: 18px;
+        margin:15px 0px 3px 0px;
+        color:#111111;
+    }
+    .haibstomshu {
+        font-size:0.8em;
+        line-height: 18px;
+        color:#333333;
+    }
+    .bahaoanBox {
+        width:86%;
+        padding:0px 10px 10px 10px;
+        margin:0 auto;
+        position: fixed;
+        left:7%;
+        bottom:0px;
+        z-index: 100000;
+    }
+    .bahaoanBox .bahaoan {
+        height:38px;
+        line-height: 38px;
+        margin: 0px;
+        padding:0px 10px;
+        background: #ff2222;
+        color:#ffffff;
+        text-align: center;
+        font-size:0.9em;
+        width:100%;
+        border-radius:19px;
+        border:none;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        分享海报
+    </h1>
+</header>
+<div class="mui-content">
+    <!--轮播图  s-->
+    <div id="slider" class="mui-slider zgui-lb">
+        {if !empty($adData)}
+        <div class="mui-slider-group mui-slider-loop">
+            <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <div class="haibsbxBox content_cf">
+                    <img src="/static/images/hb.png" alt="" />
+                    <div class="haibsbxewmBox clearfix">
+                        <div class="haibsleftimg"><img src="{:U('Team/qrcode', ['value' => base64_encode($tgUrl)])}" alt="" /></div>
+                        <div class="haibsrightBox ">
+                            <div class="haibstotle">{$user['account']}</div>
+                            <div class="haibstomshu">邀请您加入{:zf_cache('web_info.web_name')}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {foreach $adData['list'] as $k=>$v}
+            <div class="mui-slider-item mui-slider-item-duplicate {$v['ad_img'] == $adData['first']['ad_img'] ? 'mui-active' : ''}" data-url="{$v['ad_img']}">
+                <div class="haibsbxBox content_cf">
+                    <img src="/static/images/hb.png" alt="" />
+                    <div class="haibsbxewmBox clearfix">
+                        <div class="haibsleftimg"><img src="{:U('Team/qrcode', ['value' => base64_encode($tgUrl)])}" alt="" /></div>
+                        <div class="haibsrightBox ">
+                            <div class="haibstotle">{$user['account']}</div>
+                            <div class="haibstomshu">邀请您加入{:zf_cache('web_info.web_name')}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/foreach}
+            <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+                <div class="haibsbxBox content_cf">
+                    <!-- <img src="{$get_img_domain}{$adData['first']['ad_img'] ?? ''}" alt="" /> -->
+					<img src="/static/images/hb.png" alt="" />
+                    <div class="haibsbxewmBox clearfix">
+                        <div class="haibsleftimg"><img src="{:U('Team/qrcode', ['value' => base64_encode($tgUrl)])}" alt="" /></div>
+                        <div class="haibsrightBox ">
+                            <div class="haibstotle">{$user['account']}</div>
+                            <div class="haibstomshu">邀请您加入{:zf_cache('web_info.web_name')}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/if}
+        <!--<div class="mui-slider-indicator">-->
+        <!--<div class="mui-indicator"></div>-->
+        <!--<div class="mui-indicator"></div>-->
+        <!--<div class="mui-indicator"></div>-->
+        <!--</div>-->
+    </div>
+    <!--轮播图  e-->
+<!--    <div class="bahaoanBox">
+        <button class="bahaoan download_share_code">保存海报</button>
+    </div>-->
+</div>
+{/block}
+{block name="footer"}
+<script src="__STATIC__/js/html2canvas.min.js"></script>
+{__block__}
+<script type="text/javascript">
+    mui('body').on('tap', '.download_share_code', function() {
+        window.location.href="{:U('Team/downloadPoster')}?url="+$('.mui-active').data('url');
+        return true;
+        mui.alert('保存失败，请手动截图~');
+        // console.log('click');
+        // /*通过上面的div id="content_cf" 获取到canvas画布*/
+        // html2canvas(document.querySelector(".content_cf")).then(canvas => {
+        //     //document.body.appendChild(canvas);/*这是直接把画布图片追加到页面上，页面上直接就能看到*/
+        //     // var imgURL = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // 通过canvas画布生成的图片的url
+        //     //window.location.href= imgURL;/*这是直接通过上面获取的链接直接下载，这个下载很粗糙，下载的图片没有后缀名，虽然可以打开为图片；故而优化出一下方法*/
+        //     /**
+        //      * 获取mimeType
+        //      * @param  {String} type the old mime-type
+        //      * @return the new mime-type
+        //      */
+        //     var type = 'png';
+        //     var imgData=canvas.toDataURL(type);
+        //
+        //     var _fixType = function(type) {
+        //         type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+        //         var r = type.match(/png|jpeg|bmp|gif/)[0];
+        //         return 'image/' + r;
+        //     };
+        //     // 加工image data，替换mime type
+        //     imgData = imgData.replace(_fixType(type),'image/octet-stream');
+        //
+        //     /**
+        //      * 在本地进行文件保存
+        //      * @param  {String} data     要保存到本地的图片数据
+        //      * @param  {String} filename 文件名
+        //      */
+        //     var saveFile = function(data, filename){
+        //         var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        //         save_link.href = data;
+        //         save_link.download = filename;
+        //
+        //         var event = document.createEvent('MouseEvents');
+        //         event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        //         save_link.dispatchEvent(event);
+        //     };
+        //
+        //     // 下载后的文件名
+        //     var filename = '分享码' + (new Date()).getTime() + '.' + type;
+        //     // download
+        //     saveFile(imgData,filename);
+        // });
+    })
+</script>
+{/block}

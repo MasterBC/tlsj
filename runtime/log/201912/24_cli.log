@@ -1,0 +1,45 @@
+[2019-12-24T09:32:56+08:00][ error ] [8]PDO::prepare(): send of 63 bytes failed with errno=10053 您的主机中的软件中止了一个已建立的连接。
+
+error
+[2019-12-24T10:16:43+08:00][ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+info
+[2019-12-24T10:16:44+08:00][ info ] [ DB ] INIT mysql
+info
+[2019-12-24T10:29:24+08:00][ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+info
+[2019-12-24T10:29:25+08:00][ info ] [ DB ] INIT mysql
+info
+[2019-12-24T14:48:01+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T14:52:10+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T14:57:39+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T14:57:58+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T14:58:38+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T14:59:09+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:00:55+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:02:29+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:03:28+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:06:06+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:06:59+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:12:53+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:12:55+08:00][ info ] [ DB ] INIT mysql
+info
+[2019-12-24T15:14:11+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:14:11+08:00][ info ] [ DB ] INIT mysql
+info
+[2019-12-24T15:19:07+08:00][ info ] [ LANG ] /www/wwwroot/tlsj/thinkphp/lang/zh-cn.php
+info
+[2019-12-24T15:19:09+08:00][ info ] [ DB ] INIT mysql
+info

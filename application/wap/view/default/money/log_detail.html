@@ -1,0 +1,66 @@
+{extend name="public:base" /}
+{block name="title"}账单详情{/block}
+{block name="body"}
+
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        账单详情
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="billTop">
+        <div class="billTopwen">
+            <div class="billTopimg"><img src="{:isset($userHead['head']) ?get_img_domain().$userHead['head']:'__STATIC__/centImages/tou.png '}" alt=""></div>
+            <div class="billToptx">账号:{$user['account']}</div>
+        </div>
+        <div class="billTopshu">{$MoneyInfo['money']}</div>
+        <div class="billTopztai">交易成功</div>
+    </div>
+    <div class="billContBox">
+        <!--<div class="df billConlethz">-->
+        <!--<div class="fx1 billConlet">收款方式</div>-->
+        <!--<div class="billConrit">余额</div>-->
+        <!--</div>-->
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">交易后金额</div>
+            <div class="billConrit">{$MoneyInfo['total']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">账单备注</div>
+            <div class="billConrit">{$MoneyInfo['note']}</div>
+        </div>
+
+
+        <div class="billContxia">
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">创建时间</div>
+                <div class="billConrit">{$MoneyInfo['edit_time']|date="Y-m-d H:i"}</div>
+            </div>
+            <!--<div class="df billConlethz">-->
+            <!--<div class="fx1 billConlet">订单号</div>-->
+            <!--<div class="billConrit">4357636756786789783452</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="billconNavbox df">
+        <div class="billconNav fx1">标签和备注</div>
+        <div><i class="mui-icon mui-icon-arrowright"></i></div>
+    </div>
+    <div class="billconNavbox df">
+        <div class="billconNav fx1">申请电子回单</div>
+        <div><i class="mui-icon mui-icon-arrowright"></i></div>
+    </div>
+    <div class="billconNavbox df">
+        <div class="billconNav fx1">查看往来记录</div>
+        <div><i class="mui-icon mui-icon-arrowright"></i></div>
+    </div>
+    <div class="billconNavbox df">
+        <div class="billconNav fx1">对此订单有疑问</div>
+        <div><i class="mui-icon mui-icon-arrowright"></i></div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

@@ -1,0 +1,176 @@
+{extend name="public:base" /}
+{block name="title"}我的钱包{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop myAssetTopqb">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        我的钱包
+    </h1>
+    <div class="youbiande mui-pull-right likeA" data-url="{:U('MoneyCarry/indexCarry')}">零钱记录</div>
+</header>
+<div class="mui-content muiContentTwo">
+    <div class="nagesatopBox">
+        <div class="nagesatoptx">当前余额</div>
+        <div class="nagesatoshu">
+            <span class="span_1">￥</span>
+            <span class="span_2"><span class="user-money-three">0</span></span>
+        </div>
+    </div>
+    <div class="nagesContBox">
+        <form id="subForm">
+            <div class="nagesCtle">提现方式</div>
+            <div class="clearfix">
+                <div class="nagesCtxfsBox">
+                    <div class="nagesCtxfsHe nagesCtxfsHeActive" data-type="weixin">
+                        <img src="__STATIC__/centImages/b03122.png" alt="">
+                        <span class="nagesCtxfstx">微信</span>
+                        <div class="nagesCtxfsts"><img src="__STATIC__/centImages/2019a071_125.png" alt=""></div>
+                    </div>
+                </div>
+<!--                <div class="nagesCtxfsBox">
+                    <div class="nagesCtxfsHe" data-type="alipay">
+                        <img src="__STATIC__/centImages/b03121.png" alt="">
+                        <span class="nagesCtxfstx">支付宝</span>
+                        <div class="nagesCtxfsts"><img src="__STATIC__/centImages/2019a071_125.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="nagesCtxfsBox">
+                    <div class="nagesCtxfsHe" data-type="bank">
+                        <img src="__STATIC__/centImages/b03123.png" alt="">
+                        <span class="nagesCtxfstx">银行卡</span>
+                        <div class="nagesCtxfsts"><img src="__STATIC__/centImages/2019a071_125.png" alt=""></div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="nagesCtle">提现金额</div>
+            <div class="clearfix">
+                {foreach $carryConfig as $k=>$v}
+                    {if ($v['amount'] == 0.3)}
+                        {if ($ConfigNum <= 0)}
+                        <div class="nagestxjeBox" data-id="{$v['id']}">
+                            <div class="nagestxjeone">{$v['amount']}元</div>
+                            <div class="nagestxjetwo">
+                                <div class="nagestxjetwoqs">{$v['amount']}元</div>
+                                <div class="nagestxjetwoms">实际到账{$v['arrival']}元</div>
+                            </div>
+                        </div>
+                        {/if}
+                     {elseif($v['amount'] == 1)/} <!-- 还没有到 抢购时间 -->    
+                        {if ($numA <= 0)}
+                        <div class="nagestxjeBox" data-id="{$v['id']}">
+                            <div class="nagestxjeone">{$v['amount']}元</div>
+                            <div class="nagestxjetwo">
+                                <div class="nagestxjetwoqs">{$v['amount']}元</div>
+                                <div class="nagestxjetwoms">实际到账{$v['arrival']}元</div>
+                            </div>
+                        </div>
+                        {/if}
+                     {elseif($v['amount'] == 3)/} <!-- 还没有到 抢购时间 -->  
+                        {if ($numB <= 0)}
+                        <div class="nagestxjeBox" data-id="{$v['id']}">
+                            <div class="nagestxjeone">{$v['amount']}元</div>
+                            <div class="nagestxjetwo">
+                                <div class="nagestxjetwoqs">{$v['amount']}元</div>
+                                <div class="nagestxjetwoms">实际到账{$v['arrival']}元</div>
+                            </div>
+                        </div>
+                        {/if}
+                     {elseif($v['amount'] == 5)/} <!-- 还没有到 抢购时间 -->    
+                        {if ($numC <= 0)}
+                        <div class="nagestxjeBox" data-id="{$v['id']}">
+                            <div class="nagestxjeone">{$v['amount']}元</div>
+                            <div class="nagestxjetwo">
+                                <div class="nagestxjetwoqs">{$v['amount']}元</div>
+                                <div class="nagestxjetwoms">实际到账{$v['arrival']}元</div>
+                            </div>
+                        </div>
+                        {/if}
+                    {else/}   
+                        <div class="nagestxjeBox" data-id="{$v['id']}">
+                            <div class="nagestxjeone">{$v['amount']}元</div>
+                            <div class="nagestxjetwo">
+                                <div class="nagestxjetwoqs">{$v['amount']}元</div>
+                                <div class="nagestxjetwoms">实际到账{$v['arrival']}元</div>
+                            </div>
+                        </div>
+                    {/if}
+                {/foreach}
+            </div>
+
+            <div class="nageszyshxBox">
+                <div class="nageszyshxtl">注意事项</div>
+                <div class="nageszyshxCont">
+                    <div>1.提现前需绑定微信和<span class="span_1">关注微信服务号</span></div>
+                    <div>2.提现将在周一至周五工作日24小时内审批到账，周末不处理审批，请耐心等待</div>
+                    <div>3.提现手续费为3%</div>
+                    <!--<div>4.提现不到账？请查看<span class="span_1 likeA" data-url="{:U('test/alinstructions')}">提现说明</span></div>-->
+                </div>
+            </div>
+
+            <div class="nagesbtnBox">
+                <button class="nagesbtn carrySubmit" type="submit">立即提现</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var carryType = 'weixin', carryConfigId;
+    mui('body').on('tap', '.nagesCtxfsHe', function() {
+        carryType = $(this).data('type');
+        console.log(carryType);
+        $(this).addClass('nagesCtxfsHeActive');
+        $(this).parent('.nagesCtxfsBox').siblings('.nagesCtxfsBox').find('.nagesCtxfsHe').removeClass('nagesCtxfsHeActive');
+    });
+    mui('body').on('tap', '.nagestxjeBox', function() {
+        carryConfigId = $(this).data('id');
+        console.log(carryConfigId);
+        if($(this).find('.nagestxjetwo').css('display') == 'none'){
+            $(this).addClass('nagestxjeoneActive');
+            $(this).siblings('.nagestxjeBox').removeClass('nagestxjeoneActive');
+            $('.nagesbtn').addClass('nagesbtnActive');
+        }else{
+            $(this).removeClass('nagestxjeoneActive');
+            $(this).siblings('.nagestxjeBox').removeClass('nagestxjeoneActive');
+            $('.nagesbtn').removeClass('nagesbtnActive');
+        }
+    });
+
+    var mask=mui.createMask();
+    mui('body').on('tap', '.carrySubmit', function () {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: {carry_config_id:carryConfigId,carry_type:carryType},
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('提交成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('MoneyCarry/indexCarry')}";
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+    mui('body').on('tap', '.carrySubmit', function() {
+
+    });
+</script>
+{/block}

@@ -1,0 +1,218 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">中文名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name_cn" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="region_list" lay-filter="region_list"></table>
+            <script type="text/html" id="toolbarDemo">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-sm" lay-event="addUser">
+                        <i class="layui-icon layui-icon-add-1"></i>添加
+                    </button>
+                    <button class="layui-btn layui-btn-sm" lay-event="generate">
+                        <i class="layui-icon layui-icon-add-1"></i>生成前台地址
+                    </button>
+                </div>
+            </script>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="look"><i class="layui-icon layui-icon-edit"></i>查看</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'region_list';
+        laydate.render({
+            elem: '#time'
+            , range: true,
+            format: 'yyyy/MM/dd'
+        });
+        var options = {
+            id: tableId,
+            url: '{:url("")}?pid={:request()->param("pid")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbarDemo',
+            height: 'full-200',
+            cols: [[
+                {field: 'id', title: 'ID'},
+                {field: 'name_cn', title: '中文名'},
+                // {field: 'name_en', title: '英语名'},
+                {field: 'level', title: '地区等级'},
+                {field: 'status', title: '状态'},
+                {title: '操作', templet: '#options', rowspan:3, align: 'center', fixed:'right', width:200}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 20, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+        //头工具栏事件
+        table.on('toolbar('+tableId+')', function (obj) {
+            switch (obj.event) {
+                case 'addUser':
+                    var url = '{:url("addRegion")}';
+                    layer.open({
+                        type: 2
+                        , title: '添加'
+                        , content: url
+                        , area: ['450px', '410px']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+
+                                var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                    } else {
+                                        layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                    }
+                                });
+                            });
+
+                            submit.trigger('click');
+                        }
+                    });
+                    break;
+                case 'generate':
+                    layer.confirm('是否确认重新生成?', {icon:3}, function(){
+                        var loadAdd = layer.msg('生成中', {icon:16,shade:0.1,time:0});
+                        $.ajax({
+                            url:"{:url('generateCity')}",
+                            type:'post',
+                            success:function(res) {
+                                layer.close(loadAdd);
+                                if(res.code == 1) {
+                                    layer.msg(data.msg, {icon:6});
+                                } else {
+                                    layer.msg(data.msg, {icon:5});
+                                }
+                            }
+                        });
+                    });
+                    break;
+            };
+        });
+        table.render(options);
+
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+                var tr = $(obj.tr);
+
+                var url = '{:url("editRegion")}?id=' + data.id;
+                layer.open({
+                    type: 2
+                    , title: '编辑'
+                    , content: url
+                    , area: ['450px', '410px']
+                    , shadeClose: true
+                    , btnAlign: 'c'
+                    , maxmin: true
+                    , btn: ['确定', '取消']
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index]
+                            , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                        //监听提交
+                        iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                            var field = data.field; //获取提交的字段
+
+                            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                            $.post(url, field, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    table.reload(tableId); //数据刷新
+                                    layer.close(index); //关闭弹层
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+
+                        submit.trigger('click');
+                    }
+                    , success: function (layero, index) {
+
+                    }
+                })
+            } else if (obj.event === 'look') {
+                var url = '{:url("")}?pid=' + data.id;
+                layer.open({
+                    type: 2
+                    , title: '查看'
+                    , content: url
+                    , area: ['100%', '100%']
+                    , btnAlign: 'c'
+                    , maxmin: true
+                })
+            } else if (obj.event === 'del') {
+                layer.confirm('是否确认删除该地址?', {icon: 3}, function () {
+                    var url = '{:url("delRegion")}';
+                    var loadAdd = layer.msg('删除中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                    $.post(url, {id: data.id}, function (res) {
+                        layer.close(loadAdd);
+                        if (res.code == 1) {
+                            table.reload(tableId); //数据刷新
+                            layer.msg(res.msg, {icon: 6, offset: '15px'});
+                        } else {
+                            layer.msg(res.msg, {icon: 5, offset: '15px'});
+                        }
+                    });
+                });
+            }
+        });
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                ,page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}

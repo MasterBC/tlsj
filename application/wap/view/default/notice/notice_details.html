@@ -1,0 +1,30 @@
+{extend name="public:base" /}
+{block name="title"}公告详情{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">公告详情</h1>
+</header>
+    <div class="mui-content">
+        <div class="noticeDetaBox">
+            <div class="noticeDetaTitle">{$typeInfo[$notInfo['type']]}</div>
+            <div class="noticeDetaTime">{$notInfo['add_time']|date="Y-m-d"}</div>
+            <div class="noticeDetaCont">{:htmlspecialchars_decode($notInfo['content'])}</div>
+                <!--上一篇S-->
+            {if condition="$lastData neq '' "}
+            <div class="shxianp likeA" data-type="1" data-url="{:U('Notice/noticeDetails',['id'=>$lastData['id']])}"><i class="mui-icon mui-icon-arrowthinup i"></i>上一篇 &nbsp;&nbsp;&nbsp;{$lastData['title']}</div>
+            {/if}
+            <!--上一篇E-->
+            <!--下一篇S-->
+            {if condition="$nextData neq '' "}
+            <div class="shxianp likeA" data-type="2" data-url="{:U('Notice/noticeDetails',['id'=>$nextData['id']])}"><i class="mui-icon mui-icon-arrowthindown i"></i>下一篇 &nbsp;&nbsp;&nbsp;{$nextData['title']}</div>
+            {/if}
+            <!--下一篇E-->
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}
+

@@ -1,0 +1,103 @@
+{
+	"code": 1,
+	"data": [
+		{
+			"id": "1",
+			"name": "主要部门1",
+			"open": "true",
+			"html": "<div style='background: #eee;width: 100px;height: 100px;'>自定义的内容\n可以使用任意html</div>",
+			"child": [
+				{
+					"id": "2",
+					"name": "主要部门2",
+					"open": "true",
+					"html": "",
+					"child": []
+				}, {
+					"id": "3",
+					"name": "主要部门3",
+					"open": "true",
+					"html": "",
+					"child": [
+						{
+							"id": "2",
+							"name": "子部门",
+							"open": "true",
+							"html": "<div style='overflow: hidden;background: #000;border-radius: 100px;height:100px;'><div style='width: 100px;background: #c7c314;text-align: center;color: #fff;'>自定义</div><img src='https://github.com/conesat/OrgCharts/blob/master/github_image/rec.gif?raw=true' width='100px'/></div>",
+
+							"child": []
+						}, {
+							"id": "2",
+							"name": "子部门",
+							"open": "true",
+							"html": "",
+							"child": []
+						}, {
+							"id": "3",
+							"name": "子部门2",
+							"open": "true",
+							"html": "<div style='box-shadow: 10px 10px #505050;'><div style='width: 100px;background: #EE82EE;text-align: center;color: #fff;'>自定义内容</div><img src='https://avatars1.githubusercontent.com/u/21339376?s=400&u=5857444e889b95b9b2e9e9926ae4e2bab04e5f0b&v=4' width='100px'/></div>",
+							"child": [
+								{
+									"id": "2",
+									"name": "子部门",
+									"open": "true",
+									"html": "",
+									"child": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}, {
+			"id": "2",
+			"name": "测试1",
+			"open": "true",
+			"html": "",
+			"child": [
+				{
+					"id": "2",
+					"name": "测试1",
+					"open": "true",
+					"html": "",
+					"child": []
+				}, {
+					"id": "2",
+					"name": "测试1",
+					"open": "true",
+					"html": "",
+					"child": []
+				}, {
+					"id": "2",
+					"name": "测试1",
+					"open": "true",
+					"html": "",
+					"child": [
+						{
+							"id": "2",
+							"name": "测试1",
+							"open": "true",
+							"html": "",
+							"child": []
+						}, {
+							"id": "2",
+							"name": "测试1",
+							"open": "true",
+							"html": "",
+							"child": []
+						}, {
+							"id": "2",
+							"name": "测试1",
+							"open": "true",
+							"html": "",
+							"child": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
+

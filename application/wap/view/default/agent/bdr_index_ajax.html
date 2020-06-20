@@ -1,0 +1,21 @@
+{foreach $userInfo as $v}
+<li class="noticeLi df getTjrId" data-id="{$v['user_id']}">
+    <div class="fx1">
+        <div class="df">
+            <div class="recomendImg">
+                <img src="__STATIC__/centImages/tou.png" alt="">
+            </div>
+            <div class="fx1">
+                <div class="noticeLiMmend">
+                    <span>用户姓名：{$v['nickname']|default="无"}</span>
+                    <span class="numberPeople">(00)</span>
+                </div>
+                <div class="noticeLiTime">用户ID:{$v['user_id']} &nbsp; 用户账号:{$v['account']}</div>
+            </div>
+        </div>
+    </div>
+    <div class="noticeLiright">
+        <span class="mui-icon icon-font">&#xe95c;</span>
+    </div>
+</li>
+{/foreach}

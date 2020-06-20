@@ -1,0 +1,57 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">会员账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="account"   placeholder="请输入会员账号" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">人物名称</label>
+                            <div class="layui-input-block">
+                                <select name="product_id" lay-search="">
+                                    <option value="0">--请选择--</option>
+                                    {foreach $productNameArr as $k => $v}
+                                    <option value="{$k}">{$v}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">金币价格</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="amount"   placeholder="请输入金币价格" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">人物收益</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="income"   placeholder="请输入人物收益" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var upload = layui.upload;
+
+   
+    });
+</script>
+{/block}

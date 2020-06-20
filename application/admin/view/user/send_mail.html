@@ -1,0 +1,61 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="radio" name="sendType" lay-filter="sendType" value="1" autocomplete="off" title="发送给以下会员" {$sendType == 1 ? 'checked' : 'disabled'} />
+                                <input type="radio" name="sendType" lay-filter="sendType" value="2" autocomplete="off" title="发送给所有会员" {$sendType == 2 ? 'checked' : ''} />
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="send_user_list" {$sendType == 2 ? 'style="display:none;"' : ''}>
+                            <label class="layui-form-label">会员列表</label>
+                            <div class="layui-input-inline" style="width:40%;max-height:150px;overflow-y:auto;">
+                                {foreach $userList as $k=>$v}
+                                <input type="hidden" name="user_id[{$k}]" value="{$v['user_id']}"/>
+                                <p><span>ID:{$v['user_id']}</span>&nbsp;<span>昵称:{$v['nickname']}</span>&nbsp;<span>邮箱:{$v['user_data']['email']}</span>
+                                </p>
+                                {/foreach}
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">主题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="subject" lay-verify="required" placeholder="邮件主题" autocomplete="off" class="layui-input"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮件内容</label>
+                            <div class="layui-input-block">
+                                <textarea name="content" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        form.on('radio(sendType)', function (data) {
+            if (data.value == 1) {
+                $('#send_user_list').show();
+            } else {
+                $('#send_user_list').hide();
+            }
+        });
+    });
+</script>
+{/block}

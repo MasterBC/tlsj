@@ -1,0 +1,122 @@
+{extend name="public:base" /}
+{block name="title"}我的地址{/block}
+{block name="other_css"}
+<!--样式引入s-->
+<!--刷新加载插件 s-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mescroll.min.css" />
+<!--样式引入E-->
+<style>
+    .mescroll{
+        position: fixed;
+        top: 44px;
+        left:0px;
+        width:100%;
+        bottom: 0;
+        height: auto;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        我的地址
+    </h1>
+    <div class="mui-pull-right myAddrejia"><i class="mui-icon mui-icon-plusempty i likeA" data-url="{:U('Address/addAddress')}"></i>
+    </div>
+</header>
+<div id="mescroll" class="mescroll">
+    <div id="content" class="tradparUl">
+
+    </div>
+
+</div>
+{/block}
+{block name="footer"}
+<!--刷新加载插件 s-->
+<script src="__STATIC__/js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+<!--刷新加载插件 s-->
+{__block__}
+<!--删除地址-->
+<script>
+    mui('body').on('tap', '.delAddress', function(){
+        var _this = $(this);
+        mui.confirm('是否确认删除?', '提示', ['确认', '取消'], function(e){
+            if(e.index == 0) {
+                var id = _this.data('id');
+                $.post("{:U('Address/delAddress')}", {id:id}, function(res){
+                    if(res.code == 1) {
+                        mui.toast(res.msg);
+                        setTimeout(function(){
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        mui.alert(res.msg);
+                    }
+                });
+            }
+        });
+    });
+    //默认地址
+    mui('body').on('tap', '.defaultAddress', function(){
+        var _this = $(this);
+        mui.confirm('是否确认修改为默认地址?', '提示', ['确认', '取消'], function(e){
+            if(e.index == 0) {
+                var id = _this.data('id');
+                $.post("{:U('Address/setDefaultAddress')}", {id:id}, function(res){
+                    if(res.code == 1) {
+                        mui.toast(res.msg);
+                        setTimeout(function(){
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        mui.alert(res.msg);
+                    }
+                });
+            }
+        });
+    });
+</script>
+<script>
+    //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
+    var mescroll = new MeScroll("mescroll", {
+        up: {
+            callback: getListDataFromNet, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+            isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+            clearEmptyId: "content", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+            toTop:{ //配置回到顶部按钮
+                src : "__STATIC__/centImages/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                //offset : 1000
+            },
+            lazyLoad: {
+                use: true // 是否开启懒加载,默认false
+            }
+        }
+    });
+    function downCallback() {
+        mescroll.resetUpScroll();//重新搜索,重置列表数据
+    }
+    function getListDataFromNet(page) {
+        //延时一秒,模拟联网
+        $.ajax({
+            type: 'GET',
+            url: '{:U("")}?p='+(page.num - 1)+'&uid='+{$uid}+'&type='+{$type}+'&cart_id='+{$cartId},
+            // url: '../res/pdlist'+dataTag+'.json',
+//		                url: '../res/pdlist1.json?num='+pageNum+"&size="+pageSize,
+//                     dataType: 'json',
+            success: function(data){
+                var count = 10;
+                if(data == '') {
+                    mescroll.endSuccess(count, false);
+                } else {
+                    mescroll.endSuccess(count);
+                }
+                $('#content').append(data);
+            },
+            error: function (){
+                mescroll.endErr();
+            }
+        });
+    }
+</script>
+{/block}

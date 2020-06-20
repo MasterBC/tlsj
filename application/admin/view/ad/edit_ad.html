@@ -1,0 +1,75 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" placeholder="请输入广告名称" lay-verify="required" class="layui-input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告类型</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="type" value="1" title="安卓" {$data.type?' checked':''}>
+                                <input type="radio" name="type" value="0" title="IOS" {$data.type?'':' checked'}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图标链接</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ico" placeholder="请输入图标链接" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">视频链接</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="url" placeholder="请输入视频链接" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">安装包链接</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="app" placeholder="请输入安装包链接" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告时长</label>
+                            <div class="layui-input-inline">
+                                <input type="text" style="width: 100px;display: inline-block" name="times" placeholder="广告播放时长" class="layui-input" lay-verify="required" autocomplete="off"/>&nbsp;秒
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="state" value="1" title="启用" {$data.state?' checked':''}>
+                                <input type="radio" name="state" value="0" title="停用" {$data.state?'':' checked'}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form;
+        $("input[name='title']").val('{$data.title|raw}');
+        $("input[name='url']").val('{$data.url|raw}');
+        $("input[name='ico']").val('{$data.ico|raw}');
+        $("input[name='app']").val('{$data.app|raw}');
+        $("input[name='times']").val('{$data.times|raw}');
+    });
+</script>
+{/block}

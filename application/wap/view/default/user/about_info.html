@@ -1,0 +1,16 @@
+{extend name="public:base" /}
+{block name="title"}关于我们{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">关于我们</h1>
+</header>
+<div class="mui-content" id="content">
+    <div class="noticeDetaBox">
+        <div class="noticeDetaCont">{:htmlspecialchars_decode($aboutInfo['content_cn'])}</div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

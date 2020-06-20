@@ -1,0 +1,112 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="transform_config_list" lay-filter="transform_config_list"></table>
+            <fieldset class="layui-elem-field">
+                <legend>备注</legend>
+                <div class="layui-field-box">
+                    <ul>
+                        <li>1. 最低 表示 每次转账 起步数量，如 1 则表示  每次转账 不能少于 1 个。</li>
+                        <li>2. 最高 表示 每次转账 最高数量，如 100 则表示  每次转账 最多少能大于 100 个。</li>
+                        <li>3. 倍数 表示 每次转账的参考金额 如 2  则表示 每次转账必须 2 的倍数，示例：4 可以转，但 3 就不行</li>
+                        <li>4. 手续费  表示每次转账要扣的手续费，如 扣 转出方 转 100  收 10 % 的手续费 就要扣款 110 ，如 扣 收款方 则 收款方只到账  90</li>
+                        <li>5. 推荐关系    A推荐B ， B推荐 C ， C推荐D   只能转上级 则 C 只可以给 A B 转账，不能给 D 转， 只能转下级  则 C 只能给  D 转，不能给 A B 转</li>
+                    </ul>
+                </div>
+            </fieldset>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form'], function () {
+        var table = layui.table, form = layui.form;
+        var tableId = 'transform_config_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            // height: 'full-200',
+            cols: [[
+                {field: 'wallet_name', title: '转出货币', rowspan:3, align: 'center'},
+                {field: 'to_wallet_name', title: '转入货币', rowspan:3, align: 'center'},
+                {field: '', title: '参数配置', colspan:6, align: 'center'},
+                {field: 'status', title: '状态', rowspan:3, align: 'center'},
+                {title: '操作', templet: '#options', rowspan:3, align: 'center', fixed:'right', width:100}
+            ], [
+                {field: '', title: '金额', colspan:3, align: 'center'},
+                {title: '手续费', rowspan:2, align: 'center', templet:function(d){
+                        return d.fee+'%';
+                    }},
+                {title: '到账比例', rowspan:2, align: 'center', templet:function(d){
+                        return d.per+'%';
+                    }},
+                {field: 'day_total', title: '每日转换量', rowspan:2, align: 'center'},
+            ],[
+                {field: 'low', title: '最低', rowspan:2, align: 'center'},
+                {field: 'out', title: '最高', rowspan:2, align: 'center'},
+                {field: 'bei', title: '倍数', rowspan:2, align: 'center'}
+            ]],
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+                var tr = $(obj.tr);
+
+                var url = '{:url("editTransformConfig")}?id=' + data.id;
+                layer.open({
+                    type: 2
+                    , title: '编辑'
+                    , content: url
+                    , area: ['880px', '600px']
+                    , shadeClose: true
+                    , btnAlign: 'c'
+                    , maxmin: true
+                    , btn: ['确定', '取消']
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index]
+                            , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                        //监听提交
+                        iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                            var field = data.field; //获取提交的字段
+
+                            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                            $.post(url, field, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    table.reload(tableId); //数据刷新
+                                    layer.close(index); //关闭弹层
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+
+                        submit.trigger('click');
+                    }
+                    , success: function (layero, index) {
+
+                    }
+                })
+
+            }
+        });
+    });
+</script>
+{/block}
+
+

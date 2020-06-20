@@ -1,0 +1,2567 @@
+---------------------------------------------------------------
+
+[2019-12-23T23:31:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：4,543.98kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:31:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:32:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:33:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:34:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:35:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:36:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:09+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:31+08:00] 42.236.10.117 GET nqct.xmlianke.top/
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,574.67kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:32+08:00] 42.236.10.117 GET nqct.xmlianke.top/login/accountindex.html
+[运行时间：0.031250s] [吞吐率：32.00req/s] [内存消耗：3,620.82kb] [文件加载：117]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=cfm7lr8fuok0epdth8c2bj1p7m',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\wwwroot\nbdg.xmlianke.top\application\wap\config/../view/default/login\account_index.html [ array (
+  0 => 'controller',
+  1 => 'action',
+) ]
+---------------------------------------------------------------
+
+[2019-12-23T23:37:32+08:00] 42.236.10.117 GET nqct.xmlianke.top/
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：4,575.76kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=cfm7lr8fuok0epdth8c2bj1p7m',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:32+08:00] 42.236.10.117 GET nqct.xmlianke.top/login/accountindex.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：3,620.80kb] [文件加载：117]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\wwwroot\nbdg.xmlianke.top\application\wap\config/../view/default/login\account_index.html [ array (
+  0 => 'controller',
+  1 => 'action',
+) ]
+---------------------------------------------------------------
+
+[2019-12-23T23:37:33+08:00] 42.236.10.114 GET nqct.xmlianke.top/user/index.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,576.14kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:33+08:00] 42.236.10.125 GET nqct.xmlianke.top/verify?type=home_login
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：2,950.31kb] [文件加载：98]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+  'rule' => 'verify',
+  'route' => 'Common/Index/verify',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'home_login',
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:33+08:00] 42.236.10.125 POST nqct.xmlianke.top/message/getnoticenum.html
+[运行时间：0.031250s] [吞吐率：32.00req/s] [内存消耗：3,558.31kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:33+08:00] 42.236.10.117 POST nqct.xmlianke.top/money/getajaxuserownedmoneyarr.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：4,461.05kb] [文件加载：121]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:33+08:00] 42.236.10.125 POST nqct.xmlianke.top/block/getajaxuserownedblockarr.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：3,548.82kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:34+08:00] 42.236.10.117 POST nqct.xmlianke.top/block/getajaxuserownedblockarr.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：3,548.82kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:34+08:00] 42.236.10.114 POST nqct.xmlianke.top/message/getnoticenum.html
+[运行时间：0.078126s] [吞吐率：12.80req/s] [内存消耗：3,558.31kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:34+08:00] 42.236.10.125 POST nqct.xmlianke.top/money/getajaxuserownedmoneyarr.html
+[运行时间：0.093751s] [吞吐率：10.67req/s] [内存消耗：4,461.05kb] [文件加载：121]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:34+08:00] 42.236.10.114 GET nqct.xmlianke.top/login/accountindex.html
+[运行时间：0.031250s] [吞吐率：32.00req/s] [内存消耗：3,621.76kb] [文件加载：117]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=9l3vfr8vijo7k1mrhb0j59tq6t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\wwwroot\nbdg.xmlianke.top\application\wap\config/../view/default/login\account_index.html [ array (
+  0 => 'controller',
+  1 => 'action',
+) ]
+---------------------------------------------------------------
+
+[2019-12-23T23:37:35+08:00] 42.236.10.117 POST nqct.xmlianke.top/block/getajaxuserownedblockarr.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：3,548.82kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:35+08:00] 42.236.10.125 POST nqct.xmlianke.top/message/getnoticenum.html
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：3,558.31kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:35+08:00] 42.236.10.114 POST nqct.xmlianke.top/money/getajaxuserownedmoneyarr.html
+[运行时间：0.093751s] [吞吐率：10.67req/s] [内存消耗：4,461.05kb] [文件加载：121]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:36+08:00] 42.236.10.117 POST nqct.xmlianke.top/block/getajaxuserownedblockarr.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：3,548.82kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:36+08:00] 42.236.10.114 POST nqct.xmlianke.top/message/getnoticenum.html
+[运行时间：0.078125s] [吞吐率：12.80req/s] [内存消耗：3,558.31kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:36+08:00] 42.236.10.125 POST nqct.xmlianke.top/money/getajaxuserownedmoneyarr.html
+[运行时间：0.078125s] [吞吐率：12.80req/s] [内存消耗：4,461.05kb] [文件加载：121]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:40+08:00] 42.236.10.125 POST nqct.xmlianke.top/message/getnoticenum.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：3,558.31kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:40+08:00] 42.236.10.114 POST nqct.xmlianke.top/money/getajaxuserownedmoneyarr.html
+[运行时间：0.078126s] [吞吐率：12.80req/s] [内存消耗：4,461.05kb] [文件加载：121]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:40+08:00] 42.236.10.114 POST nqct.xmlianke.top/block/getajaxuserownedblockarr.html
+[运行时间：0.078125s] [吞吐率：12.80req/s] [内存消耗：3,548.82kb] [文件加载：114]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5diemhpa7d652ukv8gg4jtti1t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://nqct.xmlianke.top',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:59+08:00] 42.236.10.114 GET nqct.xmlianke.top/verify?type=home_login
+[运行时间：0.046876s] [吞吐率：21.33req/s] [内存消耗：2,950.89kb] [文件加载：98]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'wap'
+[ info ] [ ROUTE ] array (
+  'rule' => 'verify',
+  'route' => 'Common/Index/verify',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=9l3vfr8vijo7k1mrhb0j59tq6t',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/login/accountindex.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'home_login',
+)
+---------------------------------------------------------------
+
+[2019-12-23T23:37:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:37:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:10+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:10+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062501s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:19+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:29+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:39+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.046875s] [吞吐率：21.33req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:49+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getstatistics.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,620.04kb] [文件加载：124]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/welcome.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2019-12-23T23:38:59+08:00] 144.0.143.243 GET nqct.xmlianke.top/zfadmin.php/index/getmessagenum.html
+[运行时间：0.062500s] [吞吐率：16.00req/s] [内存消耗：4,544.03kb] [文件加载：122]
+[ info ] [ LANG ] D:\wwwroot\nbdg.xmlianke.top\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e13f26n18v45eblbb4qkcho4ul',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nqct.xmlianke.top/zfadmin.php/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'nqct.xmlianke.top',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql

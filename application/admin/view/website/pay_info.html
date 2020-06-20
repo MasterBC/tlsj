@@ -1,0 +1,118 @@
+{extend name="public:base" /}
+{block name="title"}支付设置{/block}
+{block name="body"}
+<div class="layui-form layui-fluid layui-form-pane">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">支付宝支付参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <input type="radio" name="alipay[status]" {if isset($config['alipay']['status']) && $config['alipay']['status'] === true}checked{/if} value="true" title="启用" autocomplete="off" />
+                                    <input type="radio" name="alipay[status]" {if isset($config['alipay']['status']) && $config['alipay']['status'] === false}checked{/if} value="false" title="不启用" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">APPID</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="alipay[appid]" value="{$config['alipay']['appid'] ?? ''}" placeholder="请输入appid" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">商户私钥</label>
+                                <div class="layui-input-block">
+                                    <textarea name="alipay[private_key]" class='layui-textarea' placeholder="请输入商户私钥">{$config['alipay']['private_key'] ?? ''}</textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">支付宝公钥</label>
+                                <div class="layui-input-block">
+                                    <textarea name="alipay[public_key]" class='layui-textarea' placeholder="请输入支付宝公钥">{$config['alipay']['public_key'] ?? ''}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">微信支付参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <input type="radio" name="weixin[status]" {if isset($config['weixin']['status']) && $config['weixin']['status'] === true}checked{/if} value="true" title="启用" autocomplete="off" />
+                                    <input type="radio" name="weixin[status]" {if isset($config['weixin']['status']) && $config['weixin']['status'] === false}checked{/if} value="false" title="不启用" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">公众账号ID</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="weixin[appid]" value="{$config['weixin']['appid'] ?? ''}" placeholder="请输入公众账号ID" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">商户号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="weixin[mch_id]" value="{$config['weixin']['mch_id'] ?? ''}" placeholder="请输入商户号" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">商户密钥</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="weixin[mch_key]" value="{$config['weixin']['mch_key'] ?? ''}" placeholder="请输入商户私钥" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+
+        form.on('radio(register_phone_switch)', function (data) {
+            if (data.value == 'false') {
+                form.val("reg_info", {
+                    "register_sms_switch": data.value
+                });
+                $('input[lay-filter="register_sms_switch"]').attr('disabled', 'true');
+                $('#same_phone_register_num').hide();
+            } else {
+                $('input[lay-filter="register_sms_switch"]').removeAttr('disabled');
+                $('#same_phone_register_num').show();
+            }
+            form.render('radio');
+        });
+    });
+</script>
+{/block}

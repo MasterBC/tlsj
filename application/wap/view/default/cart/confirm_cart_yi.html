@@ -1,0 +1,154 @@
+{extend name="public:base" /}
+{block name="title"}确认订单{/block}
+{block name="other_css"}
+<!--样式引入s-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mescroll.min.css" />
+<!--刷新加载插件 s-->
+<style>
+    .mescroll{
+        position: fixed;
+        top: 0px;
+        left:0px;
+        width:100%;
+        bottom: 50px;
+        height: auto;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        确认订单
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="confirmdbigBox">
+        <div class="confirmddTop df likeA" data-url="{:U('Address/addressIndex')}">
+            <div class="confirmdddzhiimg"><img src="__STATIC__/centImages/mb_112.png" alt=""></div>
+            <div class="fx1">
+                <div class="df confirmddText">
+                    <div class="fx1">收货人：{$userAddress['username']}</div>
+                    <div>{$userAddress['mobile']}</div>
+                </div>
+                <div class="confirmddshdz">
+                    收货地址：{$regionInfo[$userAddress['province']]}&nbsp;{$regionInfo[$userAddress['city']]}&nbsp;{$regionInfo[$userAddress['district']]}&nbsp;&nbsp;{$userAddress['address']}
+                </div>
+            </div>
+            <div class="confirmdddzhizhen">
+                <i class="mui-icon mui-icon-arrowright i"></i>
+            </div>
+        </div>
+        <form action="" id="cart_form">
+
+            <div class="confirmddsplist">
+                <div class="myordponBox">
+                    <!--<div class="df myordponTl">-->
+                    <!--<img src="__STATIC__/centImages/mb_78.png" alt="">-->
+                    <!--<div class="fx1 myordponTltx textove">潮牌扑街</div>-->
+                    <!--</div>-->
+                    <div class="zdsplist">
+                        <div class="df">
+                            <div class="myOrdertxImg">
+                                <img src="{:empty($userInfo['picture']) ? '__STATIC__/centImages/mb_12.png' : get_img_show_url($userInfo['picture'])}" alt="">
+                            </div>
+                            <div class="fx1 myOrdersptext">
+                                <div class="df">
+                                    <div class="myOrdersptl textove fx1">
+                                        {$userInfo['goods_name']}
+                                    </div>
+                                    <div class="myOrderspjg">￥&nbsp;{$userInfo['shop_price']}</div>
+                                </div>
+                                <div class="myOrderspxjms">常规</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="confirmddstat">
+                        <span class="span_1">&nbsp;&nbsp;{$num}件商品 小计：</span>
+                        <span class="span_2">￥&nbsp;{$userInfo['shop_price']}</span>
+                    </div>
+                </div>
+                <input type="hidden" name="cart_id" value="{$userInfo['goods_id']}">
+            </div>
+
+            <input type="hidden" name="address_id" value="{$userAddress['id']}">
+        </form>
+        <!--<div class="confirmddsplist">-->
+        <!--<div class="myordponBox">-->
+        <!--<div class="df myordponTl">-->
+        <!--<img src="__STATIC__/centImages/mb_78.png" alt="">-->
+        <!--<div class="fx1 myordponTltx textove">潮牌扑街</div>-->
+        <!--</div>-->
+        <!--<div class="zdsplist">-->
+        <!--<div class="df">-->
+        <!--<div class="myOrdertxImg"><img src="__STATIC__/centImages/mb_12.png" alt=""></div>-->
+        <!--<div class="fx1 myOrdersptext">-->
+        <!--<div class="df">-->
+        <!--<div class="myOrdersptl textove fx1">-->
+        <!--祛痘神器祛痘膏-->
+        <!--</div>-->
+        <!--<div class="myOrderspjg">￥49.8</div>-->
+        <!--</div>-->
+        <!--<div class="myOrderspxjms">常规</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="confirmddstat">-->
+        <!--<span class="span_1">共2件商品 小计：</span>-->
+        <!--<span class="span_2">99.6￥</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<div class="confirmddWei">
+    <div class="df">
+        <div class="fx1">
+            <span class="span_1">共{$num|default='0'}件商品</span>
+            <span class="span_1">共计：<span class="span_2">{$userInfo['shop_price']*$num}￥</span></span>
+        </div>
+        <div class="confirmdtjiaodd addOrder">提交订单</div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+<!--刷新加载插件 s-->
+<script src="__STATIC__/js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+<!--刷新加载插件 s-->
+{__block__}
+<script>
+    var stop = 1;
+    var mask=mui.createMask();
+    mui('body').on('tap', '.addOrder', function(){
+        var obj = $(this);
+        if(stop == 1) {
+            stop = 0;
+            mui.showLoading("正在提交订单","div");
+            mask.show();//显示遮罩层
+            $.ajax({
+                type: 'post',
+                url: '{:U("Cart/addOrderYi")}',
+                data: $('#cart_form').serialize(),
+                success: function (res) {
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if (res.code != 1) {
+                        stop = 1;
+                        mui.toast(res.msg,{ duration:'long', type:'div' });
+                        return false;
+                    } else {
+                        mui.toast(res.msg,{ duration:'2000', type:'div' });
+                        setTimeout(function(){
+                            window.location.href ='{:U("Order/confirmPay")}';
+                        },1000);
+                    }
+                },
+                error: function (data) {
+                    mui.toast('添加失败!',{ duration:'2000', type:'div' });
+                }
+            })
+        }
+    });
+</script>
+{/block}

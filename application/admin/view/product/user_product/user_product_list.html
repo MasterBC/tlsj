@@ -1,0 +1,215 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">人物类型</label>
+                    <div class="layui-input-block">
+                        <select name="product_id">
+                            <option value="">--请选择--</option>
+                            {foreach $productNameArr as $key=>$val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">人物状态</label>
+                    <div class="layui-input-block">
+                        <select name="status">
+                            <option value="">--请选择--</option>
+                            {foreach $usersProductstatusArr as $key=>$val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <script type="text/html" id="toolbar">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-sm" lay-event="add">
+                        <i class="layui-icon layui-icon-add-1"></i>添加
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">
+                        <i class="layui-icon layui-icon-delete"></i>删除
+                    </button>
+                </div>
+            </script>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+            </script>
+            <table id="bank_list" lay-filter="bank_list"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        var tableId = 'bank_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbar',
+            defaultToolbar:false,
+            cols: [[
+                {type: 'checkbox', fixed: 'left', rowspan: 2},
+                {field: 'id', title: 'ID'},
+                {field: 'account', title: '会员账号'},
+                {field: 'add_time', title: '添加时间'},
+                {field: 'produc_name', title: '人物类型'},
+                {field: 'amount', title: '金币价格'},
+                {field: 'income', title: '金币收益'},
+                {title: '操作', templet: '#options', width: 90}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        //头工具栏事件
+        table.on('toolbar('+tableId+')', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'add':
+                    var url = '{:url("addUserProductInfo")}';
+                    layer.open({
+                        type: 2
+                        , title: '添加'
+                        , content: url
+                        , area: ['80%', '80%']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submit = layero.find('iframe').contents().find("#submitBtn");
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+
+                                var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                    } else {
+                                        layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                    }
+                                });
+                            });
+
+                            submit.trigger('click');
+                        }
+                    });
+                    break;
+                case 'del':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    var num = 0;
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                        num++;
+                    }
+                    id = id.join(',');
+                    if(id == '') {
+                        return layer.msg('请选择要删除的数据');
+                    }
+                    layer.confirm('是否确认删除?', {icon:3}, function(){
+                        var url = '{:url("delUserProductList")}';
+                        var loadAdd = layer.msg('删除中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: id}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload(tableId); //数据刷新
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+                    break;
+            };
+        });
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            switch(obj.event) {
+                case 'edit':
+                    var tr = $(obj.tr);
+                    var url = '{:url("editUserProductInfo")}?id=' + data.id;
+                    layer.open({
+                        type: 2
+                        , title: '编辑'
+                        , content: url
+                        , area: ['80%', '80%']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submit = layero.find('iframe').contents().find("#submitBtn");
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+                                var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                    } else {
+                                        layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                    }
+                                });
+                            });
+
+                            submit.trigger('click');
+                        }
+                    })
+                    break;
+            }
+        });
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                , page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}
+
+

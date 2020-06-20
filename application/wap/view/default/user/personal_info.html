@@ -1,0 +1,112 @@
+{extend name="public:base" /}
+{block name="title"}个人资料{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        个人资料
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="neirongText">
+        <form class="contentForm">
+            <input type="hidden" name="id" value="{$userInfo['data_id']}">
+            <div class="muiInputRowsan">
+                <div class="sanTl">名称</div>
+                <div class="mui-input-row">
+                    <input type="text" name="username" value="{$userData['username']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="会员名称">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">邮箱</div>
+                <div class="mui-input-row">
+                    <input type="text" name="email" value="{$userData['email']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="会员邮箱">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">手机号</div>
+                <div class="mui-input-row">
+                    <input type="text" name="mobile" value="{$userData['mobile']}" disabled autocomplete="off" class="mui-input-clear muiInput" placeholder="会员手机号">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">QQ号码</div>
+                <div class="mui-input-row">
+                    <input type="text" name="qq_name" value="{$userData['qq_name']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="会员QQ号">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">支付宝账号</div>
+                <div class="mui-input-row">
+                    <input type="text" name="zfb_name" value="{$userData['zfb_name']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="支付宝账号">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">微信账号</div>
+                <div class="mui-input-row">
+                    <input type="text" name="wx_name" value="{$userData['wx_name']}" autocomplete="off" class="mui-input-clear muiInput" placeholder="微信账号">
+                </div>
+            </div>
+            <div class="df">
+                <div class="fx1 pedatatouxBox">
+                    <div>微信二维码</div>
+                    <div class="pedatatoux uploadImg" data-show_id="wx_code" id="wximg">
+                        <img src="{:empty($userData['wx_code']) ? '' : get_img_domain().$userData['wx_code']}" id="wx_code" alt="">
+                        <input type="hidden" name="wx_code" class="wx_code" value="{$userData['wx_code']}" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="fx1 pedatatouxBox">
+                    <div class="fx1">支付宝二维码</div>
+                    <div class="pedatatoux uploadImg" data-show_id="zfb_code">
+                        <img src="{:empty($userData['zfb_code']) ? '' : get_img_domain().$userData['zfb_code']}" id="zfb_code" alt="">
+                        <input type="hidden" name="zfb_code" class="zfb_code" value="{$userData['zfb_code']}" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="gonggButtonda">
+                <button type="button" class="mui-btn gonggButton">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function() {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        var data = $('.contentForm').serialize();
+        console.log(data);
+        var url = "{:U('User/personalInfo')}";
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast(res.msg, {duration: '1000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('User/setUp')}";
+                    }, 1000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+
+    });
+</script>
+{/block}

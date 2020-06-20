@@ -1,0 +1,35 @@
+{extend name="public:base" /}
+{block name="title"}钱包转换列表{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        钱包转换列表
+    </h1>
+</header>
+<div class="mui-content" >
+    <ul id="content" class="tradparUl">
+        {foreach $moneyTransformInfo as $v}
+        <li class="noticeLi df likeA" data-url="{:U('MoneyTransform/transformAdd',['mid'=>$v['mid'],'to_mid'=>$v['to_mid']])}">
+            <div class="fx1">
+                <div class="df">
+                    <div class="recomendImg">
+                        <img src="__STATIC__/centImages/x_55.png" alt="">
+                    </div>
+                    <div class="fx1 noticeLiMmendqb">{$moneyNames[$v['mid']]}&nbsp;转换&nbsp;{$moneyNames[$v['to_mid']]}&nbsp;&nbsp;金额{$v['low']}起且是{$v['bei']}的倍数,并且单笔最高{$v['out']}! &nbsp;&nbsp;手续费为{$v['fee']}%</div>
+                </div>
+            </div>
+            <div class="noticeLiright">
+                <span class="mui-icon icon-font">&#xe95c;</span>
+            </div>
+        </li>
+        {/foreach}
+    </ul>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+
+{/block}

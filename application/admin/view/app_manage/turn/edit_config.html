@@ -1,0 +1,114 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" autocomplete="off" title="启用" {$info['status'] == 1 ? 'checked' : ''} />
+                                <input type="radio" name="status" value="2" autocomplete="off" title="禁用" {$info['status'] == 2 ? 'checked' : ''} />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">奖品图片</label>
+                            <div class="layui-input-inline">
+                                <input name="img" id="img" value="{:isset($info['img']) ? $info['img'] : ''}" autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                                <input type="hidden" name="description[img]" value="奖品图片" />
+                            </div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button type="button" class="layui-btn layui-btn-primary uploadImg" lay-data="{field: 'img',data:{dir:'img', field:'img'}}">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片
+                                </button>
+                                <button class="layui-btn layui-btn-primary checkImg" data-type="img">查看图片</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">奖品名称</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='name' value='{$info["name"]}' autocomplete="off" placeholder="奖金名称"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">奖品数量</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='num' value='{$info["num"]}' autocomplete="off" placeholder="奖品数量"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">中奖概率</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='is_per' value='{$info["is_per"]}' autocomplete="off" placeholder="中奖概率"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">中奖人数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='day_total' value='{$info["day_total"]}' autocomplete="off" placeholder="每天中奖人数"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">中奖提示语</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" class="layui-input" name='message' value='{$info["message"]}' autocomplete="off" placeholder="中奖提示语"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+
+        upload.render({
+            elem: '.uploadImg',
+            url: '/uploadImg',
+            before: function () {
+            }
+            , done: function (res, index, upload) {
+                if (res.code == 1) {
+                    $('#' + this.data.field).val(res.data.src);
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            }
+        });
+        $(document).on('click', '.checkImg', function () {
+            var src = "{:get_img_domain()}" + $('#' + $(this).data('type')).val();
+            layer.photos({
+                photos: {
+                    "title": "查看图片" //相册标题
+                    , "data": [{
+                        "src": src //原图地址
+                    }]
+                }
+                , shade: 0.01
+                , closeBtn: 1
+                , anim: 5
+            });
+        });
+    });
+</script>
+{/block}

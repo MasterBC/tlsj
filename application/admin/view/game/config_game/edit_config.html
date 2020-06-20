@@ -1,0 +1,69 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" autocomplete="off" title="启用" {$info['status'] == 1 ? 'checked' : ''} />
+                                <input type="radio" name="status" value="2" autocomplete="off" title="禁用" {$info['status'] == 2 ? 'checked' : ''} />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">游戏类型</label>
+                            <div class="layui-input-inline">
+                                <select name="is_type" autocomplete="off">
+                                    <option value="">--请选择--</option>
+                                    {foreach $isTypeDataArr as $k => $v}
+                                    <option value="{$k}" {if isset($info['is_type']) && $k == $info['is_type']}selected{/if}>{$v}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">LOGO</label>
+                            <div class="layui-input-block">
+                                <input name="gram_logo" id="logo"  value="{$info['gram_logo'] ?? ''}" autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">游戏名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="gram_name"  value="{$info['gram_name']}" placeholder="请输入游戏名称" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">访问地址</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="gram_url"  value="{$info['gram_url']}" placeholder="请输入访问地址" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">游戏人气</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="gram_mood"  value="{$info['gram_mood']}" placeholder="请输入游戏人气值" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+    var upload = layui.upload;
+});
+</script>
+{/block}

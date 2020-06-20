@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/centStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.showLoading.css" />
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        帮助中心
+    </h1>
+</header>
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <div class="helpTextTl">
+            <i class="fa fa-question-circle-o"></i> 操作说明
+        </div>
+        <ul>
+            <li class="helpTextLi">
+                <div class="helpTextbti df">
+                    <div class="helpTextbtitx fx1">这是标题?</div>
+                    <div class="jiantou">
+                        <i class="fa fa-angle-down i jiantouzxia"></i>
+                        <i class="fa fa-angle-up i jiantouzshang"></i>
+                    </div>
+                </div>
+                <div class="helpTextms">
+                    <div class="wenzi textove2">
+                        这里是帮助中心的内容，这里是帮助中心的内容，这里是帮助中心的内容，这里是帮助中心的内容!
+                    </div>
+                    <div class="helpTextmsLinkBox">
+                        <a href='javaScript:void(0);' data-url="helpindex.html" class="helpTextmsLink likeA">查看详情</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="helpTextTl">
+            <i class="fa fa-question-circle-o"></i> 常见问题
+        </div>
+        <ul>
+            <li class="helpTextLi">
+                <div class="helpTextbti df">
+                    <div class="helpTextbtitx fx1">这是标题?</div>
+                    <div class="jiantou">
+                        <i class="fa fa-angle-down i jiantouzxia"></i>
+                        <i class="fa fa-angle-up i jiantouzshang"></i>
+                    </div>
+                </div>
+                <div class="helpTextms">
+                    <div class="wenzi textove2">
+                        这里是帮助中心的内容，这里是帮助中心的内容，这里是帮助中心的内容，这里是帮助中心的内容!
+                    </div>
+                    <div class="helpTextmsLinkBox">
+                        <a href='javaScript:void(0);' data-url="helpindex.html" class="helpTextmsLink likeA">查看详情</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/style.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005
+    });
+    mui('body').on('tap', '.helpTextbti', function () {
+        if ($(this).next('.helpTextms').css('display') == 'none') {
+            $(this).next('.helpTextms').show();
+            $(this).find('.jiantouzxia').hide();
+            $(this).find('.jiantouzshang').show();
+            $(this).parents('.helpTextLi').siblings('.helpTextLi').find('.helpTextms').hide();
+            $(this).parents('.helpTextLi').siblings('.helpTextLi').find('.jiantouzxia').show();
+            $(this).parents('.helpTextLi').siblings('.helpTextLi').find('.jiantouzshang').hide();
+        } else {
+            $(this).next('.helpTextms').hide();
+            $(this).find('.jiantouzxia').show();
+            $(this).find('.jiantouzshang').hide();
+        }
+    });
+</script>
+</body>
+
+</html>

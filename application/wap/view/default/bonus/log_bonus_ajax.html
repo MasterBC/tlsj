@@ -1,0 +1,23 @@
+{foreach $bonusInfo as $v}
+<li class="recordPageLi likeA" data-url="{:U('Bonus/logDetail', ['id' => $v.id])}">
+    <div class="df recordPageTx">
+        <div class="fx1 recordPageTxleft">{$bonusNameInfo[$v['bonus_id']]}</div>
+        <div class="recordPageTxRight"><i class="mui-icon mui-icon-arrowright i"></i></div>
+    </div>
+    <div class="df">
+        <!--<div class="recordPaImg">-->
+        <!--<img src="../centImages/tou.png" alt="">-->
+        <!--</div>-->
+        <div class="fx1">
+            <div class="recordPagezhims">产生时间：{$v['add_time']|date="Y-m-d H:i"}</div>
+            <!--<div class="recordPagezhitime">已领奖金：{$v['stay_money']}</div>-->
+        </div>
+
+        <div class="recordPashu">
+
+            奖金：{$v['money']}
+        </div>
+    </div>
+
+</li>
+{/foreach}

@@ -1,0 +1,459 @@
+{extend name="public:base" /}
+{block name="title"}网络图{/block}
+{block name="other_css"}
+<style>
+    .zgui-sysous {
+        position: absolute;
+        top: 0.8em;
+        left: 0.5em;
+        color:#eeeeee;
+    }
+    input[type=search] {
+        padding-left: 2.5em;
+        text-align: left;
+        font-size: .8em;
+        color:#fff;
+        background: none;
+        margin-top:8px;
+        border:1px solid #484856;
+    }
+    input[type=search]:-ms-input-placeholder{color:#eeeeee;}
+    input[type=search]::-webkit-input-placeholder{color:#eeeeee;}
+    input[type=search]::-moz-placeholder{color:#eeeeee;}
+    input[type=search]:-moz-placeholder{color:#eeeeee;}
+    .mui-bar-nav.mui-bar .mui-pull-left {
+        padding:9px 20px 10px 15px;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav" style="padding:2px 0px 5px 0px;box-shadow: none;background:#31313F;">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA" style="color:#ffffff;">&#xe95b;</a>
+    <form class="df" id='searchForm' action="" style="position: relative;">
+        <span class="icon-font zgui-sysous">&#xe924;</span>
+        <input type="search" id="search_account" autocomplete="off" class="fx1" placeholder="请输入会员账号搜索">
+        <button type="button" class="mui-pull-right" style="height:29px;background:none;border:none;color:#fff;padding:5px 10px;margin-top:6px;font-size: 14px;" id="search">搜索</button>
+    </form>
+</header>
+<div class="mui-content">
+    <div class="networktuText">
+        <div class="networktucz df" style="display:none;">
+            <div class="fx1">
+                <button type="button" name="btnSearch" class="networbutton" id="goPrev"><i class="icon-font">&#xe966;</i>上一层</button>
+            </div>
+            <div class="fx1">
+                <button type="button" name="btnSearch" class="networbutton" id="goTop"><i class="icon-font">&#xe965;</i>置顶</button>
+            </div>
+        </div>
+        <div class="wlTableBxo" >
+            <table border="" cellspacing="" cellpadding="" >
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td colspan="12" id="first_show">
+                        <div class="binarSystem fdsaf">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-right:2px solid #87FFFF;height:15px;border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF;height:15px;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF;height:15px;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="6" id="second_1">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="6" id="second_2">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-right:2px solid #87FFFF;border-bottom:2px solid #87FFFF; height:15px;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-right:2px solid #87FFFF;border-bottom:2px solid #87FFFF; height:15px;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td style="border-bottom:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF; height:15px;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="border-right:2px solid #87FFFF;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="second_1_three_1">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                    <td colspan="4" id="second_1_three_2">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                    <td colspan="4" id="second_2_three_1">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                    <td colspan="4" id="second_2_three_2">
+                        <div class="binarSystem">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--注册   s-->
+<div class="userRegisBox">
+    <div class="userRegisHead df">
+        <div class="userRegisgb">
+            <i class="mui-icon mui-icon-arrowleft i"></i>
+        </div>
+        <div class="fx1">用户注册</div>
+        <div class="userRegiszwei"></div>
+    </div>
+    <div class="userRegisCont">
+        <form class="" id="sub_form">
+            <!--<div class="df userRegisForm">-->
+                <!--<div class="userRegisTu">-->
+                    <!--<img src="__STATIC__/centImages/2019_a006_71_1.png" alt="">-->
+                <!--</div>-->
+            <!--</div>-->
+            <input type="hidden" name="tjrAccount" id="tjr" autocomplete="off" value="{$user['reg_code']}" class="mui-input-clear fx1 userRegisInput" placeholder="请输入推荐码">
+            <div class="df userRegisForm">
+                <input type="text" name="account" autocomplete="off" class="mui-input-clear fx1 userRegisInput" placeholder="请输入账号">
+            </div>
+            <div class="df userRegisForm">
+                <input type="text" name="email" value="" class="mui-input-clear userRegisInput fx1" placeholder="邮箱账号">
+            </div>
+            <div class="df userRegisForm">
+                <input type="password" name="password" autocomplete="off" class="mui-input-password fx1 userRegisInput" placeholder="请输入登录密码">
+            </div>
+            <div class="df userRegisForm">
+                <input type="password" name="secpwd" autocomplete="off" class="mui-input-password fx1 userRegisInput" placeholder="请输入二级密码">
+            </div>
+            {if (zf_cache('smtp_info.v_code_mail_switch') === true)}
+            <div class="df userRegisForm" style="position: relative;">
+                <input type="text" id="verifyCode" name="verify_code" class="mui-input-clear userRegisInput" placeholder="请输入验证码">
+                <img src="/verify?type=reg" alt="" onclick="refreshVerify();" class="yzmaImg Home_Login_Yzm">
+            </div>
+            {/if}
+            {if (zf_cache('smtp_info.user_send_mail_switch') === true)}
+            <div class="df userRegisForm" style="position: relative;">
+                <input type="text" name="mobileCode" class="mui-input-clear userRegisInput" placeholder="邮箱验证码">
+                <div class="yzmaImgWZzfmlg" onclick="send_email_reg_code(this)">
+                    获取验证码
+                </div>
+            </div>
+            {/if}
+            <input type="hidden" name="jdrAccount" value="" autocomplete="off" />
+            <input type="hidden" name="position" value="" autocomplete="off" />
+            <input type="hidden" name="country_id" value="" autocomplete="off" />
+            <div class="gonggButtonBox">
+                <button type="button" class="gonggButton subForm">立即注册</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--注册   e-->
+
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/js/validate.js"></script>
+<script>
+    var selectedValue = $('.country_select').find('.mui-selected').find('.countrydm').html(),countryId = $('.country_select').find('.mui-selected').data('id');
+    //国家代码  s
+    mui("body").on('tap', '.clickonse', function () {
+        selectedValue = $(this).find('.countrydm').html();
+        countryId = $(this).data('id');
+    });
+    mui("body").on('tap', '.queren', countryConfirm);
+    function countryConfirm()
+    {
+        $('.valSwitch').html(selectedValue);
+        $(".countryCodeBox").hide();
+        $('input[name="country_id"]').val(countryId);
+    }
+    countryConfirm();
+    //国家代码  e
+
+
+    //        弹出注册 s
+    mui("body").on('tap', '.zhuceAnniu', function () {
+        var _this = $(this);
+        var jdrAccount = _this.data('jdr-account');
+        var pos = _this.data('pos');
+        if(jdrAccount == '') {
+            mui.toast('接点人未注册');
+            return false;
+        }
+        $(".userRegisBox").show();
+        $('#sub_form').find('input[name="jdrAccount"]').val(jdrAccount);
+        $('#sub_form').find('input[name="position"]').val(pos);
+    });
+    mui("body").on('tap', '.userRegisgb', function () {
+        $(".userRegisBox").hide();
+        $('#sub_form').find('input[name="jdrAccount"]').val('');
+        $('#sub_form').find('input[name="position"]').val('');
+    });
+    //        弹出注册 e
+
+    //        国家代码 s
+    mui("body").on('tap', '.userRegisGuo', function () {
+        $(".countryCodeBox").show();
+    });
+    mui("body").on('tap', '.quxiaogb', function () {
+        $(".countryCodeBox").hide();
+    });
+    mui("body").on('tap', '.countryCodegb', function () {
+        $(".countryCodeBox").hide();
+    });
+    //        国家代码 e
+    var branchData2 = [];
+    var jdrAccount = '';
+    var prevJdrAccount = '';
+    mui('body').on('tap', '.next_user', function(){
+        var _this = $(this);
+
+        jdrAccount = _this.data('account');
+        getNetwork();
+    });
+    mui('body').on('tap', '#goPrev', function(){
+        jdrAccount = prevJdrAccount;
+        getNetwork();
+    });
+    mui('body').on('tap', '#goTop', function(){
+        jdrAccount = '';
+        getNetwork();
+    });
+    mui('body').on('tap', '#search', function(){
+        var account = $('#search_account').val();
+        if(account == '') {
+            return mui.alert('请输入会员账号');
+        }
+        jdrAccount = account;
+        getNetwork();
+    });
+    function getNetwork()
+    {
+
+        $.get("{:U('Team/getNetwork')}", {account:jdrAccount}, function(data){
+
+            console.log(data);
+            if(data.code == -1) {
+                mui.alert(data.msg);
+                return false;
+            }
+            if(data.account != "{$user['account']}") {
+                $('.networktucz').show();
+                prevJdrAccount = data.jdrAccount;
+            } else {
+                $('.networktucz').hide();
+            }
+            if(data.activate == 1) {
+                $('#first_show').html('<div class="binarSystem" style="background:'+data.color+'" ><div class="binarSystemTx"><div class="span_2">'+data.account+'</div></div><div class="binarSysfenl df"><div class="fx1 binarSysLeft"><div class="binarSysLeftne">A区</div><div class="binarSysLeftsu">'+data.left_yj+'</div><div class="binarSysRightsu">团队人数：'+data.team_num_a+'</div></div><div class="fx1 binarSysRight"><div class="binarSysRightne">B区</div><div class="binarSysRightsu">'+data.right_yj+'</div><div class="binarSysRightsu">团队人数：'+data.team_num_b+'</div></div></div></div>');
+            } else {
+                $('#first_show').html('<div class="binarSystem" style="background:'+data.color+'"><div class="binarSystemTx"><div class="span_2">'+data.account+'</div><div class="span_3">未激活</div></div></div>');
+            }
+            for(var i = 1; i <= 2; i++) {
+                if(data.list) {
+                    // console.log($((data.list)[i])[0].activate);
+                    var branchData = $((data.list)[i])[0];
+                    if(branchData) {
+                        if(branchData.activate == 1) {
+                            if (branchData.team_num) {
+                                console.log(1);
+                                $('#second_'+i).html('<div class="binarSystem next_user" style="background:'+branchData.color+'" data-account="'+branchData.account+'"><div class="binarSystemTx"><div class="span_2">'+branchData.account+'</div><div class="binarSysRightsu">A区团队：'+ branchData.team_num_a +'</div><div class="binarSysRightsu">B区团队：'+ branchData.team_num_b +'</div><div class="span_3">已激活</div></div></div>');
+                            } else {
+                                console.log(2);
+                                $('#second_'+i).html('<div class="binarSystem next_user" style="background:'+branchData.color+'" data-account="'+branchData.account+'"><div class="binarSystemTx"><div class="span_2">'+branchData.account+'</div><div class="binarSysRightsu">A区团队：0</div><div class="binarSysRightsu">B区团队：0</div><div class="span_3">已激活</div></div></div>');
+                            }
+                        } else {
+                            $('#second_'+i).html('<div class="binarSystem"><div class="binarSystemTx"><div class="span_2">'+branchData.account+'</div><div class="span_3">未激活</div></div></div>');
+                        }
+                        for(var j = 1; j <= 2; j++) {
+                            if(branchData.list) {
+                                branchData2 = branchData['list'][j];
+                                if(branchData2) {
+                                    if(branchData2.activate == 1) {
+                                        if (branchData2.team_num) {
+                                            console.log(1);
+                                            $('#second_'+i+'_three_'+j).html('<div class="binarSystem next_user" style="background:'+branchData2.color+'" data-account="'+branchData2.account+'"><div class="binarSystemTx"><div class="span_2">'+branchData2.account+'</div><div class="binarSysRightsu">A区团队：'+ branchData2.team_num_a +'</div><div class="binarSysRightsu">B区团队：'+ branchData2.team_num_b +'</div><div class="span_3">已激活</div></div></div>');
+                                        } else {
+                                            console.log(2);
+                                            $('#second_'+i+'_three_'+j).html('<div class="binarSystem next_user" style="background:'+branchData2.color+'" data-account="'+branchData2.account+'"><div class="binarSystemTx"><div class="span_2">'+branchData2.account+'</div><div class="binarSysRightsu">A区团队：0</div><div class="binarSysRightsu">B区团队：0</div><div class="span_3">已激活</div></div></div>');
+                                        }
+                                    } else {
+                                        $('#second_'+i+'_three_'+j).html('<div class="binarSystem"><div class="binarSystemTx"><div class="span_2">'+branchData2.account+'</div><div class="span_3">未激活</div></div></div>');
+                                    }
+                                } else {
+                                    $('#second_'+i+'_three_'+j).html('<div class="binarSystem zhuceAnniu" data-jdr-account="'+branchData.account+'" data-pos="'+j+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                                }
+                            } else {
+                                $('#second_'+i+'_three_'+j).html('<div class="binarSystem zhuceAnniu" data-jdr-account="'+branchData.account+'" data-pos="'+j+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                            }
+                        }
+                    } else {
+                        $('#second_'+i).html('<div class="binarSystem zhuceAnniu" data-jdr-account="'+data.account+'" data-pos="'+i+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                        for(var j = 1; j <= 2; j++) {
+                            $('#second_'+i+'_three_'+j).html('<div class="binarSystem zhuceAnniu" data-jdr-account="" data-pos="'+j+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                        }
+                    }
+                } else {
+                    $('#second_'+i).html('<div class="binarSystem zhuceAnniu" data-jdr-account="'+data.account+'" data-pos="'+i+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                    for(var j = 1; j <= 2; j++) {
+                        $('#second_'+i+'_three_'+j).html('<div class="binarSystem zhuceAnniu" data-jdr-account="" data-pos="'+j+'"><div class="binarSystemTx"><div class="zhuce">注册</div></div></div>');
+                    }
+                }
+            }
+        });
+    }
+    getNetwork();
+
+    var mask=mui.createMask();
+
+    var smtpEmailObj = [];
+    // 发送邮箱验证码
+    function send_email_reg_code(obj){
+        smtpEmailObj = obj;
+        var email = $('input[name="email"]').val();
+        if(!check_mail(email)){
+            mui.toast('请输入正确的邮箱账号',{ duration:'long', type:'div' });
+            return;
+        }
+
+        {if (zf_cache('smtp_info.v_code_mail_switch') === true)}
+            var code = $('#verifyCode').val();
+            var data = {email:email,code:code,check_code:'reg'};
+        {else /}
+            var data = {email:email};
+        {/if}
+        var url = "/sendSmtp";
+        mui.showLoading("正在发送","div");
+        mask.show();//显示遮罩层
+        $.post(url, data, function(data){
+            mask.close();//关闭遮罩层
+            mui.hideLoading();
+            if(data.code == 1){
+                $(smtpEmailObj).removeAttr('onclick');
+                intAs = {:zf_cache('smtp_info.send_email_time_out')}; // 手机短信超时时间
+                jsInnerTimeout(intAs);
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            } else {
+                refreshVerify();
+                mui.toast(data.msg, {duration: 'long', type: 'div'});
+            }
+        });
+    }
+
+        //倒计时函数
+        function jsInnerTimeout(intAs){
+            intAs--;
+            if(intAs<=-1){
+                $(smtpEmailObj).attr('onclick', 'send_email_reg_code(this)');
+                $(smtpEmailObj).text("获取验证码");
+                return true;
+            }
+            $(smtpEmailObj).text(intAs+'s');
+            setTimeout("jsInnerTimeout("+intAs+")",1000);
+        };
+
+        function refreshVerify()
+        {
+            $('.Home_Login_Yzm').attr('src', "/verify?type=reg");
+        }
+
+    // 注册提交 s
+    var isSub = true;
+    mui('body').on('tap', '.subForm', function () {
+        var data = $('#sub_form').serialize();
+        // console.log(data);
+        if (isSub) {
+            isSub = false;
+            mui.showLoading("注册中","div");
+            mask.show();//显示遮罩层
+            $.post("{:U('Team/addUser')}", data, function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast(res.msg, {duration: '2000', type: 'div'});
+                    $(".userRegisBox").hide();
+                    getNetwork();
+                    isSub = true;
+                    $('#sub_form')[0].reset();
+                } else {
+                    isSub = true;
+                    mui.toast(res.msg);
+                    return false;
+                }
+            });
+        }
+    });
+    // 注册提交 e
+
+</script>
+{/block}

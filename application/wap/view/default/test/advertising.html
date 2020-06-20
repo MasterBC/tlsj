@@ -1,0 +1,72 @@
+{extend name="public:base" /}
+{block name="title"}广告{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<div class="mui-content">
+    <div class="advertiCont">
+        <video autoplay="" name="media" width="100%" height="100%">
+            <source src="https://m.cudaojia.com/dist/ACTIVITY/certificate/2019/09/02/0b6fc1bc-e010-4264-a1ed-819cb9c09451.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="adverticz df">
+        <div class="advertzbk">
+            <div class="adverticzdjs">30</div>
+            <div class="advertzbkfh mui-action-back"><i class="mui-icon mui-icon-arrowleft i"></i></div>
+        </div>
+        <div class="fx1"></div>
+        <div class="adverticzshen">
+            <img src="__STATIC__/centImages/2019a071_135.png" alt="" class="fanshen">
+            <img src="__STATIC__/centImages/2019a071_136.png" alt="" class="biyin">
+        </div>
+    </div>
+    <div class="advertibtmBox df">
+        <div class="advertayh">
+            <img src="https://m.cudaojia.com/dist/ACTIVITY/certificate/2019/09/02/c907fa40-31aa-4d6e-b808-c909800f1e49.jpg" alt="">
+        </div>
+        <div class="fx1">
+            <div class="advertayhmc">安逸花</div>
+            <!-- <div class="advertayplBox df">
+                <div class="advertaxx">
+                    <img src="__STATIC__/centImages/2019a071_138.png" alt="">
+                    <img src="__STATIC__/centImages/2019a071_138.png" alt="">
+                    <img src="__STATIC__/centImages/2019a071_138.png" alt="">
+                    <img src="__STATIC__/centImages/2019a071_138.png" alt="">
+                    <img src="__STATIC__/centImages/2019a071_137.png" alt="">
+                </div>
+                <div class="advertapf fx1">12.3w个评论</div>
+            </div> -->
+        </div>
+        <div class="advertaBtn">
+            <img src="https://m.cudaojia.com/dist/ACTIVITY/certificate/2019/09/02/570e8494-9ca3-447c-87a7-0711ea8ed2c3.png" alt="">
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    mui('body').on('tap', '.adverticzshen', function() {
+        if($(this).find('.biyin').css('display') == 'none'){
+            $(this).find('.biyin').css('display','block');
+            $(this).find('.fanshen').css('display','none');
+        }else{
+            $(this).find('.biyin').css('display','none');
+            $(this).find('.fanshen').css('display','block');
+        }
+    });
+    $(function(){
+        var num=30;
+        var t=setInterval(function(){
+            num--;
+            $(".adverticzdjs").html(num);
+            if(num==0){
+                clearInterval(t);
+                // location.href="{:U('User/index')}"
+                $('.adverticzdjs').css('display','none');
+                $('.advertzbkfh').css('display','block');
+            }
+        },1000)
+    })
+</script>
+{/block}

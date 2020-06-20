@@ -1,0 +1,28 @@
+{extend name="public:base" /}
+{block name="title"}安全管理{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">安全管理</h1>
+</header>
+<div class="mui-content">
+    <ul class="sycredtmUl">
+        <li class="sycredtmLi df likeA" data-url="{:U('User/saveLoginPassword')}">
+            <img src="__STATIC__/centImages/2019_a006_51_1.png" alt="" />
+            <div class="sycredtmLitx fx1">设置登录密码</div>
+            <div class="sycredtmLizx"><i class="mui-icon mui-icon-arrowright i"></i></div>
+        </li>
+        <li class="sycredtmLi df likeA" data-url="{:U('User/saveSecpwd')}">
+            <img src="__STATIC__/centImages/2019_a006_52.png" alt="" />
+            <div class="sycredtmLitx fx1">设置二级密码</div>
+            <div class="sycredtmLizx"><i class="mui-icon mui-icon-arrowright i"></i></div>
+        </li>
+    </ul>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+
+{/block}

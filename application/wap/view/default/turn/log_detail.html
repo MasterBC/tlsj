@@ -1,0 +1,40 @@
+{extend name="public:base" /}
+{block name="title"}详情{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        详情
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="billTop">
+        <div class="billTopwen">
+            <div class="billTopimg"><img src="{$userInfo['head']|default='__STATIC__/centImages/tou.png'}" alt=""></div>
+            <div class="billToptx">{$user['account']|default="无"}</div>
+        </div>
+    </div>
+    <div class="billContBox">
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">奖金名称</div>
+            <div class="billTopztai">{$info['name']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">奖励数量</div>
+            <div class="billConrit">{$info['num']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">进入钱包</div>
+            <div class="billConrit">{:isset($moneyNames[$info['mid']]) ? $moneyNames[$info['mid']] : '无'}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">备注</div>
+            <div class="billConrit">{$info['message']}</div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

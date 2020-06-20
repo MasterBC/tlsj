@@ -1,0 +1,75 @@
+{extend name="public:base" /}
+{block name="title"}游戏{/block}
+{block name="other_css"}
+<style>
+    .mui-segmented-control.mui-scroll-wrapper {
+        height:120px;
+        margin-bottom: 10px;
+    }
+    .mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+        height: 100%;
+    }
+	.gameyolistHe{
+		width: 65px;
+	}
+</style>
+{/block}
+{block name="body"}
+<div class="mui-content unigameyouBox">
+    <div class="gameyouxiBox">
+<!--        <div class="df">-->
+<!--            <div class="fx1 gameytle">我最近在玩</div>-->
+<!--            <div class="gameytlinimg"><img src="__STATIC__/centImages/a071yx_50.png" alt=""></div>-->
+<!--        </div>-->
+<!--        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <div class="mui-scroll">
+                <div class="gameyolistHe">
+                    <div class="gameyolimg reminderByNo" data-tishi="暂未开放"><img src="__STATIC__/centImages/a071yx_2.png" alt=""></div>
+                    <div class="gameyoltxt">决战沙城</div>
+                    <div class="gameyolzzcs">1,968.3万人</div>
+                </div>
+            </div>
+        </div>-->
+<!--        <div class="gameyhfu likeA" data-url="{:U('User/index')}">-->
+<!--            <img src="__STATIC__/centImages/a071yx_9.png" alt="">-->
+<!--        </div>-->
+        <div class="gameytle">小编推荐</div>
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height:{:ceil(count($gameOneList)/5)*120}px;">
+            <div class="mui-scroll" style="text-align: left;">
+                {foreach $gameOneList as $k => $v}
+                <div class="gameyolistHe likeA" data-url="{$v['gram_url'] ?? '#'}">
+                    <div class="gameyolimg reminderByNo"><img src="{$v['gram_logo'] ?? '__STATIC__/centImages/a071yx_2.png'}" alt=""></div>
+                    <div class="gameyoltxt">{$v['gram_name'] ?? ''}</div>
+                    <div class="gameyolzzcs">{$v['gram_mood'] ?? '1,968.3万人'}</div>
+                </div>
+				{if (($k+1)%5==0) && ($k+1)<>0}<br/>{else /}{/if}
+                {/foreach}
+            </div>
+        </div>
+        <div class="df">
+            <div class="fx1 gameytle">休闲游戏</div>
+<!--            <div class="gameygduo">
+                更多<i class="mui-icon mui-icon-arrowright i"></i>
+            </div>-->
+        </div>
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height:{:ceil(count($gameOneList)/5)*120}px;">
+            <div class="mui-scroll" style="text-align: left;">
+                {foreach $gameTwoList as $k => $v}
+                <div class="gameyolistHe likeA" data-url="{$v['gram_url'] ?? '#'}">
+                    <div class="gameyolimg reminderByNo"><img src="{$v['gram_logo'] ?? '__STATIC__/centImages/a071yx_2.png'}" alt=""></div>
+                    <div class="gameyoltxt">{$v['gram_name'] ?? ''}</div>
+                    <div class="gameyolzzcs">{$v['gram_mood'] ?? '1,968.3万人'}</div>
+                </div>
+				{if (($k+1)%5==0) && ($k+1)<>0}<br/>{else /}{/if}
+                {/foreach}
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_nav"}
+{include file="public/footer_nav" /}
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

@@ -1,0 +1,103 @@
+{extend name="public:base" /}
+{block name="title"}广告{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<style>
+    .footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        cursor: pointer;
+    }
+    img {
+        width: 100%;
+    }
+    .ads{
+        height: 80px;
+        background: rgba(22,23,28,0.95);
+    }
+    .ads img{
+        width: 65px;
+        position: absolute;
+        left: 30px;
+        bottom: 7px;
+    }
+    .ads button{
+        width: 100px;
+        height: 40px;
+        color: #fff;
+        font-size: 16px;
+        background: #FF2084;
+        border-radius: 10px;
+        border: 1px solid #FF2084;
+        position: absolute;
+        right: 30px;
+        bottom: 17px;
+    }
+</style>
+<div class="mui-content">
+    <div class="advertiCont">
+        <div id="videobox">
+            <video webkit-playsinline playsinline x5-playsinline x-webkit-airplay="allow" {$device_type?'':' muted'} autoplay="autoplay" id="videoALL">
+                <source src="{$adInfo.url|raw}" type="video/mp4">
+            </video>
+        </div>
+        <div class="footer pop ads" id="footer">
+            <img src="{$adInfo.ico|raw}" style="cursor: pointer;"/>
+            <button>立即下载</button>
+        </div>
+        <script>
+            var videoALL = document.getElementById('videoALL');
+            var videobox = document.getElementById('videobox');
+            var clientWidth = document.documentElement.clientWidth;
+            var clientHeight = document.documentElement.clientHeight;
+            function stylediv(divId){
+                divId.style.width = clientWidth + 'px';
+                divId.style.height = clientHeight + 'px';
+            }
+            stylediv(videobox);
+            playcontr();
+            function playcontr(){
+                videoALL.style.width = '100%';
+                videoALL.style.height = '100%';
+                videobox.style.display = "block";
+                videoALL.play();
+            }
+            document.getElementById("footer").onclick=function(){
+                window.location.href = '{$adInfo.app|raw}';
+            };
+        </script>
+    </div>
+    <div class="adverticz df">
+        <div class="advertzbk">
+            <div class="adverticzdjs">30</div>
+            <!--<div class="advertzbkfh likeA" data-url="{:U('videoAdPlayEnd', ['type' => $type])}"><i class="mui-icon mui-icon-closeempty i"></i></div>-->
+        </div>
+        <div class="fx1"></div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    $(function(){
+        document.addEventListener("WeixinJSBridgeReady", function() {
+            videoALL.play();
+        }, false);
+        var num = {$adInfo.times};
+        var t=setInterval(function(){
+            num--;
+            $(".adverticzdjs").html(num);
+            if(num == 0){
+                clearInterval(t);
+                $('.adverticzdjs').css('display','none');
+                // $('.advertzbkfh').css('display','block');
+                setTimeout(function () {
+                    window.location.href = "{:U('videoAdPlayEnd', ['type' => $type])}";
+                },1000);
+            }
+        },1100);
+    });
+</script>
+{/block}

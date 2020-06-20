@@ -1,0 +1,80 @@
+{extend name="public:base" /}
+{block name="title"}{$blockNames[$transformInfo['bid']]}转换{$blockNames[$transformInfo['to_bid']]}{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        {$blockNames[$transformInfo['bid']]}转换{$blockNames[$transformInfo['to_bid']]}
+    </h1>
+    <div class="mui-icon icon-font mui-pull-right likeA" data-url="{:U('BlockTransform/indexTransform', ['bid' => $transformInfo['bid']])}"><img src="__STATIC__/centImages/jilu_1.png" alt="" style="height:20px;"></div>
+</header>
+<div class="mui-content">
+    <div class="neirongText">
+        <form class="contentForm">
+            <div class="muiInputRowsan">
+                <div class="sanTl">{$blockNames[$transformInfo['bid']]}余额</div>
+                <div class="mui-input-row">
+                    <input type="text" value="{$userBlock}" readonly autocomplete="off" class="mui-input-clear muiInput" placeholder="余额">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">转换数量</div>
+                <div class="mui-input-row">
+                    <input type="text" name="num" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入转出数量">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">二级密码</div>
+                <div class="mui-input-row">
+                    <input type="password" name="secpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入二级密码">
+                </div>
+            </div>
+            <div class="gonggButtonda">
+                <input type="hidden" name="bid" value="{$transformInfo['bid']}">
+                <input type="hidden" name="to_bid" value="{$transformInfo['to_bid']}">
+                <button type="button" class="mui-btn gonggButton transformAdd">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    var isDsd = true;
+    mui('body').on('tap', '.transformAdd', function () {
+        if (isDsd) {
+            isDsd = false;
+            var data = $('.contentForm').serialize();
+            mui.showLoading("提交中", "div");
+            mask.show();//显示遮罩层
+            $.ajax({
+                type: 'post',
+                url: '{:U("")}',
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    console.log(res);
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if (res.code == 1) {
+                        mui.toast('操作成功', {duration: '2000', type: 'div'});
+                        setTimeout(function () {
+                            mui.back();
+                        }, 2000);
+                    } else {
+                        isDsd = true;
+                        return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+                }
+            });
+        }
+    });
+</script>
+{/block}

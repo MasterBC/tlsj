@@ -1,0 +1,160 @@
+{extend name="public:base" /}
+{block name="title"}注册设置{/block}
+{block name="body"}
+<div class="layui-form layui-fluid layui-form-pane" lay-filter="reg_info">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-card">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-sm12">
+                     <div class="layui-card">
+                        <div class="layui-card-header">黙认参数</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">系统账号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="default_account" value="{:isset($config['default_account']) ? $config['default_account'] : ''}" placeholder="请输入默认账号   " autocomplete="off" class="layui-input"/>
+                                    <input type="hidden" name="description[default_account]" value="平台默认账号" />
+                                </div>
+                                <div class="layui-form-mid">清空数据后 平台 黙认添加的第一个会员账号</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">登录密码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="default_login_pass" value="{:isset($config['default_login_pass']) ? $config['default_login_pass'] : ''}" placeholder="请输入默认登陆密码" autocomplete="off" class="layui-input"/>
+                                        <input type="hidden" name="description[default_login_pass]" value="平台默认登录密码" />
+                                    </div>
+                                    <div class="layui-form-mid">为空 表示不设黙认</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">二级密码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="default_pay_pass" value="{:isset($config['default_pay_pass']) ? $config['default_pay_pass'] : ''}" placeholder="请输入默认二级密码" autocomplete="off" class="layui-input"/>
+                                        <input type="hidden" name="description[default_pay_pass]" value="平台默认二级密码" />
+                                    </div>
+                                    <div class="layui-form-mid">为空 表示不设黙认</div>
+                                </div>
+                            </div>
+                            <div class="layui-inline layui-form-item" pane="">
+                                <label class="layui-form-label">注册成功后</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="default_activate_state" autocomplete="off" value="1" title="激活" {:isset($config['default_activate_state']) ? $config['default_activate_state'] == 1 ? 'checked' : '' : ''}>
+                                    <!--<input type="radio" name="default_activate_state" autocomplete="off" value="2" title="未激活" {:isset($config['default_activate_state']) ? $config['default_activate_state'] == 2 ? 'checked' : '' : ''}>-->
+                                    <input type="hidden" name="description[default_activate_state]" value="平台默认激活状态 1激活 2未激活" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">注册ID默认</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="default_reg_user_id" value="{:isset($config['default_reg_user_id']) ? $config['default_reg_user_id'] : ''}" placeholder="会员注册ID默认起值值" autocomplete="off" class="layui-input"/>
+                                        <input type="hidden" name="description[default_pay_pass]" value="会员注册ID默认起值值" />
+                                    </div>
+                                    <div class="layui-form-mid">起</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">注册后赠送</label>
+                                    <div class="layui-input-inline">
+                                        <select name="reg_give_mid" id="reg_give_mid" autocomplete="off">
+                                            <option value="0">--请选择--</option>
+                                            {foreach ($moneyNames as $k => $v)}
+                                            <option value="{$k}" {:isset($config['reg_give_mid']) ? $config['reg_give_mid'] == $k ? 'selected' : '' : ''}>{$v}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="reg_give_num" value="{:isset($config['reg_give_num']) ? $config['reg_give_num'] : ''}" placeholder="注册后赠送数量" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid layui-word-aux"><b style="color:red;">个</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="layui-card">
+                        <div class="layui-card-header">限制条件</div>
+                        <div class="layui-card-body">
+                            <div class="layui-inline layui-form-item" pane="">
+                                <label class="layui-form-label">注册手机号</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="register_phone_switch" lay-filter="register_phone_switch" autocomplete="off" value="true" title="开启" {:isset($config['register_phone_switch']) ? $config['register_phone_switch'] === true ? 'checked' : '' : ''}>
+                                    <input type="radio" name="register_phone_switch" lay-filter="register_phone_switch" autocomplete="off" value="false" title="关闭" {:isset($config['register_phone_switch']) ? $config['register_phone_switch'] === false ? 'checked' : '' : ''}>
+                                    <input type="hidden" name="description[register_phone_switch]" value="注册启用手机号" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-item" id="same_phone_register_num" {:isset($config['register_phone_switch']) ? $config['register_phone_switch'] === false ? 'style="display:none;"' : '' : ''}>
+                                    <label class="layui-form-label">同手机号限</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="same_phone_register_num" value="{:isset($config['same_phone_register_num']) ? $config['same_phone_register_num'] : ''}" placeholder="同一个手机号注册数量" autocomplete="off" class="layui-input"/>
+                                        <input type="hidden" name="description[same_phone_register_num]" value="同一个手机号允许注册数量" />
+                                    </div>
+                                    <div class="layui-form-mid">绑定账号的数量 ，0 表示不限制绑定数量</div>
+                                </div>
+                            </div>
+                            <div class="layui-inline layui-form-item" pane="">
+                                <label class="layui-form-label">短信验证码</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="register_sms_switch" lay-filter="register_sms_switch" autocomplete="off" value="true" title="开启" {:isset($config['register_sms_switch']) ? $config['register_sms_switch'] === true ? 'checked' : '' : ''} {:isset($config['register_phone_switch']) ? $config['register_phone_switch'] === false ? 'disabled' : '' : ''} >
+                                    <input type="radio" name="register_sms_switch" lay-filter="register_sms_switch" autocomplete="off" value="false" title="关闭" {:isset($config['register_sms_switch']) ? $config['register_sms_switch'] === false ? 'checked' : '' : ''} {:isset($config['register_phone_switch']) ? $config['register_phone_switch'] === false ? 'disabled' : '' : ''}>
+                                    <input type="hidden" name="description[register_sms_switch]" value="注册短信验证" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+            </div>
+            
+          
+            
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+
+        form.on('radio(register_phone_switch)', function (data) {
+            if (data.value == 'false') {
+                form.val("reg_info", {
+                    "register_sms_switch": data.value
+                });
+                $('input[lay-filter="register_sms_switch"]').attr('disabled', 'true');
+                $('#same_phone_register_num').hide();
+            } else {
+                $('input[lay-filter="register_sms_switch"]').removeAttr('disabled');
+                $('#same_phone_register_num').show();
+            }
+            form.render('radio');
+        });
+    });
+</script>
+{/block}

@@ -1,0 +1,139 @@
+{extend name="public:base" /}
+{block name="title"}更换手机号码{/block}
+{include file="public/header" /}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        更换手机号码
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="neirongText">
+        <form class="contentForm">
+            <input type="hidden" name="id" value="{$userDataInfo['id']}">
+            <div class="muiInputRowsan">
+                <div class="sanTl">原手机号</div>
+                <div class="mui-input-row">
+                    <input type="text" name="oldMobile" value="{$userDataInfo['mobile']}" autocomplete="off" disabled class="mui-input-clear muiInput" >
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">新手机号码</div>
+                <div class="mui-input-row">
+                    <input type="text" name="mobile" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入新手机号码">
+                </div>
+            </div>
+            {if (zf_cache('sms_info.verif_code') == 1)}
+            <div class="muiInputRowsan">
+                <div class="mui-input-row">
+                    <input type="text" id="verifyCode" name="verify_code" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入验证码">
+                    <img src="/verify?type=home_login" alt="" onclick="refreshVerify();" class="yzmaImg Home_Login_Yzm">
+                </div>
+            </div>
+            {/if}
+            <div class="muiInputRowsan">
+                <div class="sanTl">验证码</div>
+                <div class="mui-input-row" style="position: relative;">
+                    <input type="text" name="mobile_code" autocomplete="off" class="mui-input-clear muiInput" placeholder="手机验证码">
+                    <div class="yzmaImgWZzfm" onclick="send_sms_reg_code(this);" style="top:8px;">获取验证码</div>
+                </div>
+            </div>
+            <div class="gonggButtonda">
+                <button type="button" class="mui-btn gonggButton">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/js/validate.js"></script>
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function () {
+        var obj = $(this);
+        var data = $('.contentForm').serialize();
+        console.log(data);
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("User/saveMobile")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('修改成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('User/setup')}";
+                    }, 2000);
+                } else {
+                    refreshVerify();
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+
+    function refreshVerify()
+    {
+        $('.Home_Login_Yzm').attr('src', "/verify?type=home_login");
+    }
+</script>
+<script>
+    var smsObj = [];
+    // 发送手机短信
+    function send_sms_reg_code(obj){
+        smsObj = obj;
+        var mobile = $('input[name="oldMobile"]').val();
+        if(!check_mobile(mobile)){
+            mui.toast('请输入正确的手机号',{ duration:'long', type:'div' });
+            return;
+        }
+        {if (zf_cache('sms_info.verif_code') == 1)}
+            var code = $('#verifyCode').val();
+            var data = {mobile:mobile,code:code,check_code:'home_login'};
+        {else /}
+            var data = {mobile:mobile};
+        {/if}
+        var url = "/sendSms";
+        mui.showLoading("正在发送","div");
+        mask.show();//显示遮罩层
+        $.post(url, data, function(data){
+            console.log(data);
+            mask.close();//关闭遮罩层
+            mui.hideLoading();
+            if(data.code == 1){
+                $(smsObj).removeAttr('onclick');
+                intAs = {:zf_cache('sms_info.send_sms_time_out')} // 手机短信超时时间
+                jsInnerTimeout(intAs);
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            } else {
+                refreshVerify();
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            }
+        });
+    }
+
+    //倒计时函数
+    function jsInnerTimeout(intAs){
+        intAs--;
+        if(intAs<=-1){
+            $(smsObj).attr('onclick', 'send_sms_reg_code(this)');
+            $(smsObj).text("获取验证码");
+            return true;
+        }
+        $(smsObj).text(intAs+'s');
+        setTimeout("jsInnerTimeout("+intAs+")",1000);
+    };
+</script>
+{/block}

@@ -1,0 +1,4 @@
+[2020-01-02T09:40:25+08:00][ error ] [8]PDO::prepare(): send of 63 bytes failed with errno=32 Broken pipe[/www/wwwroot/tlsj/thinkphp/library/think/db/Connection.php:662]
+error
+[2020-01-02T09:40:25+08:00][ info ] [ DB ] INIT mysql
+info

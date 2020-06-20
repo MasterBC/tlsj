@@ -1,0 +1,10 @@
+{foreach ($list as $v)}
+<li class="tradparLi df likeA" data-url="{:U('MoneyCarry/carryDetail', ['id' => $v['id']])}">
+    <div class="tradparLiimg"><img src="__STATIC__/centImages/x_2.png" alt=""></div>
+    <div class="fx1">
+        <div class="tradparLitx">{$moneyNames[$v['mid']] ?? ''} 提现</div>
+        <div class="tradparLitime">{:date('Y-m-d H:i:s', $v['add_time'])}</div>
+    </div>
+    <div class="tradparLishu_1">{$v['add_money']}</div>
+</li>
+{/foreach}

@@ -1,0 +1,12 @@
+{foreach $addMoneyData as $v}
+<li class="tradparLi likeA">
+    <div class="df likeA" data-url="{:U('MoneyAdd/addMoneyDetail', ['id' => $v['id']])}">
+        <div class="fx1">
+            <div class="tradparLitx"><span class="span_1">充值成功</span></div>
+            <div class="tradparLitime">充值时间：{:date('Y-m-d H:i:s', $v['pay_time'])}</div>
+        </div>
+        <div class="tradparLishu_3">{$v['add_money']}</div>
+    </div>
+    <div class="tradparLitimejs" style="color: red;font-size:0.8em;">{$statusData[$v['status']]}</div>
+</li>
+{/foreach}

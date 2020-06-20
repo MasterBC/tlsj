@@ -1,0 +1,204 @@
+{extend name="public:base" /}
+{block name="title"}注册{/block}
+{block name="other_css"}
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/intl-tel-input-master/build/css/demo.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/intl-tel-input-master/build/css/intlTelInput.css">
+<style>
+    .intl-tel-input .selected-flag {
+        padding:0px;
+    }
+    .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+        font-size:20px;
+    }
+    .mui-checkbox.mui-left label, .mui-radio.mui-left label {
+        padding-left: 30px;
+    }
+    .mui-modal {
+        left:0px;
+        background: #363645;
+    }
+    .selected-dial-code{
+        color: #fff9ec;
+    }
+    .mui-content{
+        background: url(/static/images/login_bg1.png) no-repeat;
+    background-size: 100% 100%;
+    }
+</style>
+{/block}
+{block name="body"}
+    <div class="mui-content">
+        <div class="LoginImgbox">
+            <img src="{:get_img_domain()}{:zf_cache('web_info.web_logo')}" alt="" class="LoginImg_1">
+        </div>
+        <div class="LoginText">
+            <form class="regForm">
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="text" name="tjrAccount" autocomplete="off" value="{$code !='' ? $code :'' }"  class="mui-input-clear muiInput" placeholder="推荐码">
+                    </div>
+                </div>
+                {if ($phone_num > 1)}
+                <div class="muiInputRow">
+                    <div class="mui-input-row df">
+                        <span style="padding:10px 0px;line-height: 20px;color:#BBBCBD;font-size:14px;"></span><input type="text" name="account" autocomplete="off" value="" class="mui-input-clear muiInput fx1" placeholder="会员账号">
+                    </div>
+                </div>
+                {/if}
+                {if zf_cache('reg_info.register_phone_switch') === true}
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="text" id="phone" name="mobile" autocomplete="off" class="mui-input-clear muiInput" placeholder="手机号">
+                    </div>
+                </div>
+                {/if}
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="password" name="password" autocomplete="off" class="mui-input-password muiInput" placeholder="会员密码">
+                    </div>
+                </div>
+                {if (zf_cache('sms_info.verif_code') == 1)}
+                <div class="muiInputRow">
+                    <div class="mui-input-row" style="position: relative;">
+                        <input type="text" id="verifyCode" name="verify_code" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入验证码">
+                        <img src="/verify?type=reg" alt="" onclick="refreshVerify();" class="yzmaImg Home_Login_Yzm">
+                    </div>
+                </div>
+                {/if}
+                {if zf_cache('reg_info.register_sms_switch') === true}
+                <div class="muiInputRow">
+                    <div class="mui-input-row" style="position: relative;">
+                        <input type="text" name="mobileCode" autocomplete="off" class="mui-input-clear muiInput" placeholder="手机验证码">
+                        <div class="yzmaImgWZzfmlg" onclick="send_sms_reg_code(this)">
+                            获取验证码
+                        </div>
+                    </div>
+                </div>
+                {/if}
+                <div class="mui-checkbox mui-left">
+                    <input name="checkbox" value="no" type="hidden">
+                    <label class="zcexieyiTab">阅读并同意<a class="tred zcXie zexyi">【注册协议】</a></label>
+                    <input name="checkbox" value="yes" type="checkbox" style="position: absolute;top:14px;left:-2px;">
+                </div>
+                <div class="gonggButtonda" style="padding-top:20px;">
+                    <button type="button" class="mui-btn accountReg gonggButton">立即注册</button>
+                </div>
+                <div class="linkACZuo likeA" data-url="{:U('Login/accountIndex')}">已有账号，立即<span class="span_1">登录</span></div>
+            </form>
+        </div>
+    </div>
+    <div class="agreementCont">
+        <div class="hedd">
+            <div class="df">
+                <div class="fx1">注册协议</div>
+                <a class="mui-icon mui-icon-close mui-pull-right tfff" href="#modal"></a>
+            </div>
+        </div>
+        <div id="modal">
+            <div class="zhonghe">
+                {:isset($registrationAgreementInfo['content_cn']) ? htmlspecialchars_decode($registrationAgreementInfo['content_cn']) : ''}
+            </div>
+        </div>
+        <div class="guanbi">同意并继续</div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/css/intl-tel-input-master/build/js/intlTelInput.js"></script>
+<script src="__STATIC__/js/validate.js"></script>
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.accountReg', function () {
+        var obj = $(this);
+        var data = $('.regForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("注册中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("Reg/doReg")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('注册成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:isset($app_address) ? $app_address : ''}";
+                    }, 2000);
+                } else {
+                    refreshVerify();
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+
+    function refreshVerify()
+    {
+        $('.Home_Login_Yzm').attr('src', "/verify?type=reg");
+    }
+
+    mui('body').on('tap',".zexyi",function() {
+        $('.agreementCont').css('display','block');
+    });
+    mui('body').on('tap',".mui-icon-close",function() {
+        $('.agreementCont').css('display','none');
+    });
+    mui('body').on('tap',".guanbi",function() {
+        $('.agreementCont').css('display','none');
+        $('#regProtocol').attr('checked', 'true');
+    });
+    var smsObj = [];
+    // 发送手机短信
+    function send_sms_reg_code(obj){
+        smsObj = obj;
+        var mobile = $('input[name="mobile"]').val();
+        if(!check_mobile(mobile)){
+            mui.toast('请输入正确的手机号',{ duration:'long', type:'div' });
+            return;
+        }
+        {if (zf_cache('sms_info.verif_code') == 1)}
+            var code = $('#verifyCode').val();
+            var data = {mobile:mobile,code:code,check_code:'reg'};
+        {else /}
+            var data = {mobile:mobile};
+        {/if}
+        var url = "/sendSms";
+        mui.showLoading("正在发送","div");
+        mask.show();//显示遮罩层
+        $.post(url, data, function(data){
+            mask.close();//关闭遮罩层
+            mui.hideLoading();
+            if(data.code == 1){
+                $(smsObj).removeAttr('onclick');
+                intAs = {:zf_cache('sms_info.send_sms_time_out')}; // 手机短信超时时间
+                jsInnerTimeout(intAs);
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            } else {
+                refreshVerify();
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            }
+        });
+    }
+
+    //倒计时函数
+    function jsInnerTimeout(intAs){
+        intAs--;
+        if(intAs<=-1){
+            $(smsObj).attr('onclick', 'send_sms_reg_code(this)');
+            $(smsObj).text("获取验证码");
+            return true;
+        }
+        $(smsObj).text(intAs+'s');
+        setTimeout("jsInnerTimeout("+intAs+")",1000);
+    };
+</script>
+{/block}

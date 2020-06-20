@@ -1,0 +1,82 @@
+{extend name="public:base" /}
+{block name="title"}广告{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<div class="mui-content">
+    <div class="advertiCont">
+        <!--<video autoplay="" poster="{//$adInfo['cover_url']}" id="videoPlay" name="media" width="100%" height="100%">-->
+            <!--<source src="{//$adInfo['video_url']}" type="video/mp4">-->
+        <!--</video>-->
+        <iframe src="{$adInfo|raw}" frameBorder=0 scrolling=yes width="100%" height="100%" allowtransparency></iframe>
+    </div>
+    <div class="adverticz df">
+        <div class="advertzbk">
+            <div class="adverticzdjs">30</div>
+            <div class="advertzbkfh likeA" data-url="{:U('videoAdPlayEnd', ['type' => $type])}"><i class="mui-icon mui-icon-closeempty i"></i></div>
+        </div>
+        <div class="fx1"></div>
+        <div class="adverticzshen">
+            <img src="__STATIC__/centImages/2019a071_135.png" alt="" class="fanshen">
+            <img src="__STATIC__/centImages/2019a071_136.png" alt="" class="biyin">
+        </div>
+    </div>
+    <!--<div class="advertibtmBox df">-->
+        <!--<div class="advertayh">-->
+            <!--<img src="{//$adInfo['icon_url']}" alt="">-->
+        <!--</div>-->
+        <!--<div class="fx1">-->
+            <!--<div class="advertayhmc">{//$adInfo['title']}</div>-->
+            <!--&lt;!&ndash; <div class="advertayplBox df">-->
+                <!--<div class="advertaxx">-->
+                    <!--<img src="__STATIC__/centImages/2019a071_138.png" alt="">-->
+                    <!--<img src="__STATIC__/centImages/2019a071_138.png" alt="">-->
+                    <!--<img src="__STATIC__/centImages/2019a071_138.png" alt="">-->
+                    <!--<img src="__STATIC__/centImages/2019a071_138.png" alt="">-->
+                    <!--<img src="__STATIC__/centImages/2019a071_137.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="advertapf fx1">12.3w个评论</div>-->
+            <!--</div> &ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="advertaBtn likeA" data-url="{//$adInfo['url']}">-->
+            <!--<img src="{//$adInfo['btn_url']}" alt="">-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    // var videoElement = document.getElementById("videoPlay");
+    // if(videoElement.paused === false) {
+    //      videoElement.play();
+    // }
+    //console.log(videoElement.paused);
+    mui('body').on('tap', '.adverticzshen', function() {
+        if($(this).find('.biyin').css('display') == 'none'){
+            // videoElement.volume = 0;
+            $(this).find('.biyin').css('display','block');
+            $(this).find('.fanshen').css('display','none');
+        }else{
+            // videoElement.volume = 1;
+            $(this).find('.biyin').css('display','none');
+            $(this).find('.fanshen').css('display','block');
+        }
+    });
+    $(function(){
+        var num=30;
+        var t=setInterval(function(){
+            num--;
+            $(".adverticzdjs").html(num);
+            if(num==0){
+                clearInterval(t);
+                $('.adverticzdjs').css('display','none');
+                $('.advertzbkfh').css('display','block');
+                setTimeout(function () {
+                    window.location.href = "{:U('videoAdPlayEnd', ['type' => $type])}";
+                },1000);
+            }
+        },1100);
+    });
+</script>
+{/block}

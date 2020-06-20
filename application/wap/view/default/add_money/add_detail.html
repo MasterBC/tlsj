@@ -1,0 +1,55 @@
+{extend name="public:base" /}
+{block name="title"}充值详情{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        充值详情
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="billTop">
+        <div class="billTopwen">
+            <div class="billTopimg"><img src="{:isset($userDataHead['head']) ?get_img_domain().$usersDataInfo['head']:'__STATIC__/centImages/tou.png '}" alt=""></div>
+            <div class="billToptx">账号:{$user['account']}</div>
+        </div>
+        <div class="billTopshu"></div>
+        <div class="billTopztai" style="color: red;">{$statusData[$info['status']]}</div>
+    </div>
+    <div class="billContBox">
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">汇款银行</div>
+            <div class="billConrit">{$bankNames[$info['bank_id']]}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">充值钱包</div>
+            <div class="billConrit">{$moneyNames[$info['mid']]}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">充值金额</div>
+            <div class="billConrit">{$info['add_money']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">实际充值</div>
+            <div class="billConrit">{$info['actual_money']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">钱包汇率</div>
+            <div class="billConrit">{$info['money_per']}</div>
+        </div>
+        <div class="df billConlethz">
+            <div class="fx1 billConlet">充值备注</div>
+            <div class="billConrit">{$info['note']|default="无"}</div>
+        </div>
+        <div class="billContxia">
+            <div class="df billConlethz">
+                <div class="fx1 billConlet">汇款时间</div>
+                <div class="billConrit">{:date('Y-m-d H:i:s', $info['pay_time'])}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

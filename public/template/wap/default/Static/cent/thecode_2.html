@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>付款</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/centStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.showLoading.css" />
+    <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        付款
+    </h1>
+</header>
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <div class="neirongText">
+            <form class="contentForm">
+                <div class="muiInputRowbd">
+                    <div class="mui-input-row">
+                        <input type="text" name="" value="收款类型：" readonly autocomplete="off" class="mui-input-clear muiInput" placeholder="收款类型">
+                    </div>
+                    <input type="hidden" name="mid" value="2">
+                </div>
+                <div class="muiInputRowbd">
+                    <div class="mui-input-row">
+                        <input type="text" name="type" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="收款名称">
+                    </div>
+                </div>
+                <div class="muiInputRowbd">
+                    <div class="mui-input-row">
+                        <input type="text" name="money" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="金额">
+                    </div>
+                </div>
+                <div class="muiBtnBox">
+                    <button type="button" class="mui-btn muiBtn_2"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<nav class="mui-bar mui-bar-tab navWeiBox">
+    <div data-url="index.html" class="mui-tab-item likeA">
+        <div class="navWeiImg_1">
+            <img src="../centImages/k002_45.png" alt="" class="img_1">
+            <img src="../centImages/k002_22.png" alt="" class="img_2">
+        </div>
+        <div class="mui-tab-label span_1">首页</div>
+    </div>
+    <div data-url="thecode.html" class="mui-tab-item likeA navWeiImgActive">
+        <div class="navWeiImg_2">
+            <img src="../centImages/k002_5.png" alt="" class="img_1">
+            <img src="../centImages/k002_6.png" alt="" class="img_2">
+        </div>
+        <div class="mui-tab-label span_1">兑码</div>
+    </div>
+    <div data-url="setIndex.html" class="mui-tab-item likeA">
+        <div class="navWeiImg_3">
+            <img src="../centImages/k002_15.png" alt="" class="img_1">
+            <img src="../centImages/k002_16.png" alt="" class="img_2">
+        </div>
+        <div class="mui-tab-label span_1">设置</div>
+    </div>
+</nav>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/style.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005
+    });
+</script>
+</body>
+
+</html>

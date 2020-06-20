@@ -1,0 +1,144 @@
+{extend name="public:base" /}
+{block name="title"}网站设置{/block}
+{block name="other_css"}
+<style>
+    .layui-form-select .layui-input {
+        line-height: 30px;
+        border:none;
+        border-bottom:1px solid #D2D2D2;
+    }
+    .layui-input, .layui-select, .layui-textarea {
+        height: 30px;
+    }
+    .layui-input-inline  .layui-input{
+        border:none;border-bottom:1px solid #D2D2D2;width:100%;text-align: center;height: 30px;line-height: 30px;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">网站设置</div>
+                <div class="layui-card-body" pad15>
+                    <div class="layui-form" wid100 lay-filter="">
+                        
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="web_name" value="{:isset($config['web_name']) ? $config['web_name'] : ''}" placeholder="请输入网站名称" autocomplete="off" class="layui-input"/>
+                                <input type="hidden" name="description[web_name]" value="网站名称" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="web_title" value="{:isset($config['web_title']) ? $config['web_title'] : ''}" placeholder="请输入网站标题" autocomplete="off" class="layui-input"/>
+                                <input type="hidden" name="description[web_title]" value="网站标题" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站logo</label>
+                            <div class="layui-input-inline">
+                                <input name="web_logo" id="web_logo" value="{:isset($config['web_logo']) ? $config['web_logo'] : ''}" autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                                <input type="hidden" name="description[web_logo]" value="网站logo地址" />
+                            </div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button type="button" class="layui-btn layui-btn-primary uploadImg" lay-data="{field: 'web_logo',data:{dir:'logo', field:'web_logo'}}">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片
+                                </button>
+                                <button class="layui-btn layui-btn-primary checkImg" data-type="web_logo">查看图片</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网站ico</label>
+                            <div class="layui-input-inline">
+                                <input name="web_ico" id="web_ico" value="{:isset($config['web_ico']) ? $config['web_ico'] : ''}" autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                                <input type="hidden" name="description[web_ico]" value="网站ico地址" />
+                            </div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button type="button" class="layui-btn layui-btn-primary uploadImg" lay-data="{field: 'web_ico',data:{dir:'icon', field:'web_ico'}}">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片
+                                </button>
+                                <button class="layui-btn layui-btn-primary checkImg" data-type="web_ico">查看图片</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">版权信息</label>
+                            <div class="layui-input-block">
+                                <textarea name="copyright" autocomplete="off" class="layui-textarea" placeholder="请输入版权信息">{:isset($config['copyright']) ? $config['copyright'] : ''}</textarea>
+                                <input type="hidden" name="description[copyright]" value="版权信息" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">APP地址</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="app_address" value="{:isset($config['app_address']) ? $config['app_address'] : ''}" placeholder="APP下载地址，填写后 会员注册成功后 会自动跳转到 APP 下载地址页面" autocomplete="off" class="layui-input"/>
+                                <input type="hidden" name="description[APP地址]" value="APP地址" />
+                            </div>
+                        </div>
+
+
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+        upload.render({
+            elem: '.uploadImg',
+            url: '/uploadImg',
+            before: function () {
+            }
+            , done: function (res, index, upload) {
+                if (res.code == 1) {
+                    $('#' + this.data.field).val(res.data.src);
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            }
+        });
+        $(document).on('click', '.checkImg', function () {
+            var src = "{:get_img_domain()}" + $('#' + $(this).data('type')).val();
+            layer.photos({
+                photos: {
+                    "title": "查看图片" //相册标题
+                    , "data": [{
+                        "src": src //原图地址
+                    }]
+                }
+                , shade: 0.01
+                , closeBtn: 1
+                , anim: 5
+            });
+        });
+    });
+</script>
+{/block}

@@ -1,0 +1,33 @@
+{extend name="public:base" /}
+{block name="title"}收款管理{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-icon icon-font mui-pull-left likeA" data-url="{:U('User/myInfo')}">&#xe95b;</a>
+    <h1 class="mui-title">收款管理</h1>
+</header>
+<div class="mui-content">
+    <ul class="sycredtmUl">
+        <li class="sycredtmLi df likeA" data-url="{:U('User/bindAlipay')}">
+            <img src="__STATIC__/centImages/b03121.png" alt="" />
+            <div class="sycredtmLitx fx1">支付宝绑定</div>
+            <div class="sycredtmLizx"><i class="mui-icon mui-icon-arrowright i"></i></div>
+        </li>
+        <li class="sycredtmLi df likeA" data-url="{:U('User/bindWechat')}">
+            <img src="__STATIC__/centImages/b03122.png" alt="" />
+            <div class="sycredtmLitx fx1">微信绑定</div>
+            <div class="sycredtmLizx"><i class="mui-icon mui-icon-arrowright i"></i></div>
+        </li>
+        <li class="sycredtmLi df likeA" data-url="{:U('Bank/userBank')}">
+            <img src="__STATIC__/centImages/b03123.png" alt="" />
+            <div class="sycredtmLitx fx1">银行卡绑定</div>
+            <div class="sycredtmLizx"><i class="mui-icon mui-icon-arrowright i"></i></div>
+        </li>
+    </ul>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+
+{/block}

@@ -1,0 +1,159 @@
+{extend name="public:base" /}
+{block name="title"}绑定微信{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<div id="bind_help_info" style="display:none;">
+    <header class="mui-bar mui-bar-nav myAssetTop">
+        <a class=" mui-icon icon-font mui-pull-left" id="back_to_bind">&#xe95b;</a>
+        <h1 class="mui-title">
+            微信二维码保存指南
+        </h1>
+    </header>
+    <div class="mui-content">
+        <div>
+            <img src="__STATIC__/centImages/wxzn.png" alt="" style="width:100%;">
+        </div>
+    </div>
+</div>
+<div id="bind_info">
+    <header class="mui-bar mui-bar-nav myAssetTop">
+        <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+        <h1 class="mui-title">
+            绑定微信
+        </h1>
+        <div class="mui-icon icon-font mui-pull-right" id="check_bind_help"><img src="__STATIC__/centImages/x_38.png" alt="" style="height:20px;"></div>
+    </header>
+    <div class="mui-content">
+        <div class="neirongText">
+            <form class="contentForm" id="subForm">
+                <div class="muiInputRowsan">
+                    <div class="sanTl">微信账号</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="wx_name" value="{$user['wx_name'] ?? ''}" autocomplete="off" class="mui-input-clear muiInput" placeholder="微信账号">
+                    </div>
+                </div>
+                <div class="nesaplicBox">
+                    <div class="nesaplicTl">
+                        <div class="nesaplicTlzi"><span class="span_1">微信收款码</span></div>
+                    </div>
+                    <div class="nesaplicewmCont">
+                        <div class="df">
+                            <div class="fx1">
+                                <div class="nesaplicConttl">上传收款码清晰照</div>
+                                <div class="nesapliewmcan uploadImg" data-show_id="wx_code">
+                                    <img src="__STATIC__/centImages/x_87.png" alt="">
+                                </div>
+                            </div>
+                            <div class="nesapewmimg">
+                                <div class="nesapewmimgtx code_ts">{:empty($usersDataInfo['wx_code']) ? '示例图' : '微信收款码'}</div>
+                                <img src="{:empty($user['wx_code']) ? '__STATIC__/centImages/ewnm_1.png' : get_img_show_url($user['wx_code'])}" id="wx_code" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gonggButtonda">
+                    <input type="hidden" class="wx_code" name="wx_code" value="{$user['wx_code'] ?? ''}" />
+                    <button type="button" class="mui-btn gonggButton subForm">提交</button>
+                </div>
+            </form>
+            <input type='file' name='img' style='display:none' class='imgup' />
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    mui('body').on('tap', '#check_bind_help', function(){
+        $('#bind_info').hide();
+        $('#bind_help_info').show();
+    });
+    mui('body').on('tap', '#back_to_bind', function(){
+        $('#bind_help_info').hide();
+        $('#bind_info').show();
+    });
+</script>
+{js href='__STATIC__/js/previewImage.js' /}
+<script>
+    mui('body').on('tap', '#wx_code', function(){
+        var showImgs = [$(this).attr('src')];
+        var obj = {
+            urls : showImgs,
+            current : $(this).attr('src')
+        };
+        previewImage.start(obj);
+    });
+</script>
+<script>
+    var mask=mui.createMask();
+    var imgObj = [];
+    mui('body').on('change', '.imgup', function(){
+        var formData = new FormData();
+        var img = $(this).val();
+        if(img) {
+            formData.append("img", $(this)[0].files[0]);
+            formData.append("field", 'img');
+            mui.showLoading("上传中");
+            $.ajax({
+                url: "/uploadImg",
+                type: "post",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                async:false,
+                success: function(res) {
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if(res.code != 1) {
+                        mui.alert(res.msg);
+                    } else {
+                        $('#'+$(imgObj).data('show_id')).attr('src', '{:get_img_domain()}'+res.data.src);
+                        $('.'+$(imgObj).data('show_id')).val(res.data.src);
+                        $('.code_ts').html('微信收款码');
+                    }
+                },
+                error: function(e) {
+                    alert("网络错误，请重试！！");
+                }
+            });
+        }
+    });
+    mui('body').on('tap', '.uploadImg', function(){
+        imgObj = $(this);
+        $('.imgup').click();
+    });
+    mui('body').on('tap', '.subForm', function() {
+        var obj = $(this);
+        $(obj).attr('disabled', 'true');
+        var data = $('#subForm').serialize();
+        var url = "{:U('')}";
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast(res.msg, {duration: '1000', type: 'div'});
+                    setTimeout(function () {
+                        mui.back();
+                    }, 1000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+
+    });
+</script>
+{/block}

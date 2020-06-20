@@ -1,0 +1,383 @@
+{extend name="public:base" /}
+{block name="title"}我的{/block}
+{block name="body"}
+    <div class="mui-content" style="padding-bottom: 55px;">
+        <div class="apseuptopBoxBa">
+            <div class="apseuptopBox">
+                <div class="apseuptopdataBox df">
+                    <div class="apseuptopdataimg">
+                        <div class="topdataimgHe uploadImgHead" data-show_id="show_img">
+                            <input type='file' name='img' style='display:none' class='imgup' />
+                            <img src="{:isset($user['head']) ?get_img_domain().$user['head']:'__STATIC__/centImages/tou.png'}" class="imgData" id="show_img" alt="">
+                        </div>
+                    </div>
+                    <div class="fx1">
+                        <div class="topdauid">{$user['nickname'] ?? ''}</div>
+                        <div class="topdadengj">{$user['level'] ?? '0'} 级</div>
+                    </div>
+                    <div class="beoqiandwd clearfix">
+                        <img src="__STATIC__/centImages/2019a071_59.png" alt="" class="day_sign">
+                        {if ($userTodaySignRedEnvelopeStatus == 1)}
+                        <div class="beoqiandtx day_sign linquhban" data-msg="签到红包" data-type="sign">签到</div>
+                        {else /}
+                        <div class="beoqiandtx">已签到</div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sepbtBox">
+            <!--<div class="assetbbBox">
+                <div class="assetbbHe">
+                    <div class="df assetbbTle">
+                        <img src="__STATIC__/centImages/2019a071_41.png" alt="">
+                        <div class="fx1 assetbbTletx">资产</div>
+                    </div>
+                    <div class="df assetbCont">
+                        <div class="fx1 likeA" data-url="{:U('Block/logList', ['bid' => 1])}">
+                            <div class="assetbbshu user-block-one">0</div>
+                            <div class="assetbbtx">牛币</div>
+                        </div>
+                        <div class="fx1 likeA" data-url="{:U('Money/logMoney', ['mid' => 1])}">
+                            <div class="assetbbshu user-money-one">0</div>
+                            <div class="assetbbtx">算力</div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="btomnavBox">
+                <div class="btomnavHe">
+                    <div class="btomnav df">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_43.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">
+                            <span>打工红包</span>
+                            <span class="text_1">(最高{$work_total_hongbao_money ?? '0.00'}元)</span>
+                        </div>
+                        <div class="linquan">领取</div>
+                    </div>
+                    <div class="btomnav df">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_42.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">
+                            <span>随机红包</span>
+                            <span class="text_1">(最高{$random_total_hongbao_money ?? '0.00'}元)</span>
+                        </div>
+                        {if $randomRedEnvelopeStatus == 1}
+                        <div class="linquan linquanActive linquhban" data-msg="给您发了一个随机红包(最高{$random_total_hongbao_money ?? '0.00'}元)" data-type="random">领取</div>
+                        {elseif $randomRedEnvelopeStatus == 2}
+                        <div class="linquan">已领取</div>
+                        {/if}
+                    </div>
+                    <div class="btomnav df">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_44.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">
+                            <span>升级红包</span>
+                            <span class="text_1">(最高{$upgrade_total_hongbao_money ?? '0.00'}元)</span>
+                        </div>
+                        {if $userPendingUpgradeRedEnvelopeInfo}
+                        <div class="linquan linquanActive linquhban" data-msg="给您发了一个升级红包(最高{$upgrade_total_hongbao_money ?? '0.00'}元)" data-type="upgrade">领取</div>
+                        {else/}
+                        <div class="linquan">领取</div>
+                        {/if}
+                    </div>
+                </div>
+            </div>-->
+            <div class="btomnavBox">
+                <div class="btomnavHe">
+                    <div class="btomnav df likeA" data-url="{:U('MoneyCarry/carryAdd')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_46.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">我的钱包</div>
+                        <div class="rsgsetts_2">可提现 <span class="user-money-three">0.00</span> 元</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <div class="btomnav df likeA" data-url="{:U('User/realNameAuth')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_47.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">实名认证</div>
+                        <div class="rsgsetts_2">{$authNameStatusData[$authNameStatus] ?? '未认证'}</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    {if ($user['tjr_id'] > 0)}
+                    <div class="btomnav df wodesfuan">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071wd_1.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">我的师父</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    {/if}
+                    <div class="btomnav df likeA" data-url="{:U('Team/firstTjrList')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071wd_2_1.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">我的团队</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btomnavBox">
+                <div class="btomnavHe">
+				    <div class="btomnav df likeA" data-url="{:U('User/moneyLog')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_41.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">金币记录</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <div class="btomnav df" id="copyTgUrl" data-clipboard-text="{$tgUrl}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071wd_3.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">复制邀请链接</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <div class="btomnav df likeA" data-url="{:U('Team/tjrFriendAdd')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_45.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">生成邀请卡</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <div class="btomnav df likeA" data-url="{:U('Message/messageIndex')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_49.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">联系我们</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <div class="btomnav df likeA" data-url="{:U('User/setUp')}">
+                        <div class="btomnavimg">
+                            <img src="__STATIC__/centImages/2019a071_48.png" alt="">
+                        </div>
+                        <div class="btomnavtx fx1">设置</div>
+                        <div class="btomnavzxx">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>
+                    <!--<div class="btomnav df likeA" data-url="{:U('Team/teamIndex')}">
+                        <div class="btomnavimg" style="margin-top: 10px;">
+                            <img src="__STATIC__/centImages/2019a071_45.png" alt="">
+                        </div>
+                        <div class="fx1">
+                            <div class="btomnavtx">邀请好友</div>
+                            <div class="toshareode">{$user['reg_code'] ?? ''}</div>
+                        </div>
+                        <div class="rsgsetts_2" style="margin-top: 10px;">邀请好友 + {:zf_cache('security_info.code_day_give_mid_num') ?? '0'} 算力</div>
+                        <div class="btomnavzxx" style="margin-top: 10px;">
+                            <i class="mui-icon mui-icon-arrowright i"></i>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--红包弹窗 s-->
+<div class="redenvpepopBox">
+    <div class="redenvpepoyin"></div>
+    <div class="redenvpCont">
+        <img src="__STATIC__/centImages/2019a071_124.png" alt="" class="imgbbg">
+        <div class="redenvpCodata">
+            <div class="redenvpCodacaca">
+                <div class="nvpCodacacaan"><i class="mui-icon mui-icon-closeempty i"></i></div>
+            </div>
+            <div class="redenvcodlogo"><img src="{:get_img_domain()}{:zf_cache('web_info.web_logo')}" alt=""></div>
+            <div class="redenvcodmc">{:zf_cache('web_info.web_name')}</div>
+            <div class="redenvcodmss redenvcodmsg">给您发了一个随机红包(最高{:zf_cache('security_info.sign_total_hongbao_money')}元)</div>
+        </div>
+        <div class="redenvplinan">
+            <img src="__STATIC__/centImages/2019a071_123_1.png" alt="" class="redenvplinanbg">
+            <img src="__STATIC__/centImages/2019a071_123_2.png" alt=""  class="redenvplinanan">
+        </div>
+        <div class="redenvplitixinBox">
+            <div class="redenvplitixinn">可提现</div>
+        </div>
+    </div>
+</div>
+<!--红包弹窗 e-->
+
+<!--师父弹窗 s-->
+<div class="masterupBox">
+    <div class="masterupyiny"></div>
+    <div class="masterupCont">
+        <div class="masteruptl">我的师父</div>
+        <div class="df">
+            <div class="masteruptimg">
+                <img src="{:isset($tjrUserInfo['head']) ?get_img_domain().$tjrUserInfo['head']:'__STATIC__/centImages/tou.png'}" alt="">
+            </div>
+            <div class="fx1">
+                <div class="masteruptmc">
+                    <span>{$tjrUserInfo['nickname'] ?? ''}</span>
+                    <img src="__STATIC__/centImages/2019a071_130.png" alt="">
+                </div>
+                <div class="masteruptdh">{:hideStr($tjrUserInfo['account'],5,4) ?? ''}</div>
+            </div>
+            <div class="masteruptdj">{:get_max_product_info($tjrUserInfo['user_id'])} 级</div>
+        </div>
+        <div class="masterupmshu" data-url="{:U('test/privacyys')}">
+            <!--<i class="mui-icon mui-icon-info i"></i>-->
+            <!--如何设置社交信息？戳这里&gt;&gt;-->
+        </div>
+<!--        <div class="masterupmdzan">
+            <img src="__STATIC__/centImages/2019a071_131.png" alt="" class="zy_1">
+            <img src="__STATIC__/centImages/2019a071_132.png" alt="" class="zy_2">
+            靠谱
+        </div>-->
+    </div>
+</div>
+
+
+
+<!--师父弹窗 e-->
+
+{/block}
+{block name="footer_nav"}
+{include file="public/footer_nav" /}
+{/block}
+{block name="footer"}
+<script src="__STATIC__/js/clipboard.min.js"></script>
+{__block__}
+<script>
+    // 复制邀请链接 s
+    var clipboard = new Clipboard('#copyTgUrl');
+    clipboard.on('success', function (e) {
+        e.clearSelection();
+        mui.toast('复制成功', {duration: 'long', type: 'div'});
+    });
+    clipboard.on('error', function (e) {
+        mui.toast('复制失败', {duration: 'long', type: 'div'});
+    });
+    // 复制邀请链接 e
+
+    // 我的师父弹窗 s
+    mui('body').on('tap', '.wodesfuan', function() {
+        $('.masterupBox').addClass('masterupBoxActive');
+    });
+    mui('body').on('tap', '.masterupyiny', function() {
+        $('.masterupBox').removeClass('masterupBoxActive');
+    });
+    mui('body').on('tap', '.masterupmdzan', function() {
+        if($(this).hasClass('masterupmdzanActive')){
+            $(this).removeClass('masterupmdzanActive');
+        }else{
+            $(this).addClass('masterupmdzanActive');
+        }
+    });
+    // 我的师父弹窗 e
+
+    // 红包弹窗 s
+    mui('body').on('tap', '.linquhban', function() {
+        console.log('点击了');
+        $('.redenvcodmsg').html($(this).data('msg'));
+        $('.redenvplinan').attr('data-type', ($(this).data('type')));
+        $('.redenvpepopBox').addClass('redenvpepopBoxActive');
+    });
+    mui('body').on('tap', '.redenvplinan', function() {
+        $(this).find('.redenvplinanbg').addClass('otationsz');
+        receivingARedEnvelope($(this).data('type'));
+        /*setTimeout(function () {
+            $('.redenvpepopBox').removeClass('redenvpepopBoxActive');
+            $('.redenvplinanbg').removeClass('otationsz');
+        },1800);*/
+    });
+    mui('body').on('tap', '.nvpCodacacaan', function() {
+        $('.redenvpepopBox').removeClass('redenvpepopBoxActive');
+    });
+
+    /**
+     * 领取红包
+     */
+    function receivingARedEnvelope(type) {
+        $.ajax({
+            type: 'post',
+            url: '{:U("User/receivingARedEnvelope")}',
+            data: {type: type},
+            dataType: 'json',
+            success: function (res) {
+                $('.redenvpepopBox').removeClass('redenvpepopBoxActive');
+                $('.redenvplinanbg').removeClass('otationsz');
+                if(res.code == 1) {
+                    mui.alert('成功领取到'+res.data.money,'温馨提示', function() {
+                        window.location.reload();
+                    });
+                } else {
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    }
+    // 红包弹窗 e
+
+    var mask=mui.createMask();
+    var imgObj = [];
+    mui('body').on('change', '.imgup', function(){
+        var formData = new FormData();
+        var img = $(this).val();
+        if(img) {
+            formData.append("img", $(this)[0].files[0]);
+            formData.append("field", 'img');
+            mui.showLoading("上传中");
+            $.ajax({
+                url: "/uploadImg",
+                type: "post",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                async:false,
+                success: function(res) {
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if(res.code != 1) {
+                        mui.alert(res.msg);
+                    } else {
+                        mui.showLoading("上传中");
+                        $.post("{:U('User/saveUserHeadImg')}",{src:res.data.src}, function(data){
+                            mui.hideLoading();
+                            if(data.code == 1) {
+                                $('#'+$(imgObj).data('show_id')).attr('src', '{:get_img_domain()}'+res.data.src);
+                            } else {
+                                mui.toast(data.msg,{ duration:'2000', type:'div' });
+                            }
+                        });
+                    }
+                },
+                error: function(e) {
+                    alert("网络错误，请重试！！");
+                }
+            });
+        }
+    });
+    mui('body').on('tap', '.uploadImgHead', function(){
+        imgObj = $(this);
+        $('.imgup').click();
+    });
+</script>
+{/block}

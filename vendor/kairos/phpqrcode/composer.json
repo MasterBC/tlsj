@@ -1,0 +1,19 @@
+{
+  	"name": "kairos/phpqrcode",
+	"type": "library",
+	"description": "A PHP class to generate QR Code",
+	"keywords": ["php", "qrcode"],
+	"homepage": "http://github.com/kairosagency/phpqrcode",
+	"license": ["LGPL"],
+	"authors": [
+		{
+			"name": "Kairos Agency"
+		}
+	],
+	"require": {
+		"php": ">=4.3.10"
+	},
+	"autoload": {
+		"files": ["qrlib.php"]
+	}
+}

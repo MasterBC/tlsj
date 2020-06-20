@@ -1,0 +1,26 @@
+{foreach $addInfo as $v}
+<div class="myAddreBox df">
+    <div class="myAddredzhiimg"><img src="__STATIC__/centImages/mb_113.png" alt=""></div>
+    <div class="fx1">
+        <div class="df confirmddText">
+            <div class="fx1">收货人：{$v['username']}</div>
+            <div>{$v['mobile']}</div>
+        </div>
+        <div class="confirmddshdz">
+            收货地址：{$regionInfo[$v['province']]}&nbsp;{$regionInfo[$v['city']]}&nbsp;{$regionInfo[$v['district']]}&nbsp;&nbsp;{$v['address']}
+        </div>
+        <div class="myAddrecaozuo">
+            {if condition="$v['default'] eq 1"}
+            <span class="span_1">默认</span>
+            {else/}
+            <span class="span_1 defaultAddress" data-id="{$v['id']}">默认地址</span>
+            {/if}
+            <span class="span_1 likeA" data-url="{:U('Address/editAddress',['id'=>$v['id'],'type' => $type ,'cart_id'=>$cartId])}">编辑</span>
+            <span class="spansc delAddress" data-id="{$v['id']}">删除</span>
+        </div>
+    </div>
+    <div class="myAddredzhizhen">
+        <i class="mui-icon mui-icon-arrowright i {if $type == 1}''{else}likeA{/if} " data-url="{:U('Cart/confirmCart',['id' => $v['id'],'cart_id' => $cartId])}"></i>
+    </div>
+</div>
+{/foreach}

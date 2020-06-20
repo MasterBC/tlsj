@@ -1,0 +1,67 @@
+{if condition="count($cartList) eq 0 "}
+    <div style="padding-top:50px; text-align: center;">
+        <img src="__STATIC__/centImages/mb_111.png" alt="" style="width:40%;margin-bottom:10px;">
+        <div style="color:#bbbbbb;margin-bottom:5px;">您的购物车还是空的</div>
+        <div class=""><a data-url="{:U('Shop/shopIndex')}" class="zgui-gwc-kq likeA">快去装满它</a></div>
+    </div>
+    {else/}
+{foreach $cartList as $k => $val}
+{if is_numeric($k)}
+<div class="shoptrollist">
+    <div class="shoptrollisttl df">
+        <img src="{:empty($val['logo'])?' __STATIC__/centImages/mb_107.png' : get_img_domain().$val['logo']}" alt="">
+        <div class="fx1 shoptrollisttltx">{$val['name']}</div>
+    </div>
+    {foreach $val['goods'] as $k => $v}
+    {if is_numeric($k)}
+    <div class="df chanplist" style="border:none;">
+        <div class="mui-input-row mui-checkbox mui-left spxuanz">
+            <label style="height:30px;width:30px;padding:0px;"></label>
+            <input name="checkbox1[{$v.id}]" style="left:0px;font-size:20px;" type="checkbox"  {if condition="$v['selected'] eq 1"}checked{/if} value="{$v['id']}" onclick="ajax_cart_list();" >
+        </div>
+        <div class="shoptrollistimg likeA" data-url="{:U('Goods/goodsInfo',['id' => $v['goods_id']])}">
+            <img src="{:isset($v['picture']) ?get_img_domain().$v['picture']:'__STATIC__/centImages/by_24.png'}" alt="">
+        </div>
+        <div class="fx1">
+            <div class="df">
+                <div class="shoptrollistbt textove2 fx1">{$v['goods_name']}</div>
+                <button class="shoptrollisscu delete" type="button" data-id="{$v['id']}">删除</button>
+            </div>
+            <div class="df">
+                <div class="fx1 shoptrollijia">￥{$v['goods_price']}</div>
+                <div class="mui-numbox"  data-numbox-min="1" data-numbox-max='{$v["stock"]}'>
+                    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                    <input class="mui-numbox-input" name="goods_num[{$v.id}] " onchange="ajax_cart_list();" type="number" value="{$v['goods_num']}"/>
+                    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                </div>
+            </div>
+            <div class="shoptrollistbt">{:empty($v['spec_name']) ? '常规' : $v['spec_name']}</div>
+        </div>
+    </div>
+    {/if}
+    {/foreach}
+</div>
+{/if}
+{/foreach}
+{/if}
+<!--底部 s-->
+<div class="shoptrollweiBox">
+    <div class="df">
+        <div class="mui-input-row mui-checkbox mui-left">
+            <label style="height:50px;line-height: 50px;font-size:0.9em; width:60px;padding:0px 0px 0px 30px;">全选</label>
+            <input  type="checkbox" name="select_all" value="1" id="select_all" onclick="check_all();" style="left:0px;top:10px; font-size:20px;" {if condition="$selectAll eq 1"}checked{/if} >
+        </div>
+        <div class="fx1 shoptrollweizt">
+            <span class="span_1">运费:</span>
+            <span class="span_3">0.00</span>
+            <span class="span_3">合计:</span>
+            <span class="span_4">￥{$cartList['total_price']|default='0.00'}</span>
+        </div>
+        <div class="settlementan xiaDang" >去结算</div>
+    </div>
+</div>
+<!--底部 e-->
+<script>
+    mui(".mui-numbox").numbox();
+</script>
+

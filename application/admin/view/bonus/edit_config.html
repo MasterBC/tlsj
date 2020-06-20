@@ -1,0 +1,122 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="name_cn" value="{$info['name_cn']}" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+<!--                        <div class="layui-form-item">
+                            <label class="layui-form-label">计算方式</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="type" value="1" title="比例" autocomplete="off" {$info['type'] == 1 ? 'checked' : ''} />
+                                <input type="radio" name="type" value="2" title="固定金额" autocomplete="off" {$info['type'] == 2 ? 'checked' : ''} />
+                            </div>
+                        </div>-->
+<!--                        <div class="layui-form-item">
+                            <label class="layui-form-label">结算方式</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="sj" value="1" title="秒结" autocomplete="off" {$info['type'] == 1 ? 'checked' : ''} />
+                                <input type="radio" name="sj" value="2" title="日结" autocomplete="off" {$info['type'] == 2 ? 'checked' : ''} />
+                                <input type="radio" name="sj" value="3" title="周结" autocomplete="off" {$info['type'] == 3 ? 'checked' : ''} />
+                                <input type="radio" name="sj" value="4" title="月结" autocomplete="off" {$info['type'] == 4 ? 'checked' : ''} />
+                                <input type="radio" name="sj" value="5" title="季结" autocomplete="off" {$info['type'] == 5 ? 'checked' : ''} />
+                                <input type="radio" name="sj" value="6" title="年结" autocomplete="off" {$info['type'] == 6 ? 'checked' : ''} />
+                            </div>
+                        </div>-->
+<!--                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>钱包分配</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">1</label>
+                                    <div class="layui-input-inline">
+                                        <select name="a_mid" autocomplete="off">
+                                            <option value="">--请选择--</option>
+                                            {foreach $moneyNames as $k=>$v}
+                                            <option value="{$k}" {$info['a_mid'] == $k ? 'selected' : ''}>{$v}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" name='a_per' value='{$info["a_per"]|floatval}' autocomplete="off" placeholder="分配比例"/>
+                                    </div>
+                                    <div class="layui-form-mid">%</div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">2</label>
+                                    <div class="layui-input-inline">
+                                        <select name="b_mid" autocomplete="off">
+                                            <option value="">--请选择--</option>
+                                            {foreach $moneyNames as $k=>$v}
+                                            <option value="{$k}" {$info['b_mid'] == $k ? 'selected' : ''}>{$v}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" name='b_per' value='{$info["b_per"]|floatval}' autocomplete="off" placeholder="分配比例"/>
+                                    </div>
+                                    <div class="layui-form-mid">%</div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">3</label>
+                                    <div class="layui-input-inline">
+                                        <select name="c_mid" autocomplete="off">
+                                            <option value="">--请选择--</option>
+                                            {foreach $moneyNames as $k=>$v}
+                                            <option value="{$k}" {$info['c_mid'] == $k ? 'selected' : ''}>{$v}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" name='c_per' value='{$info["c_per"]|floatval}' autocomplete="off" placeholder="分配比例"/>
+                                    </div>
+                                    <div class="layui-form-mid">%</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>货币分配</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">1</label>
+                                    <div class="layui-input-inline">
+                                        <select name="d_bid" autocomplete="off">
+                                            <option value="">--请选择--</option>
+                                            {foreach $blockNames as $k=>$v}
+                                            <option value="{$k}" {$info['d_bid'] == $k ? 'selected' : ''}>{$v}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" name='d_per' value='{$info["d_per"]|floatval}' autocomplete="off" placeholder="分配比例"/>
+                                    </div>
+                                    <div class="layui-form-mid">%</div>
+                                </div>
+                            </div>
+                        </fieldset>-->
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'colorpicker'], function () {
+        var form = layui.form, colorpicker = layui.colorpicker;
+
+    });
+</script>
+{/block}

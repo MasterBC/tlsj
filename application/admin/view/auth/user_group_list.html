@@ -1,0 +1,177 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    所属筛选
+                </div>
+                <div class="layui-inline">
+                    <select name="group_name" lay-filter="group_type">
+                        <option value="">全部目录</option>
+                        <option value="admin">后台</option>
+                        <option value="seller">商家后台</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <button class="layui-btn layuiadmin-btn-role layui-btn-sm" data-type="add">添加</button>
+            </div>
+
+            <table id="group_list" lay-filter="group_list"></table>
+            <script type="text/html" id="options">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form'], function () {
+        var table = layui.table, form = layui.form;
+        var tableId = 'group_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            cols: [[
+                {field: 'title', title: '角色名称'},
+                {field: 'description', title: '职责描述'},
+                {field: 'group_name', title: '角色所属'},
+                {title: '操作', templet: '#options'}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 10, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        table.on('tool('+tableId+')', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+                var tr = $(obj.tr);
+
+                var url = '{:url("editUserGroup")}?id=' + data.id;
+                layer.open({
+                    type: 2
+                    , title: '编辑角色'
+                    , content: url
+                    , area: ['900px', '520px']
+                    , shadeClose: true
+                    , btnAlign: 'c'
+                    , maxmin: true
+                    , btn: ['确定', '取消']
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index]
+                            , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                        //监听提交
+                        iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                            var field = data.field; //获取提交的字段
+
+                            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                            $.post(url, field, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    table.reload(tableId); //数据刷新
+                                    layer.close(index); //关闭弹层
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+
+                        submit.trigger('click');
+                    }
+                    , success: function (layero, index) {
+
+                    }
+                })
+            } else if (obj.event == 'del') {
+                layer.confirm('是否确认删除该角色?', {icon:3},function(){
+                    var url = '{:url("delUserGroup")}';
+                    var loadAdd = layer.msg('删除中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                    $.post(url, {id:data.id}, function (res) {
+                        layer.close(loadAdd);
+                        if (res.code == 1) {
+                            table.reload(tableId); //数据刷新
+                            layer.msg(res.msg, {icon: 6, offset: '15px'});
+                        } else {
+                            layer.msg(res.msg, {icon: 5, offset: '15px'});
+                        }
+                    });
+                });
+            }
+        });
+        form.on('select(group_type)', function (data) {
+            //执行重载
+            table.reload(tableId, {
+                where: {
+                    group_name: data.value
+                }
+            });
+        });
+
+        //事件
+        var active = {
+            add: function () {
+                var url = '{:url("addUserGroup")}';
+                layer.open({
+                    type: 2
+                    , title: '添加新角色'
+                    , content: url
+                    , area: ['900px', '520px']
+                    , shadeClose: true
+                    , btnAlign: 'c'
+                    , maxmin: true
+                    , btn: ['确定', '取消']
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index]
+                            , submit = layero.find('iframe').contents().find("#submitBtn");
+
+                        //监听提交
+                        iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                            var field = data.field; //获取提交的字段
+
+                            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                            $.post(url, field, function (res) {
+                                layer.close(loadAdd);
+                                if (res.code == 1) {
+                                    table.reload(tableId); //数据刷新
+                                    layer.close(index); //关闭弹层
+                                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                                } else {
+                                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                                }
+                            });
+                        });
+
+                        submit.trigger('click');
+                    }
+                });
+            }
+        }
+        $('.layui-btn.layuiadmin-btn-role').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+</script>
+{/block}
+
+

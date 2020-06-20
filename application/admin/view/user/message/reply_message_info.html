@@ -1,0 +1,63 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">留言标题</label>
+                            <div class="layui-input-block">
+                                <input type="text" value="{$info['title']}" disabled autocomplete="off" class="layui-input"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">留言类型</label>
+                            <div class="layui-input-block">
+                                <input type="text" value="{:isset($messageCate[$info['type']]) ? $messageCate[$info['type']] : ''}" disabled autocomplete="off" class="layui-input"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">留言内容</label>
+                            <div class="layui-input-block">
+                                <textarea disabled class="layui-textarea">{$info['content']}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">留言图片</label>
+                            <div class="layui-input-block" id="message_img">
+                                {foreach $info['img'] as $k=>$v}
+                                <img src="{:get_img_domain()}{$v}" style="width:100px" />
+                                {/foreach}
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">回复内容</label>
+                            <div class="layui-input-block">
+                                <textarea name="reply_content" class="layui-textarea" autocomplete="off">{$info['reply']}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+        layer.photos({
+            photos: '#message_img'
+            ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+        });
+    });
+</script>
+{/block}

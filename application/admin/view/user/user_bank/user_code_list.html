@@ -1,0 +1,177 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-tab layui-tab-brief">
+            <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                            <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card-body">
+                <table id="user_list" lay-filter="user_list"></table>
+                <script type="text/html" id="imgTpl">
+                    <img style="display: inline-block; width: 50%; height: 100%;" src={{ d.wx_code }}>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="check_wx_img">查看</a>
+                </script>
+                <script type="text/html" id="code">
+                    <img style="display: inline-block; width: 50%; height: 100%;" src={{ d.zfb_code }}>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="check_zfb_img">查看</a>
+                </script>
+                <script type="text/html" id="options">
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form'], function () {
+        var table = layui.table, form = layui.form;
+        var tableId = 'user_list';
+        var options = {
+            id: tableId,
+            url: '{:url("")}',
+            elem: '#'+tableId,
+            toolbar: '#toolbarDemo',
+            height: 'full-200',
+            cols: [[
+                {type: 'checkbox', fixed: 'left', rowspan: 2},
+                {field: 'account', title: '账号', rowspan: 2},
+                {field: 'wx_name', title: '微信账号'},
+                {field: 'wx_code', title: '微信收款码', templet: '#imgTpl'},
+                {field: 'zfb_name', title: '支付宝账号'},
+                {field: 'zfb_code', title: '支付宝收款码', templet: '#code'},
+                {title: '操作', templet: '#options', width: 270, rowspan: 2}
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 20, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+        table.render(options);
+        table.on('tool(user_list)', function (obj) {
+            var data = obj.data;
+            switch (obj.event) {
+                case 'edit':
+                    var url = '{:url("editUserCode")}?id=' + data.user_id;
+                    layer.open({
+                        type: 2
+                        , title: '编辑' + data.account + '的信息'
+                        , content: url
+                        , area: ['700px', '500px']
+                        , shadeClose: true
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index],
+                                submit = layero.find('iframe').contents().find("#submitBtn");
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(submitBtn)', function (data) {
+                                var field = data.field; //获取提交的字段
+                                var loadAdd = layer.msg('提交中', {
+                                    icon: 16,
+                                    time: 0,
+                                    shade: 0.1,
+                                    offset: '15px'
+                                });
+                                $.post(url, field, function (res) {
+                                    layer.close(loadAdd);
+                                    if (res.code == 1) {
+                                        table.reload(tableId); //数据刷新
+                                        layer.close(index); //关闭弹层
+                                        layer.msg(res.msg, {
+                                            icon: 6,
+                                            offset: '15px'
+                                        });
+                                    } else {
+                                        layer.msg(res.msg, {
+                                            icon: 5,
+                                            offset: '15px'
+                                        });
+                                    }
+                                });
+                            });
+                            submit.trigger('click');
+                        }
+                    });
+                    break;
+                    case 'check_wx_img':
+                        var imgs = [];
+                        imgs.push({
+                            "pid": 'img', //图片id
+                            "src": data.wx_code, //原图地址
+                        });
+                        var pay_img = {
+                            "title": "微信收款码",
+                            "id": 11,
+                            "start": 0,
+                            "data" : imgs
+                        };
+                        layer.photos({
+                            photos: pay_img
+                            ,anim: 5
+                        });
+                        break;
+                     case 'check_zfb_img':
+                        var imgs = [];
+                        for (elem in data.zfb_code) {
+                            imgs.push({
+                               "pid": 'img', //图片id
+                                "src": data.zfb_code, //原图地址
+                            });
+                        }
+                        var pay_img = {
+                            "title": "支付宝收款码",
+                            "id": 11,
+                            "start": 0,
+                            "data" : imgs
+                        };
+                        layer.photos({
+                            photos: pay_img
+                            ,anim: 5
+                        });
+                    break;
+            }
+        });
+        $(document).on('click', '.user_type_tab li', function () {
+            $('input[name="user_type"]').val($(this).data('type'));
+            $(this).addClass('layui-this').siblings('li').removeClass('layui-this');
+            $('button[lay-filter="search_btn"]').trigger('click');
+        });
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload(tableId, {
+                where: field
+                , page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}
+
+

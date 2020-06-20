@@ -1,0 +1,32 @@
+<!-- <div class="ranklistHe">
+    <div class="ranklistnr df">
+        <div class="ranklislsuzw">
+            <div class="ranklislsu">99+</div>
+        </div>
+        <div class="ranklirwuHe">
+            <div class="ranklirwu"><img src="{$user['head']}" alt=""></div>
+        </div>
+        <div class="fx1">
+            <div class="ranklimc ">{$user['account']}</div>
+            <div class="ranklidjj">{$productNames[$user['product_id']] ?? ''}</div>
+        </div>
+        <div class="ranklishuj">{:moneyTransformation($userMoney) ?? '0'}</div>
+    </div>
+</div>-->
+{foreach $leaderboardList as $k=>$v}
+<div class="ranklistHe">
+    <div class="ranklistnr df">
+        <div class="ranklislsuzw">
+            <div class="ranklislsu">{$k+1}</div>
+        </div>
+        <div class="ranklirwuHe">
+            <div class="ranklirwu"><img src="{:empty($v['head']) ? '__STATIC__/centImages/tou.png' : $v['head']}" alt=""></div>
+        </div>
+        <div class="fx1">
+            <div class="ranklimc ">{$v['nickname']}</div>
+            <div class="ranklidjj">{$productNames[$v['product_id']] ?? ''}</div>
+        </div>
+        <div class="ranklishuj">{:moneyTransformation($v['total']) ?? '0'}</div>
+    </div>
+</div>
+{/foreach}

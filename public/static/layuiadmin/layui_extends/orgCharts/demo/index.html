@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>layui orgCharts </title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="../../../layui/css/layui.css" media="all">
+	</head>
+
+	<body>
+
+		<div style="background: #eee;height: 50px;width: 100%;text-align: center;line-height: 50px;">头部面板</div>
+		<div style="display: flex;flex-direction: row;">
+
+			<div style="width: 50px;height: 800px;padding: 2px;text-align: center;">
+				主题
+				<div onclick="changeTheme('normal')" style="width: 30px;height: 30px;background: #3caee4;margin: 5px auto;cursor: pointer;"></div>
+				<div onclick="changeTheme('red')" style="width: 30px;height: 30px;background: red;margin: 5px auto;cursor: pointer;"></div>
+				<div onclick="changeTheme('green')" style="width: 30px;height: 30px;background: #1ce45a;margin: 5px auto;cursor: pointer;"></div>
+				<div onclick="changeTheme('black')" style="width: 30px;height: 30px;background: #000000;margin: 5px auto;cursor: pointer;"></div>
+				<div onclick="changeTheme('gray')" style="width: 30px;height: 30px;background: #6f6f6f;margin: 5px auto;cursor: pointer;"></div>
+
+			</div>
+
+			<div style="flex:1;overflow: hidden;display: block;text-align: center;">
+				<div id="org_charts"></div>
+
+			</div>
+		</div>
+
+		<script src="../../../layui/layui.js"></script>
+		<script>
+			layui.config({
+				base: '../../../layui_exts/' //配置 layui 第三方扩展组件存放的基础目录
+			}).extend({
+				orgCharts: 'orgCharts/orgCharts'
+			}).use(['orgCharts', 'jquery'], function() {
+				var orgCharts = layui.orgCharts;
+				var $ = layui.$;
+				//初始化组件  
+				orgCharts.init({
+					id: "org_charts", //必填
+					theme: '', //可选
+					success: function() { //可选
+						//console.log("初始化完成")
+					},
+					error: function(e) { //可选
+						//console.log(e);
+					},
+					onClick: function(el, data) { //点击方法  el被点击的元素  data对应传入数据
+						//console.log(data.id);
+						alert('点击了' + data.name);
+					}
+				});
+
+				//加载方式1   
+				/*
+ 				orgCharts.drawByUrl({
+					url: 'data/data.json', //必选  返回格式参考 data/data.json
+					success: function() { //可选
+						//console.log("绘制化完成");
+					},
+					error: function(e) { //可选
+						//console.log('绘制失败');
+					}
+				});
+				*/
+
+				//加载方式2 
+
+				$.ajax({      
+					type: "get",
+					url: "data/data.json",
+					dataType: "text",
+					success: function(data) {
+						var JSONData = JSON.parse(data);
+						orgCharts.drawByData({
+							data: JSONData.data, //必填json数据  格式请参照  data/data.json  中的data
+							success: function() { //可选
+								//console.log("绘制化完成");
+							},
+							error: function(e) { //可选
+								//console.log('绘制失败');
+							}
+						});
+					},
+					error: function(msg) {}    
+				});
+				/*
+				 * 设置主题  主题类型normal ,red ,green ,black ,gray
+				 * 可自定义样式文件
+				 * 类名格式如 
+				 * node-my 节点样式
+				 * vertical-line-my 竖线样式
+				 * transverse-line-my 横线样式
+				 * 详细参考my.style
+				 * 该方法
+				 */
+				//Org.setTheme('gray');
+				window.changeTheme = function(theme) {
+					orgCharts.setTheme(theme);
+				}
+			});
+		</script>
+	</body>
+
+</html>

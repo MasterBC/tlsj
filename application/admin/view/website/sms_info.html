@@ -1,0 +1,139 @@
+{extend name="public:base" /}
+{block name="title"}网站设置{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">短信参数配置</div>
+                <div class="layui-card-body">
+                    <div class="layui-form" wid100 lay-filter="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开关</label>
+                            <div class="layui-input-inline">
+                                <input type="radio" name="user_send_sms_switch" autocomplete="off" value="true" title="开启" {:isset($config['user_send_sms_switch']) ? ($config['user_send_sms_switch'] == true ? 'checked' : '') : 'checked'} />
+                                <input type="radio" name="user_send_sms_switch" autocomplete="off" value="false" title="关闭" {:isset($config['user_send_sms_switch']) ? ($config['user_send_sms_switch'] == false ? 'checked' : '') : ''} />
+                                <input type="hidden" name="description[user_send_sms_switch]" value="短信开关" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图形验证码</label>
+                            <div class="layui-input-inline">
+                                <input type="radio" name="verif_code" autocomplete="off" value="true" title="开启" {:isset($config['verif_code']) ? ($config['verif_code'] == true ? 'checked' : '') : 'checked'} />
+                                <input type="radio" name="verif_code" autocomplete="off" value="false" title="关闭" {:isset($config['verif_code']) ? ($config['verif_code'] == false ? 'checked' : '') : ''} />
+                                <input type="hidden" name="description[verif_code]" value="图形验证码开关" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sms_user" value="{:isset($config['sms_user']) ? $config['sms_user'] : ''}" autocomplete="off" placeholder="请输入短信用户名" class="layui-input">
+                                <input type="hidden" name="description[sms_user]" value="短信接口用户名" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">key</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="sms_key" value="{:isset($config['sms_key']) ? $config['sms_key'] : ''}" autocomplete="off" placeholder="请输入短信key" class="layui-input">
+                                <input type="hidden" name="description[sms_key]" value="短信接口key" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">短信数量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" id="sms_num" disabled value="0" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发送过期时间</label>
+                            <div class="layui-input-inline">
+                                <select name="send_sms_time_out" id="send_sms_time_out" autocomplete="off">
+                                    <option value="60" {:isset($config['send_sms_time_out']) ? ($config['send_sms_time_out'] == 60 ? 'selected' : '') : 'selected'}>60 s</option>
+                                    <option value="120" {:isset($config['send_sms_time_out']) ? ($config['send_sms_time_out'] == 120 ? 'selected' : '') : ''}>120 s</option>
+                                    <option value="300" {:isset($config['send_sms_time_out']) ? ($config['send_sms_time_out'] == 300 ? 'selected' : '') : ''}>300 s</option>
+                                    <option value="600" {:isset($config['send_sms_time_out']) ? ($config['send_sms_time_out'] == 600 ? 'selected' : '') : ''}>600 s</option>
+                                </select>
+                                <input type="hidden" name="description[send_sms_time_out]" value="短信发送过期时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">有效时间</label>
+                            <div class="layui-input-inline">
+                                <select name="sms_time_out" id="sms_time_out" autocomplete="off">
+                                    <option value="60" {:isset($config['sms_time_out']) ? ($config['sms_time_out'] == 60 ? 'selected' : '') : 'selected'}>60 s</option>
+                                    <option value="120" {:isset($config['sms_time_out']) ? ($config['sms_time_out'] == 120 ? 'selected' : '') : ''}>120 s</option>
+                                    <option value="300" {:isset($config['sms_time_out']) ? ($config['sms_time_out'] == 300 ? 'selected' : '') : ''}>300 s</option>
+                                    <option value="600" {:isset($config['sms_time_out']) ? ($config['sms_time_out'] == 600 ? 'selected' : '') : ''}>600 s</option>
+                                </select>
+                                <input type="hidden" name="description[sms_time_out]" value="短信验证有效时间" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">测试手机号</label>
+                            <div class="layui-input-inline">
+                                <input name="test_send_mobile" value="{:isset($config['test_send_mobile']) ? $config['test_send_mobile'] : ''}" autocomplete="off" placeholder="测试手机号" class="layui-input"/>
+                                <input type="hidden" name="description[test_send_mobile]" value="测试手机号" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">请先保存再点击测试发送</div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button class="layui-btn layui-btn-primary sendMobile">测试发送</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+        $(document).on('click', '.sendMobile', function () {
+            var loadAdd = layer.msg('发送中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            var url = '{:url("Index/testSms")}';
+            $.post(url, {}, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+        function getSmsNum()
+        {
+            var url = '{:url("Index/getSmsNum")}';
+            $.post(url, {}, function (res) {
+                if (res.code == 1) {
+                    $('#sms_num').val(res.msg);
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        }
+        getSmsNum();
+    });
+</script>
+{/block}

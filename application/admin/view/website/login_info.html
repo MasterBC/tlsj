@@ -1,0 +1,85 @@
+{extend name="public:base" /}
+{block name="title"}登录参数设置{/block}
+{block name="body"}
+<div class="layui-form layui-fluid layui-form-pane">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">登录参数设置</div>
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="">
+                        <div class="layui-inline layui-form-item" pane="">
+                            <label class="layui-form-label">登录开关</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="web_kg" autocomplete="off" value="true" {:isset($config['web_kg']) ? $config['web_kg'] === true ? 'checked' : '' : ''} title="正常登录" >
+                                <input type="radio" name="web_kg" autocomplete="off" value="false" {:isset($config['web_kg']) ? $config['web_kg'] === false ? 'checked' : '' : ''} title="禁止登录" >
+                                <input type="hidden" name="description[web_kg]" value="网站登陆开关 true 开 false 关" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">免登录限制</label>
+                            <div class="layui-input-inline">
+                                <input name="avoid_lock_user_id" value="{:isset($config['avoid_lock_user_id']) ? $config['avoid_lock_user_id'] : ''}" autocomplete="off" placeholder="免登录限制会员 ID" class="layui-input"/>
+                                <input type="hidden" name="description[avoid_lock_user_id]" value="免登录限制会员 ID" />
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">关闭登录后，免登录限制会员可正常登录</div>
+                        </div>
+                        {for start='0' end='7'}
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">{$weekName[$i]}</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="open_start_time[{$i}]" placeholder="H" value="{:isset($config['open_start_time'][$i]) ? $config['open_start_time'][$i] : ''}" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid">:00:00 -</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="open_out_time[{$i}]" placeholder="H" value="{:isset($config['open_out_time'][$i]) ? $config['open_out_time'][$i] : ''}" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid">:59:59 允许登录</div>
+                            </div>
+                        </div>
+                        {/for}
+                        
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">禁止登录原因</label>
+                            <div class="layui-input-block">
+                                <textarea name="web_close_content" autocomplete="off" class="layui-textarea" placeholder="请输入禁止登录原因">{:isset($config['web_close_content']) ? $config['web_close_content'] : ''}</textarea>
+                                <input type="hidden" name="description[web_close_content]" value="禁止登录原因" />
+                            </div>
+                        </div>
+                        
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var form = layui.form, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+    });
+</script>
+{/block}

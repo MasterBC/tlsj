@@ -1,0 +1,35 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">角色列表</label>
+                            <div class="layui-input-block">
+                                {foreach name="list" item="v"}
+                                <input type="checkbox" name="group_id[]" lay-skin="primary" value="{$v['id']}" {if condition="!empty($v['profile'])"}checked{/if} title="{$v['title']}" />
+                                       {/foreach}
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <input type="hidden" name="id" value="{$adminId}" />
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+    });
+</script>
+{/block}

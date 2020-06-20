@@ -1,0 +1,23 @@
+{extend name="public:base" /}
+{block name="title"}系统通知{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        {:isset($noticeType[$info['send_type']]) ? $noticeType[$info['send_type']] : ''}
+    </h1>
+</header>
+<div class="mui-content">
+    <div class="noticeDetaBox">
+        <div class="noticeDetaTime">{$info['send_time']|date="Y-m-d H:i:s"}</div>
+        <div class="noticeDetaCont">
+            {$info['message']}
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

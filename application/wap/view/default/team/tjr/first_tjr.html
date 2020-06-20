@@ -1,0 +1,90 @@
+{extend name="public:base" /}
+{block name="title"}邀请记录{/block}
+{block name="other_css"}
+<!--样式引入s-->
+<!--刷新加载插件 s-->
+<!--样式引入E-->
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mescroll.min.css" />
+<style>
+    .mescroll {
+        position: fixed;
+        top:84px;
+        left: 0px;
+        width: 100%;
+        bottom: 0;
+        height: auto;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-icon icon-font mui-pull-left likeA" data-url="{:U('User/myInfo')}">&#xe95b;</a>
+    <h1 class="mui-title">邀请记录</h1>
+</header>
+<div class="indentddTop df">
+    <div class="indentddqh fx1 indentddqhActive likeA" data-url="{:U('Team/firstTjrList')}">
+        <div class="indentddqhtx">徒弟</div>
+    </div>
+    <div class="indentddqh fx1 likeA" data-url="{:U('Team/secondTjrList')}">
+        <div class="indentddqhtx">徒孙</div>
+    </div>
+    <div class="indentddqh fx1  likeA" data-url="{:U('Team/notActivateTjrList')}">
+        <div class="indentddqhtx">待激活</div>
+    </div>
+</div>
+<div id="mescroll" class="mescroll">
+    <div id="content" class="tradparUl">
+    </div>
+</div>
+{/block}
+{block name="footer"}
+<!--刷新加载插件 s-->
+<script src="__STATIC__/js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+<!--刷新加载插件 s-->
+{__block__}
+<script>
+    mui('body').on('tap', '.indentddqh', function(){
+        $(this).addClass('indentddqhActive');
+        $(this).siblings('.indentddqh').removeClass('indentddqhActive');
+    });
+</script>
+<script>
+    //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
+    var mescroll = new MeScroll("mescroll", {
+        up: {
+            callback: getListDataFromNet, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+            isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+            clearEmptyId: "content", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+            toTop:{ //配置回到顶部按钮
+                src : "__STATIC__/centImages/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                //offset : 1000
+            },
+            lazyLoad: {
+                use: true // 是否开启懒加载,默认false
+            }
+        }
+    });
+    function downCallback() {
+        mescroll.resetUpScroll();//重新搜索,重置列表数据
+    }
+    function getListDataFromNet(page) {
+        //延时一秒,模拟联网
+        $.ajax({
+            type: 'GET',
+            url: '{:U("")}?p='+(page.num - 1),
+            success: function(data){
+                var count = 10;
+                if(data == '') {
+                    mescroll.endSuccess(count, false);
+                } else {
+                    mescroll.endSuccess(count);
+                }
+                $('#content').append(data);
+            },
+            error: function (){
+                mescroll.endErr();
+            }
+        });
+    }
+</script>
+{/block}

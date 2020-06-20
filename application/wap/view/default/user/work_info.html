@@ -1,0 +1,90 @@
+{extend name="public:base" /}
+{block name="title"}上班{/block}
+{block name="body"}
+<div class="mui-content" style="padding-bottom: 55px;">
+    <div class="beontopBox">
+        <div class="beoqiand clearfix">
+            <img src="__STATIC__/centImages/2019a071_59.png" alt="" class="day_sign">
+            {if ($user['sign_in_time'] < strtotime(date('Y-m-d')))}
+            <div class="beoqiandtx day_sign">签到</div>
+            {else /}
+            <div class="beoqiandtx">已签到</div>
+            {/if}
+        </div>
+        <div class="beontopdata">
+            <div class="beontopdsu">
+                <text class="text_1 user-money-one">0</text>
+                <text class="text_2">算力</text>
+            </div>
+            <div class="beontopdms">贡献越多算力越多、TLBC采集越多、牛生长越快</div>
+        </div>
+    </div>
+    <div class="assetbbBox">
+        <div class="assetbbHe">
+            <div class="assetbbTletx">日常工作</div>
+            <div class="df assetbCont">
+                <div class="fx1">
+                    <img src="__STATIC__/centImages/2019a071_50.png" alt="">
+                    <div class="assetbbtx">每日签到</div>
+                    <div class="assetbbhs">（+ {:zf_cache('security_info.sign_day_give_mid_num') ?? '0'} 算力/日）</div>
+                </div>
+                <div class="fx1 likeA" data-url="{:U('Team/teamIndex')}">
+                    <img src="__STATIC__/centImages/2019a071_51.png" alt="">
+                    <div class="assetbbtx">邀请5名好友</div>
+                    <div class="assetbbhs">（{:zf_cache('security_info.code_day_give_mid_num') ?? '0'} 算力/日）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="assetbbBox">
+        <div class="assetbbHe">
+            <div class="assetbbTletx">推荐工作</div>
+            <div class="df assetbCont">
+                <div class="fx1 likeA"  data-url="{:U('User/realNameAuth')}">
+                    <img src="__STATIC__/centImages/2019a071_52.png" alt="">
+                    <div class="assetbbtx ">实名认证</div>
+                    <div class="assetbbhs">（+ {:zf_cache('security_info.auth_give_mid_num') ?? '0'}算力）</div>
+                </div>
+                <div class="fx1 likeA" data-url="{:U('Help/helpIndex')}">
+                    <img src="__STATIC__/centImages/2019a071_53.png" alt="">
+                    <div class="assetbbtx">新手教程</div>
+                    <div class="assetbbhs">（+ {:zf_cache('security_info.hepl_give_mid_num') ?? '0'}算力）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_nav"}
+{include file="public/footer_nav" /}
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.day_sign', function () {
+        mui.showLoading("签到中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("User/dayUserSign")}',
+            dataType: 'json',
+            success: function (res) {
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('签到成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+</script>
+{/block}

@@ -1,0 +1,202 @@
+{extend name="public:base" /}
+{block name="title"}广告设置{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">海报设置</div>
+                <div class="layui-card-body" pad15>
+                    <div class="layui-form" wid100 lay-filter="">
+                        {foreach $ads as $key=>$val}
+                        <div class="layui-collapse" lay-accordion="">
+                            <div class="layui-colla-item">
+                                <h2 class="layui-colla-title">{$val['name']}</h2>
+                                <div class="layui-colla-content {:count($ads) <= 2 ? 'layui-show' : ''}">
+
+                                    <fieldset class="layui-elem-field site-demo-button ad_list" style="padding:10px;">
+                                        <!--                                        <legend>{$val['name']}</legend>-->
+                                        <div class="ad_list_show">
+                                            <div class="layui-inline layui-form-item" pane="">
+                                                <label class="layui-form-label">状态</label>
+                                                <div class="layui-input-block">
+                                                    <input type="radio" name="{$val['key']}_status" autocomplete="off" value="true" title="开启" {:isset($config[$val['key'].'_status']) ? $config[$val['key'].'_status'] == true ? 'checked' : '' : ''}>
+                                                    <input type="radio" name="{$val['key']}_status" autocomplete="off" value="false" title="关闭" {:isset($config[$val['key'].'_status']) ? $config[$val['key'].'_status'] == false ? 'checked' : '' : ''}>
+                                                    <input type="hidden" name="description[{$val['key']}_status]" value="{$val['name']}广告状态" />
+                                                </div>
+                                            </div>
+                                            {if condition="isset($config[$val['key']])"}
+                                            {foreach $config[$val['key']] as $k=>$v}
+                                            <fieldset class="layui-elem-field site-demo-button ad_info_show" style="padding:10px;">
+                                                <legend>{$k}</legend>
+                                                <div>
+                                                    <div class="layui-form-item">
+                                                        <label class="layui-form-label">海报logo</label>
+                                                        <div class="layui-input-inline">
+                                                            <input name="{$val['key']}[{$k}][ad_img]" id="{$val['key']}_ad_img_{$k}"
+                                                                   value="{:isset($v['ad_img']) ? $v['ad_img'] : ''}"
+                                                                   autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                                                        </div>
+                                                        <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                                            <button type="button" class="layui-btn layui-btn-primary uploadImg"
+                                                                    lay-data="{field: '{$val['key']}_ad_img_{$k}',data:{dir:'ad_img', field:'{$val['key']}_ad_img_{$k}'}}">
+                                                                <i class="layui-icon">&#xe67c;</i>上传图片
+                                                            </button>
+                                                            <button class="layui-btn layui-btn-primary checkImg"
+                                                                    data-type="{$val['key']}_ad_img_{$k}">查看图片
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-form-item">
+                                                        <label class="layui-form-label"></label>
+                                                        <button class="layui-btn layui-btn-primary delAdInfo">删除</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            {/foreach}
+                                            {else/}
+                                            <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                                                <legend>1</legend>
+                                                <div>
+                                                    <div class="layui-form-item">
+                                                        <label class="layui-form-label">海报logo</label>
+                                                        <div class="layui-input-inline">
+                                                            <input name="{$val['key']}[1][ad_img]" id="{$val['key']}_ad_img_1"
+                                                                   autocomplete="off" placeholder="图片地址" class="layui-input"/>
+                                                        </div>
+                                                        <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                                            <button type="button" class="layui-btn layui-btn-primary uploadImg"
+                                                                    lay-data="{field: '{$val['key']}_ad_img_1',data:{dir:'ad_img', field:'{$val['key']}_ad_img_1'}}">
+                                                                <i class="layui-icon">&#xe67c;</i>上传图片
+                                                            </button>
+                                                            <button class="layui-btn layui-btn-primary checkImg"
+                                                                    data-type="{$val['key']}_ad_img_1">查看图片
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            {/if}
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label"></label>
+                                            <button class="layui-btn layui-btn-primary addAdInfo" data-type="{$val['key']}" data-index="{$key}">加一张图片
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        {/foreach}
+                        <div style="display:none;">
+                            <button type="button" class="layui-btn layui-btn-primary uploadImg toggleUpload"
+                                    lay-data="{}"></button>
+                        </div>
+                        <div class="layui-form-item" style="margin-top: 15px;">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="submitBtn">确认保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'element', 'upload'], function () {
+        var form = layui.form, element = layui.element, upload = layui.upload;
+        form.on('submit(submitBtn)', function (data) {
+            var field = data.field; //获取提交的字段
+            var url = '{:url("")}';
+
+            var loadAdd = layer.msg('提交中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+            $.post(url, field, function (res) {
+                layer.close(loadAdd);
+                if (res.code == 1) {
+                    layer.msg(res.msg, {icon: 6, offset: '15px'});
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            });
+        });
+        upload.render({
+            elem: '.uploadImg',
+            url: '/uploadImg',
+            before: function () {
+            }
+            , done: function (res, index, upload) {
+                if (res.code == 1) {
+                    $('#' + this.data.field).val(res.data.src);
+                } else {
+                    layer.msg(res.msg, {icon: 5, offset: '15px'});
+                }
+            }
+        });
+        $(document).on('click', '.checkImg', function () {
+            if ($('#' + $(this).data('type')).val() == '') {
+                return layer.msg('没有图片');
+            }
+            var src = "{:get_img_domain()}" + $('#' + $(this).data('type')).val();
+            layer.photos({
+                photos: {
+                    "title": "查看图片" //相册标题
+                    , "data": [{
+                        "src": src //原图地址
+                    }]
+                }
+                , shade: 0.01
+                , closeBtn: 1
+                , anim: 5
+            });
+        });
+        $(document).on('click', '.delAdInfo', function () {
+            $(this).parents('.ad_info_show').remove();
+        });
+        $(document).on('click', '.cftoggleUpload', function () {
+            $('.toggleUpload').attr('lay-data', $(this).attr('lay-data'));
+            $('.toggleUpload').trigger('click');
+        });
+
+        var adList = $('.ad_list');
+        var num = [];
+
+
+        adList.each(function (elem) {
+            num[elem] = $(adList[elem]).find('fieldset').length;
+        });
+        $(document).on('click', '.addAdInfo', function () {
+            var index = $(this).data('index');
+            num[index]++;
+            var showNum = num[index];
+            var type = $(this).data('type');
+            var str = '<fieldset class="layui-elem-field site-demo-button ad_info_show" style="padding:10px;">\n' +
+                '                                    <legend>' + showNum + '</legend>\n' +
+                '                                        <div class="layui-form-item">\n' +
+                '                                            <label class="layui-form-label">广告logo</label>\n' +
+                '                                            <div class="layui-input-inline">\n' +
+                '                                                <input name="' + type + '[' + showNum + '][ad_img]" id="' + type + '_ad_img_' + showNum + '" autocomplete="off" placeholder="图片地址" class="layui-input"/>\n' +
+                '                                            </div>\n' +
+                '                                            <div class="layui-input-inline layui-btn-container" style="width: auto;">\n' +
+                '                                                <button type="button" class="layui-btn layui-btn-primary cftoggleUpload" lay-data="{field: \'' + type + '_ad_img_' + showNum + '\',data:{dir:\'' + type + '_ad_img\', field:\'' + type + '_ad_img_' + showNum + '\'}}">\n' +
+                '                                                    <i class="layui-icon">&#xe67c;</i>上传图片\n' +
+                '                                                </button>\n' +
+                '                                                <button class="layui-btn layui-btn-primary checkImg" data-type="' + type + '_ad_img_' + showNum + '">查看图片</button>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n\n' +
+                '                                                <div class="layui-form-item">\n' +
+                '                                                    <label class="layui-form-label"></label>\n' +
+                '                                                    <button class="layui-btn layui-btn-primary delAdInfo">删除</button>\n' +
+                '                                                </div>' +
+                '                                    </div>\n' +
+                '                                </fieldset>';
+
+            $(this).parents('.layui-form-item').prev('.ad_list_show').append(str);
+            upload.render();
+        });
+    });
+</script>
+{/block}

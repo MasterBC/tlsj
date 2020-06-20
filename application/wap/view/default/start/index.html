@@ -1,0 +1,55 @@
+{extend name="public:base" /}
+{block name="title"}市场行情{/block}
+{include file="public/header" /}
+{block name="other_css"}
+<style>
+    .startBox {
+        position: fixed;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+        background:url("__STATIC__/centImages/start_bg.png") no-repeat ;
+        background-size:100% 100%;
+        background-position: 0 0;
+        z-index: -1;
+    }
+    .shiJianXs {
+        display: inline-block;
+        position: fixed;
+        top:15px;
+        right:15px;
+        height:30px;
+        width:30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        background: rgba(124,129,131,0.5);
+        color:#fff;
+        z-index: 10;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="startBox likeA" data-url="{:U('User/index')}">
+    <div id="time" class="shiJianXs">3</div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var wait=3;
+    timeOut();
+    function timeOut(){
+        if(wait==0){
+            window.location.href = "{:U('Login/accountindex')}";
+        }else{
+            setTimeout(function(){
+                wait--;
+                $('#time').html(wait);
+                timeOut();
+            },1000)
+        }
+    }
+</script>
+{/block}

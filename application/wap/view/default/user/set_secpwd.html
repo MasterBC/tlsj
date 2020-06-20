@@ -1,0 +1,77 @@
+{extend name="public:base" /}
+{block name="title"}设置二级密码{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        设置二级密码
+    </h1>
+</header>
+    <div class="mui-content">
+        <div class="neirongText">
+            <form class="contentForm">
+                {if condition="$user['secpwd'] != ''"}
+                    <div class="muiInputRowsan">
+                        <div class="sanTl">原二级密码</div>
+                        <div class="mui-input-row">
+                            <input type="password" name="oldsecpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入原二级密码">
+                        </div>
+                    </div>
+                {/if}
+                <div class="muiInputRowsan">
+                    <div class="sanTl">二级密码</div>
+                    <div class="mui-input-row">
+                        <input type="password"  name="secpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入二级密码">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">确认密码</div>
+                    <div class="mui-input-row">
+                        <input type="password"  name="resecpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请确认二级密码">
+                    </div>
+                </div>
+                <div class="findAnmm likeA" data-url="{:U('User/forSecpwd')}">忘记二级密码？</div>
+                <div class="gonggButtonda">
+                    <button type="button" class="mui-btn gonggButton">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function () {
+        var obj = $(this);
+        var data = $('.contentForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                     mui.back();
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+</script>
+{/block}

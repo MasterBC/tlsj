@@ -1,0 +1,169 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">会员账号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">关键字</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="kwd" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结类型</label>
+                    <div class="layui-input-block">
+                        <select name="type" autocomplete="off">
+                            <option value="">--请选择--</option>
+                            {foreach $blockLockLogTypes as $key=>$val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">冻结货币</label>
+                    <div class="layui-input-block">
+                        <select name="block_id" autocomplete="off">
+                            <option value="">--请选择--</option>
+                            {foreach $blockNames as $key=>$val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">释放状态</label>
+                    <div class="layui-input-block">
+                        <select name="status" autocomplete="off">
+                            <option value="">--请选择--</option>
+                            <option value="1">待释放</option>
+                            <option value="2">释放中</option>
+                            <option value="9">已释放</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">日期</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="time" readonly id="time" placeholder="请选择" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="search_btn">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="log_list" lay-filter="log_list"></table>
+            <script type="text/html" id="toolbarDemo">
+                <div class="layui-btn-container">
+                    <button class="layui-btn layui-btn-sm" lay-event="release">
+                        <i class="layui-icon layui-icon-engine"></i>释放
+                    </button>
+                </div>
+            </script>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['layer', 'table', 'form', 'laydate'], function () {
+        var table = layui.table, form = layui.form, laydate = layui.laydate;
+        laydate.render({
+            elem: '#time'
+            , range: true,
+            format: 'yyyy/MM/dd'
+        });
+        var options = {
+            id: 'log_list',
+            url: '{:url("")}',
+            elem: '#log_list',
+            toolbar: '#toolbarDemo',
+            height: 'full-200',
+            cols: [[ //标题栏
+                {type: 'checkbox', fixed: 'left'},
+                {field: 'id', title: 'ID'},
+                {field: 'account', title: '会员账号'},
+                {field: 'type', title: '冻结类型'},
+                {field: 'amount', title: '冻结金额'},
+                {field: 'add_time', title: '冻结时间'},
+                {field: 'wallet_name', title: '货币'},
+                {field: 'release_type', title: '释放状态'},
+                {field: 'lock_note', title: '备注'},
+            ]],
+            request: {
+                pageName: 'p',
+                limitName: 'p_num'
+            },
+            page: true,
+            limits: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            limit: 20, //默认采用60
+            // skin: 'line', //行边框风格
+            even: true, //开启隔行背景
+            size: 'sm', //小尺寸的表格
+        };
+
+        table.render(options);
+        //头工具栏事件
+        table.on('toolbar(log_list)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'release':
+                    var data = checkStatus.data, id = [];
+                    console.log(data);
+                    for (elem in data) {
+                        id.push(data[elem].id);
+                    }
+                    id = id.join(',');
+
+                    if(id == '') {
+                        return layer.msg('请选择要释放的数据');
+                    }
+
+                    layer.prompt({formType:2, title:'请输入释放理由'}, function(value, index, elem) {
+                        var url = '{:url("releaseBlock")}';
+
+                        var loadAdd = layer.msg('释放中', {icon: 16, time: 0, shade: 0.1, offset: '15px'});
+                        $.post(url, {id: id,note:value}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code == 1) {
+                                table.reload('log_list'); //数据刷新
+                                layer.close(index); //关闭弹层
+                                layer.msg(res.msg, {icon: 6, offset: '15px'});
+                            } else {
+                                layer.msg(res.msg, {icon: 5, offset: '15px'});
+                            }
+                        });
+                    });
+
+                    break;
+            }
+            ;
+        });
+        form.on('submit(search_btn)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('log_list', {
+                where: field
+                , page: {
+                    curr: 1
+                }
+            });
+        });
+    });
+</script>
+{/block}
+
+

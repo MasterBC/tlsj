@@ -1,0 +1,9 @@
+{foreach $teamUserList as $v}
+<li class="looseclist df">
+    <div class="fx1">
+        <div class="looseclistmc">{:hideStr($v['account'],3,4) ?? ''}</div>
+        <div class="looseclisttime">{:date('Y-m-d H:i:s', $v['reg_time'])}</div>
+    </div>
+    <div class="looseclisttqs">{:get_max_product_info($v['user_id'])}  级</div>
+</li>
+{/foreach}

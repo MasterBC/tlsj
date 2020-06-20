@@ -1,0 +1,82 @@
+{extend name="public:base" /}
+{block name="title"}货币转账{/block}
+{block name="body"}
+    <header class="mui-bar mui-bar-nav myAssetTop">
+        <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+        <h1 class="mui-title">
+            {$blockNames[$blockChangeInfo['bid']]}转账
+        </h1>
+        <div class="mui-icon icon-font mui-pull-right likeA" data-url="{:U('BlockChange/indexChange', ['bid' => $blockChangeInfo['bid']])}"><img src="__STATIC__/centImages/jilu_1.png" alt="" style="height:20px;"></div>
+    </header>
+    <div class="mui-content">
+        <div class="neirongText">
+            <form class="contentForm">
+                <div class="muiInputRowsan">
+                    <div class="sanTl">{$blockNames[$blockChangeInfo['bid']]}余额</div>
+                    <div class="mui-input-row">
+                        <input type="text" value="{$usersBlock|default='0.00'}" readonly autocomplete="off" class="mui-input-clear muiInput" placeholder="余额">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">对方钱包地址或手机号</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="toAccount" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="输入对方钱包地址或手机号">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">转出数量</div>
+                    <div class="mui-input-row">
+                        <input type="text" name="num" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入转出数量">
+                    </div>
+                </div>
+                <div class="muiInputRowsan">
+                    <div class="sanTl">二级密码</div>
+                    <div class="mui-input-row">
+                        <input type="password" name="secpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入二级密码">
+                    </div>
+                </div>
+                <div class="gonggButtonda">
+                    <input type="hidden" name="bid" value="{$blockChangeInfo['bid']}">
+                    <input type="hidden" name="to_bid" value="{$blockChangeInfo['to_bid']}">
+                    <button type="button" class="mui-btn gonggButton">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.gonggButton', function () {
+        var obj = $(this);
+        var data = $('.contentForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('User/Index')}";
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+</script>
+{/block}

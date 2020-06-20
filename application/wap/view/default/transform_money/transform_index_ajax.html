@@ -1,0 +1,10 @@
+{foreach $moneyTransformInfo as $v}
+<li class="tradparLi df likeA" data-url="{:U('MoneyTransform/transformDetail',['id'=>$v['id']])}">
+    <div class="tradparLiimg"><img src="__STATIC__/centImages/k002_38.png" alt=""></div>
+    <div class="fx1">
+        <div class="tradparLitx">{$moneyNames[$v['mid']]}&nbsp;转出&nbsp;{$moneyNames[$v['to_mid']]}</div>
+        <div class="tradparLitime">{:date('Y-m-d H:i:s', $v['add_time'])}</div>
+    </div>
+    <div class="tradparLishu_1">{if ($v['uid'] == $user['user_id'])}-{else /}+{/if}{$v['money']}</div>
+</li>
+{/foreach}

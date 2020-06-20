@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{block name="title"}后台{/block}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    {block name="layui_css"}
+    {css href="__LAYUIADMIN__/layui/css/layui.css,__LAYUIADMIN__/style/admin.css" /}
+    {/block}
+    {css href="__VENDOR__/pace/css/pace-theme-flash.css" /}
+    <link rel="icon" href="{:get_img_show_url(zf_cache('web_info.web_ico'))}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{:get_img_show_url(zf_cache('web_info.web_ico'))}" type="image/x-icon"/>
+    {block name="other_css"}{/block}
+</head>
+<body>
+{block name="body"}{/block}
+{block name="footer"}
+{js href="__LAYUIADMIN__/layui/layui.js,__JS__/jquery.min.js,__JS__/admin.js,__VENDOR__/pace/js/pace.min.js" /}
+{/block}
+</body>
+</html>

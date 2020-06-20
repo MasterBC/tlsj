@@ -1,0 +1,184 @@
+{extend name="public:base" /}
+{block name="title"}找回密码{/block}
+{block name="other_css"}
+<style>
+    .intl-tel-input .selected-flag {
+        padding:0px;
+    }
+    .selected-dial-code{
+        color: #fff9ec;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">找回密码</h1>
+    <a class="mui-icon mui-icon-more mui-pull-right" style="color: #fff;"></a>
+</header>
+    <div class="mui-content">
+        <div class="LoginImgbox">
+            <img src="{:get_img_domain()}{:zf_cache('web_info.web_logo')}" alt="" class="LoginImg_1">
+        </div>
+        <div class="LoginText">
+            <form class="regForm">
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="text" name="account" autocomplete="off" class="mui-input-clear muiInput" placeholder="会员账号">
+                    </div>
+                </div>
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="text" id="phone" name="mobile" autocomplete="off" class="mui-input-clear muiInput" placeholder="手机号">
+                    </div>
+                </div>
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="password" name="password" autocomplete="off" class="mui-input-password muiInput" placeholder="重置密码">
+                    </div>
+                </div>
+                <div class="muiInputRow">
+                    <div class="mui-input-row">
+                        <input type="password" name="repassword" autocomplete="off" class="mui-input-password muiInput" placeholder="确认密码">
+                    </div>
+                </div>
+                {if (zf_cache('sms_info.verif_code') == 1)}
+                <div class="muiInputRow">
+                    <div class="mui-input-row" style="position: relative;">
+                        <input type="text" id="verifyCode" name="verify_code" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入验证码">
+                        <img src="/verify?type=forgot" alt="" onclick="refreshVerify();" class="yzmaImg Home_Login_Yzm">
+                    </div>
+                </div>
+                {/if}
+                <div class="muiInputRow">
+                    <div class="mui-input-row" style="position: relative;">
+                        <input type="text" name="mobileCode" autocomplete="off" class="mui-input-clear muiInput" placeholder="手机验证码">
+                        <div class="yzmaImgWZzfmlg" onclick="send_sms_reg_code(this)">
+                            获取验证码
+                        </div>
+                    </div>
+                </div>
+                <div class="gonggButtonda" style="padding-top:20px;">
+                    <button type="button" class="mui-btn forgotAccount gonggButton">立即找回</button>
+                </div>
+                <div class="linkACZuo likeA" data-url="{:U('Login/accountIndex')}">已记住密码？立即<span class="span_1">登录</span></div>
+            </form>
+        </div>
+    </div>
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/js/validate.js"></script>
+<script>
+    var mask=mui.createMask();
+    mui('body').on('tap', '.forgotAccount', function () {
+        var obj = $(this);
+        var data = $('.regForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("处理中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("Forgot/doForgot")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        window.location.href = "{:U('Login/accountIndex')}";
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+    var smsObj = [];
+    // 发送手机短信
+    function send_sms_reg_code(obj){
+        smsObj = obj;
+        var mobile = $('input[name="mobile"]').val();
+        if(!check_mobile(mobile)){
+            mui.toast('请输入正确的手机号',{ duration:'long', type:'div' });
+            return;
+        }
+
+        {if (zf_cache('sms_info.verif_code') == 1)}
+            var code = $('#verifyCode').val();
+            var data = {mobile:mobile,code:code,check_code:'forgot'};
+        {else /}
+            var data = {mobile:mobile};
+        {/if}
+
+        var url = "/sendSms";
+        mui.showLoading("正在发送","div");
+        mask.show();//显示遮罩层
+        $.post(url, data, function(data){
+            mask.close();//关闭遮罩层
+            mui.hideLoading();
+            if(data.code == 1){
+                $(smsObj).removeAttr('onclick');
+                intAs = {:zf_cache('sms_info.send_sms_time_out')}; // 手机短信超时时间
+                jsInnerTimeout(intAs);
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            } else {
+                refreshVerify();
+                mui.toast(data.msg,{ duration:'long', type:'div' });
+            }
+        });
+    }
+
+    function refreshVerify()
+    {
+        $('.Home_Login_Yzm').attr('src', "/verify?type=forgot");
+    }
+    // var smtpEmailObj = [];
+    // // 发送手机短信
+    // function send_email_reg_code(obj){
+    //     smtpEmailObj = obj;
+    //     var email = $('input[name="mobile"]').val();
+    //     if(!check_mail(email)){
+    //         mui.toast('请输入正确的手机号',{ duration:'long', type:'div' });
+    //         return;
+    //     }
+    //
+    //     var data = {email:email};
+    //     var url = "/sendSmtp";
+    //     mui.showLoading("正在发送","div");
+    //     mask.show();//显示遮罩层
+    //     $.post(url, data, function(data){
+    //         mask.close();//关闭遮罩层
+    //         mui.hideLoading();
+    //         if(data.code == 1){
+    //             $(smtpEmailObj).removeAttr('onclick');
+    //             intAs = {:zf_cache('smtp_info.send_email_time_out')}; // 手机短信超时时间
+    //             jsInnerTimeout(intAs);
+    //             mui.toast(data.msg,{ duration:'long', type:'div' });
+    //         } else {
+    //             mui.toast(data.msg,{ duration:'long', type:'div' });
+    //         }
+    //     });
+    // }
+
+    //倒计时函数
+    function jsInnerTimeout(intAs){
+        intAs--;
+        if(intAs<=-1){
+            $(smsObj).attr('onclick', 'send_sms_reg_code(this)');
+            $(smsObj).text("获取验证码");
+            return true;
+        }
+        $(smsObj).text(intAs+'s');
+        setTimeout("jsInnerTimeout("+intAs+")",1000);
+    };
+</script>
+{/block}

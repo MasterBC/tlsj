@@ -1,0 +1,13 @@
+{foreach $userProductList as $k => $v}
+<div class="mrythudHe mrythudHe{$v['position']}" data-id="{$v['product_id']}" data-infoid="{$v['id']}">
+    <div class="mrythud">
+        <img class="img" src="https://2019-a071-img.oss-cn-shenzhen.aliyuncs.com/2019-a071-niuB/product-logo/v_{$v['product_id']}.png" alt="">
+         {if $v['product_id'] >= 38} 
+            <img class="img img_word" src="https://2019-a071-img.oss-cn-shenzhen.aliyuncs.com/2019-a071-niuB/product-logo/v_{$v['product_id']}_logo.png" alt="">
+        {/if}
+        <!-- <img class="img" src="__STATIC__/centImages/v_{$v['product_id']}.png" alt=""> -->
+        <div class="mrythdj">{$v['product_number']}</div>
+        <div class="maopap maopap_1" data-income="{$v['income']}">{$v['show_income']}</div>
+    </div>
+</div>
+{/foreach}

@@ -1,0 +1,23 @@
+{extend name="public:base" /}
+{block name="title"}404 页面不存在{/block}
+{block name="body"}
+<div class="mui-content">
+    <div class="errorpromBox">
+        <div class="errorpromimgda"><img src="__STATIC__/centImages/x_47.png" alt=""></div>
+        <div class="errorpromimgxiao"><img src="__STATIC__/centImages/x_46.png" alt=""></div>
+        <div class="errorpromtx">你所访问的页面找不到了</div>
+        <div class="errorpromtx">去其它页面看看吧！</div>
+        <div class="df errorpromAnBox">
+            <div class="fx1 errorpromLeft">
+                <div class="mui-action-back errorpromzuAn">返回上一页</div>
+            </div>
+            <div class="fx1 errorpromRight">
+                <div class="errorpromyuAn backIndex likeA" data-url="{:U('User/index')}">返回首页</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{/block}

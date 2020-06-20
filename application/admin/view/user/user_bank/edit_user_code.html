@@ -1,0 +1,93 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付宝账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="zfb_name" value="{$info['zfb_name'] ?? ''}" placeholder="请输入支付宝账号"
+                                       class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付宝收款码</label>
+                            <div class="layui-input-inline">
+                                <input name="zfb_code" id="logo" value="{$info['zfb_code']}" autocomplete="off"
+                                       placeholder="图片地址" class="layui-input"/>
+                            </div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button type="button" class="layui-btn layui-btn-primary uploadImg"
+                                        lay-data="{field: 'logo',data:{dir:'logo', field:'logo'}}">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片
+                                </button>
+                                <button class="layui-btn layui-btn-primary checkImg" data-type="logo">查看图片</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">微信账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="wx_name" value="{$info['wx_name'] ?? ''}" placeholder="请输入微信账号"
+                                       class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">微信收款码</label>
+                            <div class="layui-input-inline">
+                                <input name="wx_code" id="code" value="{$info['wx_code']}" autocomplete="off" placeholder="二维码" class="layui-input"/>
+                            </div>
+                            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                                <button type="button" class="layui-btn layui-btn-primary uploadImg" lay-data="{field: 'code',data:{dir:'code', field:'code'}}">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片
+                                </button>
+                                <button class="layui-btn layui-btn-primary checkImg" data-type="code">查看图片</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+    var upload = layui.upload;
+    upload.render({
+        elem: '.uploadImg',
+        url: '/uploadImg',
+        before: function () {
+        }
+        , done: function (res, index, upload) {
+            if (res.code == 1) {
+                $('#' + this.data.field).val(res.data.src);
+            } else {
+                layer.msg(res.msg, {icon: 5, offset: '15px'});
+            }
+        }
+    });
+    $(document).on('click', '.checkImg', function () {
+        var src = "{:get_img_domain()}" + $('#' + $(this).data('type')).val();
+        layer.photos({
+            photos: {
+                "title": "查看图片" //相册标题
+                , "data": [{
+                    "src": src //原图地址
+                }]
+            }
+            , shade: 0.01
+            , closeBtn: 1
+            , anim: 5
+        });
+    });
+});
+</script>
+{/block}

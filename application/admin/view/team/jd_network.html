@@ -1,0 +1,297 @@
+{extend name="public:base" /}
+{block name="other_css"}
+<style>
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .first_branch_activate {
+        background-color: red;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-inline">
+                <label class="layui-form-label">会员账号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button type="button" class="layui-btn layuiadmin-btn-useradmin search_btn">
+                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                </button>
+            </div>
+        </div>
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto" {:count($firstBranch) <= 1 ? 'style="display:none"' : ''}>
+            {foreach $firstBranch as $k=>$v}
+            <button class="layui-btn layui-btn-sm {$k == 0 ? 'first_branch_activate' : ''} first_branch" data-account="{$v['id']|default=''}">
+                {$v['user_info']['account']|default=''}
+            </button>
+            {/foreach}
+        </div>
+        <div class="layui-card-body">
+            <div style="display: flex;flex-direction: row;">
+
+                <div style="width: 150px;padding: 2px;text-align: center;">
+                    <div style="">级别</div>
+                    {foreach $levels as $k=>$v}
+                    <div class="clearfix" style="line-height: 30px;">
+                        <span style="float: left; display: inline-block; width: 30px;height: 30px;background: {$v['color']};margin: 5px auto;cursor: pointer;"></span>
+                        <span style="margin: 5px auto; display: inline-block;line-height:30px;"> —— </span>
+                        <span style="float: right; margin: 5px auto; display: inline-block; line-height:30px;">{$v['name_cn']}</span>
+                    </div>
+                    {/foreach}
+
+                </div>
+                <div style="flex:1;-webkit-overflow-scrolling:touch;overflow:auto;display: block;text-align: center;">
+                    <div style="margin-bottom: 15px;">
+                        <button class="layui-btn layui-btn-primary layui-btn-xs left_next">
+                            左最下
+                        </button>
+                        <button class="layui-btn layui-btn-primary layui-btn-xs right_next">
+                            右最下
+                        </button>
+                    </div>
+                    <div style="margin-bottom: 15px;display:none;" class="network_back">
+                        <button class="layui-btn layui-btn-primary layui-btn-xs back_to_prev">
+                            返回上级
+                        </button>
+                        <button class="layui-btn layui-btn-primary layui-btn-xs back_to_top">
+                            置顶
+                        </button>
+                    </div>
+                    <div id="org_charts"></div>
+                    <script id="branch_detail2" type="text/html">
+                        {{# for(var elem in d){ }}
+                        <h3>{{ d[elem].pos }}</h3>
+                        <ul>
+                            <li>
+                                <span>单: {{ d[elem].num }}</span>
+                                <span>总业绩: {{ d[elem].total_yj }}</span>
+                                <span>剩余业绩: {{ d[elem].new_yj }}</span>
+                                <span>结算业绩: {{ d[elem].out_yj }}</span>
+                            </li>
+                        </ul>
+                        {{# } }}
+                    </script>
+                    <script id="branch_detail" type="text/html">
+
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                {{# for(var elem in d){ }}
+                                <th>{{ d[elem].pos }}</th>
+                                {{# } }}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>单</td>
+                                {{# for(var elem in d){ }}
+                                <td>{{ d[elem].num }}</td>
+                                {{# } }}
+                            </tr>
+                            <tr>
+                                <td>总业绩</td>
+                                {{# for(var elem in d){ }}
+                                <td>{{ d[elem].total_yj }}</td>
+                                {{# } }}
+                            </tr>
+                            <tr>
+                                <td>剩余业绩</td>
+                                {{# for(var elem in d){ }}
+                                <td>{{ d[elem].new_yj }}</td>
+                                {{# } }}
+                            </tr>
+                            <tr>
+                                <td>结算业绩</td>
+                                {{# for(var elem in d){ }}
+                                <td>{{ d[elem].out_yj }}</td>
+                                {{# } }}
+                            </tr>
+                            </tbody>
+                        </table>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.config({
+        base: '__LAYUIADMIN__/layui_extends/' //配置 layui 第三方扩展组件存放的基础目录
+    }).extend({
+        orgCharts: 'orgCharts/orgCharts'
+    }).use(['orgCharts', 'jquery', 'laytpl'], function () {
+        var orgCharts = layui.orgCharts;
+        var $ = layui.$,laytpl = layui.laytpl;
+        var prevAccounts = [],
+            firstAccount = $('.first_branch_activate').data('account');
+        //初始化组件
+        orgCharts.init({
+            id: "org_charts", //必填
+            theme: '', //可选
+            success: function () { //可选
+                //console.log("初始化完成")
+            },
+            error: function (e) { //可选
+                //console.log(e);
+            },
+            onClick: function (el, data, type) { //点击方法  el被点击的元素  data对应传入数据
+                if (type == 1) {
+                    if (data.id > 0 && data.id != firstAccount && data.id != account) {
+                        prevAccounts.push(data.prev_id);
+                        checkBackToPrev();
+                        account = data.id;
+                        getNetwork();
+                    }
+                } else {
+                    if (data.id > 0) {
+                        var loadAdd = layer.msg('查询中', {icon:16, time:0, shade:0.1});
+                        $.post("{:U('getUserBranchDetail')}", {id: data.id}, function (res) {
+                            layer.close(loadAdd);
+                            if (res.code != 1) {
+                                return layer.alert(res.msg, {icon: 5});
+                            } else {
+                                console.log(res);
+                                var getTpl = branch_detail.innerHTML;
+                                laytpl(getTpl).render(res.data, function(html){
+                                    layer.open({
+                                        btn:false,
+                                        title:data.name+'的接点详情',
+                                        content:html,
+                                        shadeClose:true
+                                    });
+                                    console.log(html);
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+        function checkBackToPrev() {
+            if (prevAccounts.length > 0) {
+                $('.network_back').show();
+            } else {
+                $('.network_back').hide();
+            }
+        }
+
+        var account = '',is_account = '';
+
+        function getNetwork() {
+            var index = layer.load(3, {
+                shade: [0.1, '#fff'] //0.1透明度的白色背景
+            });
+            $.ajax({
+                type: "get",
+                url: "{:U('')}",
+                data: {account: account,is_account:is_account},
+                dataType: 'json',
+                success: function (data) {
+                    is_account = '';
+                    $('.left_next').attr('data-account', data.left_next);
+                    $('.right_next').attr('data-account', data.right_next);
+                    layer.close(index);
+                    if (data.code != 1) {
+                        return layer.alert(data.msg, {icon: 5});
+                    }
+                    $('#org_charts').html('');
+                    if(data.data.length > 0) {
+                        if (data.data[0].prev_id != '') {
+                            if (!in_array(prevAccounts, data.data[0].prev_id)) {
+                                prevAccounts.push(data.data[0].prev_id);
+                                checkBackToPrev();
+                            }
+                        }
+                    }
+                    orgCharts.drawByData({
+                        data: data.data, //必填json数据  格式请参照  data/data.json  中的data
+                        success: function () { //可选
+                            console.log("绘制化完成");
+                        },
+                        error: function (e) { //可选
+                            layer.alert('网络图绘制失败', {icon: 5});
+                        }
+                    });
+                },
+                error: function (msg) {
+                }
+            });
+        }
+
+        function in_array(arr, val) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == val) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        getNetwork();
+        $(document).on('click', '.search_btn', function () {
+            account = $('input[name="account"]').val();
+            if (account == '') {
+                return layer.msg('请输入要搜索的账号');
+            }
+            is_account = 1;
+            getNetwork();
+        });
+        $(document).on('click', '.left_next', function () {
+            // prevAccounts = [];
+            account = $(this).attr('data-account');
+            checkBackToPrev();
+            is_account = 1;
+            getNetwork();
+        });
+        $(document).on('click', '.right_next', function () {
+            // prevAccounts = [];
+            account = $(this).attr('data-account');
+            layer.msg(account);
+            checkBackToPrev();
+            is_account = 1;
+            getNetwork();
+        });
+        $(document).on('click', '.back_to_prev', function () {
+            if (prevAccounts.length > 0) {
+                account = prevAccounts.pop();
+                checkBackToPrev();
+            } else {
+                account = '';
+            }
+            getNetwork();
+        });
+        $(document).on('click', '.back_to_top', function () {
+            prevAccounts = [];
+            account = firstAccount;
+            checkBackToPrev();
+            getNetwork();
+        });
+        $(document).on('click', '.first_branch', function () {
+            prevAccounts = [];
+            account = $(this).data('account');
+            if (account != firstAccount) {
+                firstAccount = account;
+                $(this).addClass('first_branch_activate').siblings('button').removeClass('first_branch_activate');
+                checkBackToPrev();
+                getNetwork();
+            }
+        });
+    });
+</script>
+{/block}
+
+

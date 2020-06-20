@@ -1,0 +1,10 @@
+{foreach $newsInfo as $v}
+<li class="newslistli df likeA" data-url="{:U('news/newsCont', ['id' => $v.id])}">
+    <div class="newslistliimg"><img src="{:get_img_domain().$v.thumb}" alt="测试"></div>
+    <div class="fx1">
+        <div class="newslistlitl textove">{$v.title}</div>
+        <div class="newslistlitx textove2">{$v.desc}</div>
+        <div class="newslistlitime">{$v.add_time|date="Y-m-d H:i"}</div>
+    </div>
+</li>
+{/foreach}

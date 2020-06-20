@@ -1,0 +1,84 @@
+{extend name="public:base" /}
+{block name="other_css"}
+{css href="__LAYUIADMIN__/layui_extends/dtree/dtree.css,__LAYUIADMIN__/layui_extends/dtree/font/iconfont.css" /}
+{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <form name="form1" id="form1">
+                <td height="30" align="center">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">会员账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="account" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <button type="button" class="layui-btn layuiadmin-btn-useradmin search_btn">
+                                <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </form>
+            <ul id="demoTree" class="dtree" data-id="0"></ul>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.config({
+        base: '__LAYUIADMIN__/layui_extends/dtree/' //配置 layui 第三方扩展组件存放的基础目录
+    }).extend({
+        dtree: 'dtree' //定义该组件模块名
+    }).use(['element','layer', 'dtree'], function(){
+        var layer = layui.layer,
+            dtree = layui.dtree,
+            $ = layui.$;
+        var account = $('input[name="account"]').val();
+
+        // 默认情况下，配置了url后，当节点还可以展开时，即会自动的去往相同的url路径下发送请求加载子节点，请求子节点时，会带上一些默认参数，左侧树只是模拟请求，所以看到的数据子节点数据是一样的。
+        dtree.render({
+            elem: "#demoTree",
+            url: "{:url()}",
+            initLevel: 1,  // 指定初始展开节点级别
+            cache: false,  // 当取消节点缓存时，则每次加载子节点都会往服务器发送请求
+            defaultRequest:{nodeId:"tree.id",parentId:"tree.pId"} // 自定义默认参数的键配置在此
+            ,done:function () {
+                this.request = {};
+            }
+        });
+
+        // 点击节点名称获取选中节点值
+        dtree.on("node('demoTree')" ,function(param){
+            var basicData = param.basicData;  // 取出
+            basicData = dtree.unescape(basicData); // 转义
+            var basicDataJSON = JSON.parse(basicData);  // 转成JSON格式
+
+            layer.msg(basicDataJSON.dataInfo);  //输出
+        });
+
+
+        $('.search_btn').click(function () {
+            account = $('input[name="account"]').val();
+            if(account == '') {
+                window.location.reload();
+                return true;
+            }
+            dtree.reload('demoTree',{
+                request: {"account": account},
+                done:function () {
+                    this.request = {};
+                }
+            });
+        });
+    });
+
+</script>
+{/block}
+
+

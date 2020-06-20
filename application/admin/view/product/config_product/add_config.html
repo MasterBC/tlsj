@@ -1,0 +1,106 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" autocomplete="off" title="启用"/>
+                                <input type="radio" name="status" value="2" autocomplete="off" title="禁用" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">人物名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="product_name"  placeholder="请输入人物名称" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">人物头像</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="picture"  placeholder="请输入人物头像地址" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">基础价格</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="amount_type"  placeholder="基础价格" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="amount_k" id="reg_give_mid" autocomplete="off">
+                                        <option value="0">--请选择--</option>
+                                        {foreach ($amountTypeData as $k => $v)}
+                                        <option value="{$k}">{$v}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"> = <b style="color:red;">{$info['amount']}</b>{$webMoneyIdNameArr[2]}</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">最高价格</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="total_type"  placeholder="基础价格" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="total_k" autocomplete="off">
+                                        <option value="0">--请选择--</option>
+                                        {foreach ($amountTypeData as $k => $v)}
+                                        <option value="{$k}">{$v}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+
+                                <div class="layui-form-mid layui-word-aux"> = <b style="color:red;">{$info['total_amount']}</b>{$webMoneyIdNameArr[2]}</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">涨价倍率</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="next_per"  placeholder="请输入涨价倍率" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">人物编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="number"   placeholder="请输入人物编号" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">金币收益</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="income"  placeholder="请输入金币收益" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">回收价格</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="recovery_amount"  placeholder="请输入回收价格" class="layui-input" lay-verify="required" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form', 'upload'], function () {
+        var upload = layui.upload;
+
+   
+    });
+</script>
+{/block}

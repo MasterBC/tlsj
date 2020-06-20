@@ -1,0 +1,191 @@
+{extend name="public:base" /}
+{block name="title"}实名认证{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">实名认证</h1>
+</header>
+<div class="mui-content">
+    <div class="messageDabox" style="padding-bottom:20px;">
+        <form class="regFormly">
+            <div class="messalRowsan">
+                <div class="df">
+                    <div class="sanTl">真实姓名</div>
+                    <div class="fx1 bitiannage">*</div>
+                </div>
+                <div class="mui-input-row">
+                    <input type="text" name="username" value="{:isset($info['username']) ? $info['username'] : ''}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入真实姓名">
+                </div>
+            </div>
+            <div class="messalRowsan">
+                <div class="df">
+                    <div class="sanTl">身份证号码</div>
+                    <div class="fx1 bitiannage">*</div>
+                </div>
+                <div class="mui-input-row">
+                    <input type="text" name="card_number" value="{:isset($info['card_number']) ? $info['card_number'] : ''}" autocomplete="off" class="mui-input-clear muiInput" placeholder="请输入身份证号码">
+                </div>
+            </div>
+<!--            <div class="nesaplicBox">
+                <div class="nesaplicCont">
+                    <div class="df">
+                        <div class="fx1">
+                            <div class="nesaplicConttl">上传身份证正面清晰照</div>
+                            <div class="nesaplicscan uploadImgHeadTwo" data-show_id="card_just">
+                                <img src="__STATIC__/centImages/x_87.png" alt="">
+                            </div>
+                        </div>
+                        <div class="nesapzjimg">
+                            <div class="nesapzjimgtx" id="hide_card_just">示例图</div>
+                            {if (!isset($info['card_just']))}
+                            <img src="__STATIC__/centImages/x_90.png" alt="" id="card_just">
+                            {else /}
+                            <img src="{:get_img_domain()}{:isset($info['card_just']) ? $info['card_just'] : ''}" alt="" id="card_just">
+                            {/if}
+                        </div>
+                        <input type="hidden" name="card_just"  value="{:isset($info['card_just']) ? $info['card_just'] : ''}" class="card_just">
+                    </div>
+                </div>
+                <div class="nesaplicCont">
+                    <div class="df">
+                        <div class="fx1">
+                            <div class="nesaplicConttl">上传身份证反面清晰照</div>
+                            <div class="nesaplicscan uploadImgHeadThree" data-show_id="card_back">
+                                <img src="__STATIC__/centImages/x_87.png" alt="">
+                            </div>
+                        </div>
+                        <div class="nesapzjimg">
+                            <div class="nesapzjimgtx" id="hide_card_back">示例图</div>
+                            {if (!isset($info['card_back']))}
+                            <img src="__STATIC__/centImages/x_89.png" alt="" id="card_back">
+                            {else /}
+                            <img src="{:get_img_domain()}{:isset($info['card_back']) ? $info['card_back'] : ''}" alt="" id="card_back">
+                            {/if}
+                        </div>
+                        <input type="hidden" name="card_back" value="{:isset($info['card_back']) ? $info['card_back'] : ''}" class="card_back">
+                    </div>
+                </div>
+            </div>
+            <div class="nesaplictishi">温馨提示</div>
+            <div class="nesaplictishiwz" style="text-align: left;">
+                1.为保证你的认证顺利，请保证信息清晰可见。<br/>
+                2.此证件信息只作为实名认证，请放心上传。
+            </div>-->
+            <input type='file' name='img' style='display:none' class='img' />
+            <input type="hidden" name="id" value="{:isset($info['id']) ? $info['id'] : ''}">
+            {if ($info['status'] == 1)}
+            <button type="button" class="blockcaczann">审核中</button>
+            {elseif ($info['status'] == 2) /}
+            <div class="nesaplictishiwz" style='color: red;'>
+                {$info['refuse_note'] ?? ''}
+            </div>
+            <button type="button" class="blockcaczann storeAdd">审核失败，请重新提交</button>
+            {elseif ($info['status'] == 9) /}
+            <button type="button" class="blockcaczann">已实名</button>
+            {else /}
+            <button type="button" class="blockcaczann storeAdd">确认提交</button>
+            {/if}
+        </form>
+        <div class="bitiannagezhus">
+            温馨提示："<span class="bitiannage">*</span>" 为必填！
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    $('.textareawbk').keyup(function () {
+        var bb=$('.textareawbk').val();
+        var cc=bb.substring(0,150);
+        $('.textareawbk').val(cc);
+        var aa=($(this).val().length);
+        if(aa<150){
+            $('#result').html($(this).val().length);
+        }else{
+            $('#result').html("0");
+        }
+    });
+
+    var mask=mui.createMask();
+    var imgObj = [];
+    mui('body').on('change', '.img', function(){
+        var formData = new FormData();
+        var img = $(this).val();
+        if(img) {
+            formData.append("img", $(this)[0].files[0]);
+            formData.append("field", 'img');
+            mui.showLoading("上传中");
+            $.ajax({
+                url: "/uploadImg",
+                type: "post",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                async:false,
+                success: function(res) {
+                    console.log(res);
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if(res.code != 1) {
+                        mui.alert(res.msg);
+                    } else {
+                        $('#hide_'+$(imgObj).data('show_id')).hide();
+                        $('#'+$(imgObj).data('show_id')).attr('src', '{:get_img_domain()}'+res.data.src);
+                        $('.'+$(imgObj).data('show_id')).val(res.data.src);
+                    }
+                },
+                error: function(e) {
+                    alert("网络错误，请重试！！");
+                }
+            });
+        }
+    });
+    mui('body').on('tap', '.uploadImgHeadOne', function(){
+        imgObj = $(this);
+        $('.img').click();
+    });
+    mui('body').on('tap', '.uploadImgHeadTwo', function(){
+        imgObj = $(this);
+        $('.img').click();
+    });
+    mui('body').on('tap', '.uploadImgHeadThree', function(){
+        imgObj = $(this);
+        $('.img').click();
+    });
+
+
+    var mask=mui.createMask();
+    mui('body').on('tap', '.storeAdd', function () {
+        var obj = $(this);
+        var data = $('.regFormly').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        mui.back();
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+</script>
+{/block}

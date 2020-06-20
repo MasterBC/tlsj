@@ -1,0 +1,11 @@
+{foreach $list as $v}
+<div class="rawecorBox">
+    <div class="rawecorzi df likeA" data-url="{:U('Turn/logDetail', ['id' => $v['t_id']])}">
+        <div class="fx1">
+            <div class="rawecorm">{:isset($userList[$v['uid']]) ? $userList[$v['uid']] : ''}</div>
+            <div class="rawecortime">{:date('Y-m-d H:i:s', $v['add_time'])}</div>
+        </div>
+        <div class="rawecorright">{:isset($turnNames[$v['t_id']]) ? $turnNames[$v['t_id']] : ''}</div>
+    </div>
+</div>
+{/foreach}

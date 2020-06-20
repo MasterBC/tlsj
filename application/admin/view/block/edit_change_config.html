@@ -1,0 +1,141 @@
+{extend name="public:base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="layuiadmin-form-role" id="layuiadmin-form-role" style="padding: 20px 30px 0 0;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="status" value="1" autocomplete="off" title="启用" {$info['status'] == 1 ? 'checked' : ''} />
+                                <input type="radio" name="status" value="2" autocomplete="off" title="禁用" {$info['status'] == 2 ? 'checked' : ''} />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">货币</label>
+                            <div class="layui-input-block">
+                                <select name="bid">
+                                    {foreach $blockNames as $k=>$v}
+                                    <option value="{$k}" {$k == $info['bid'] ? 'selected' : ''}>{$v}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">转账金额</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" class="layui-input" name='low' value='{$info["low"]|intval}' autocomplete="off" placeholder="最低金额"/>
+                                </div>
+                                <div class="layui-form-mid">
+                                    -
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="number" class="layui-input" name='out' value='{$info["out"]|intval}' autocomplete="off" placeholder="最高金额"/>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="number" class="layui-input" name='bei' value='{$info["bei"]|intval}' autocomplete="off" placeholder="金额倍数"/>
+                                </div>
+                                <div class="layui-form-mid">的倍数</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">手续费</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" class="layui-input" name='fee' value='{$info["fee"]|floatval}' autocomplete="off" placeholder="手续费"/>
+                                </div>
+                                <div class="layui-form-mid">%</div>
+                                <div class="layui-form-mid">扣</div>
+                                <div class="layui-input-inline">
+                                    <select name="fee_type">
+                                        <option value="1" {$info['fee_type'] == 1 ? 'selected' : ''}>转出方</option>
+                                        <option value="2" {$info['fee_type'] == 2 ? 'selected' : ''}>转入方</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">到账</label>
+                                <div class="layui-input-inline">
+                                    <select name="to_bid">
+                                        {foreach $blockNames as $k=>$v}
+                                        <option value="{$k}" {$k == $info['to_bid'] ? 'selected' : ''}>{$v}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                                <div class="layui-form-mid">比例</div>
+                                <div class="layui-input-inline">
+                                    <input type="number" class="layui-input" name='to_per' value='{$info["to_per"]|floatval}' autocomplete="off" placeholder="到账比例"/>
+                                </div>
+                                <div class="layui-form-mid">%</div>
+                            </div>
+                        </div>
+                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>每日转账</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">次数</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" class="layui-input" name='day_num' value='{$info["day_num"]|intval}' autocomplete="off" placeholder="每日转账次数"/>
+                                        </div>
+                                        <div class="layui-form-mid">次</div>
+                                        <label class="layui-form-label">金额</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" class="layui-input" name='day_total' value='{$info["day_total"]|intval}' autocomplete="off" placeholder="每日转账金额"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="layui-elem-field site-demo-button" style="padding:10px;">
+                            <legend>转账限制</legend>
+                            <div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="is_upper" value="1" autocomplete="off" title="只能转上级" {$info['is_upper'] == 1 ? 'checked' : ''} />
+                                        <input type="radio" name="is_upper" value="2" autocomplete="off" title="不限" {$info['is_upper'] == 2 ? 'checked' : ''} />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="is_lower" value="1" autocomplete="off" title="只能转下级" {$info['is_lower'] == 1 ? 'checked' : ''} />
+                                        <input type="radio" name="is_lower" value="2" autocomplete="off" title="不限" {$info['is_lower'] == 2 ? 'checked' : ''} />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="is_above" value="1" autocomplete="off" title="只能转上线" {$info['is_above'] == 1 ? 'checked' : ''} />
+                                        <input type="radio" name="is_above" value="2" autocomplete="off" title="不限" {$info['is_above'] == 2 ? 'checked' : ''} />
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="is_below" value="1" autocomplete="off" title="只能转下线" {$info['is_below'] == 1 ? 'checked' : ''} />
+                                        <input type="radio" name="is_below" value="2" autocomplete="off" title="不限" {$info['is_below'] == 2 ? 'checked' : ''} />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="layui-form-item layui-hide">
+                            <button class="layui-btn" lay-submit lay-filter="submitBtn" id="submitBtn">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form;
+    });
+</script>
+{/block}

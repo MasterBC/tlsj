@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>导入MCOIN私钥</title>
+        <link rel="stylesheet" href="__STATIC__/font-awesome/css/font-awesome.min.css" media="all">
+        <link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.min.css" />
+        <link rel="stylesheet" type="text/css" href="__STATIC__/css/centStyle.css" />
+        <link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.showLoading.css" />
+        <script src="__STATIC__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+            .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+                font-size:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="mui-bar mui-bar-nav myAssetTop">
+            <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+            <h1 class="mui-title">
+                导入MCOIN私钥
+            </h1>
+        </header>
+        <div class="mui-content">
+            <div class="importwalheba">
+                <div class="importwalhe">
+                    <textarea name="" id="" cols="30" rows="3" placeholder="粘贴或输入ETH私钥"></textarea>
+                </div>
+                <div class="importwalhe">
+                    <textarea name="" id="" cols="30" rows="3" placeholder="粘贴或输入ETC私钥"></textarea>
+                </div>
+            </div>
+            <form>
+                <div class="creewalRowsan">
+                    <div class="df">
+                        <div class="sanTl fx1">设置密码</div>
+                        <div class="creewananduBox">
+                            <span class="nandu nanduActive"></span>
+                            <span class="nandu"></span>
+                            <span class="nandu"></span>
+                        </div>
+                    </div>
+                    <div class="mui-input-row">
+                        <input type="password" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="输入密码至少8位，建议大小写字母与数字混合">
+                    </div>
+                </div>
+                <div class="creewalRowsan">
+                    <div class="sanTl">确认密码</div>
+                    <div class="mui-input-row">
+                        <input type="password" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="重复密码">
+                    </div>
+                </div>
+                <div class="mui-checkbox mui-left">
+                    <label class="zcexieyiTab" style="">我已仔细阅读并同意<a class="tred zcXie zexyi">服务及隐私条款</a></label>
+                    <input name="checkbox" value="yes" type="checkbox" style="position: absolute;top:15px;left:35px;">
+                </div>
+                <div class="blockcaczannhez">
+                    <button class="blockcaczann likeA" data-url="backupkey.html">开始导入</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="agreementCont">
+            <div class="hedd">
+                <div class="df">
+                    <div class="fx1">服务及隐私条款</div>
+                    <a class="mui-icon mui-icon-close mui-pull-right tfff" href="#modal"></a>
+                </div>
+            </div>
+            <div id="modal">
+                <div class="zhonghe">
+                    这里是服务及隐私条款！！！！
+                </div>
+            </div>
+            <div class="guanbi">同意并继续</div>
+        </div>
+
+        <script src="__STATIC__/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="__STATIC__/js/mui.showLoading.js" type="text/javascript" charset="utf-8"></script>
+        <script src="__STATIC__/js/style.js" type="text/javascript" charset="utf-8"></script>
+
+        <script>
+            mui('body').on('tap', ".zexyi", function () {
+                $('.agreementCont').css('display', 'block');
+            });
+            mui('body').on('tap', ".mui-icon-close", function () {
+                $('.agreementCont').css('display', 'none');
+            });
+            mui('body').on('tap', ".guanbi", function () {
+                $('.agreementCont').css('display', 'none');
+                $('#regProtocol').attr('checked', 'true');
+            });
+        </script>
+
+    </body>
+
+</html>

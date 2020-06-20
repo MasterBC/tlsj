@@ -1,0 +1,12 @@
+{foreach $teamUserList as $v}
+<li class="looseclist df">
+    <div class="fx1">
+        <div class="looseclistmc">{:hideStr($v['account'],5,4) ?? ''}</div>
+        <div class="looseclisttime">{:date('Y-m-d H:i:s', $v['reg_time'])}</div>
+    </div>
+    <div class="looseclisttqs">{:get_max_product_info($v['user_id'])} 级</div>
+    <!-- <div>
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined likeA" data-url="{:U('Team/jdNetworktu', ['type'=>'activate', 'user_id'=>$v['user_id']])}" style="padding:0px 8px;line-height:20px;height:20px;">激活</button> <br/>
+    </div> -->
+</li>
+{/foreach}

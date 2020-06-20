@@ -1,0 +1,151 @@
+{extend name="public:base" /}
+{block name="title"}转盘抽奖{/block}
+{block name="other_css"}
+<style>
+    .mui-content {
+        background: url(__STATIC__/centImages/2019a071_117.png) no-repeat center;
+        background-size: cover;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="mui-content">
+    <div id="message" class="lotteuptcan">幸运转盘</div>
+
+
+
+    <div class="lotterynrBox">
+        <div class="lotteryContHe">
+            <div class="df lotterytleBox">
+                <div class="lotterytlezw"></div>
+                <div class="lotterytle fx1">
+                    <img src="__STATIC__/turn/images/2019a071_114.png" alt="">
+                </div>
+                <div class="lotterytlezw lotteuptqx">
+                    <img src="__STATIC__/centImages/2019a071_64.png" alt="">
+                </div>
+            </div>
+            <div class="lotteryzpan">
+                <center>
+                    <div class="lottery">
+                        <canvas id="myCanvas" width="310" height="310">
+                            当前浏览器版本过低，请使用其他浏览器尝试
+                        </canvas>
+                        <div class="clikoper"><img src="__STATIC__/turn/images/2019a071_106.png" alt=""></div>
+                    </div>
+                </center>
+            </div>
+            <div class="lotterydizuo">
+                <div class="lotterydizuoCnt">
+                    <img src="__STATIC__/turn/images/2019a071_108.png" alt="" class="lotterydizuozwt">
+                    <div class="lotterydizshu">转盘卷 0</div>
+                    <div class="lotterydims">每日凌晨赠送5张转盘卷</div>
+                </div>
+            </div>
+            <div class="lotteryxzbtm">
+                <img src="__STATIC__/turn/images/2019a071_116.png" alt="" id="lotteryxzan">
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script src="__STATIC__/turn/js/turntable.js"></script>
+<!--<script src="__STATIC__/js/style.js?v=2" type="text/javascript" charset="utf-8"></script>-->
+<script>
+    // 幸运转盘 s
+    mui('body').on('tap', '.lotteuptcan', function () {
+        $('.lotterynrBox').addClass('lotterynrBoxActive');
+    });
+    mui('body').on('tap', '.lotteuptqx', function () {
+        $('.lotterynrBox').removeClass('lotterynrBoxActive');
+    });
+    // 幸运转盘 e
+
+
+    var wheelSurf
+    // 初始化装盘数据 正常情况下应该由后台返回
+    var initData = {
+        "success": true,
+        "list": {php}echo $prizeArr{/php}
+    };
+    var list = {};
+
+    var angel = 360 / initData.list.length
+    // 格式化成插件需要的奖品列表格式
+    for (var i = 0, l = initData.list.length; i < l; i++) {
+        list[initData.list[i].rank] = {
+            id: initData.list[i].id,
+            name: initData.list[i].name,
+            image: initData.list[i].image
+        }
+    }
+    // 查看奖品列表格式
+
+    // 定义转盘奖品
+    wheelSurf = $('#myCanvas').WheelSurf({
+        list: list, // 奖品 列表，(必填)
+        outerCircle: {
+            color: '#D6A770' // 外圈颜色(可选)
+        },
+        innerCircle: {
+            color: '#E5C582' // 里圈颜色(可选)
+        },
+        dots: ['#FAFFFE', '#FFD700'], // 装饰点颜色(可选)
+        disk: ['#FFE48A', '#FEFAEA', '#FFE48A', '#FEFAEA', '#FFE48A', '#FEFAEA', '#FFE48A', '#FEFAEA'], //中心奖盘的颜色，默认7彩(可选)
+        title: {
+            color: '#976325',
+            font: '19px Arial'
+        } // 奖品标题样式(可选)
+    })
+
+    // 初始化转盘
+    wheelSurf.init()
+    // 抽奖
+    var throttle = true;
+    mui('body').on('tap', '#lotteryxzan', function () {
+        if (!throttle) {
+            return false;
+        };
+
+        throttle = false;
+        $("#message").html('抽奖中...');
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 1) {
+                    var count = 0;
+                    // 计算奖品角度
+                    for (const key in list) {
+                        if (list.hasOwnProperty(key)) {
+                            if (res.msg.id == list[key].id) {
+                                break;
+                            };
+                            count++
+                        };
+                    };
+
+                    // 转盘抽奖，
+                    wheelSurf.lottery((count * angel + angel / 2), function () {
+                        $("#message").html(res.msg.message);
+                        throttle = true;
+                        // $('.lotterynrBox').removeClass('lotterynrBoxActive');
+                    });
+                } else {
+                    throttle = true;
+                    if (res.code == -1) {
+                        $("#message").html(res.msg);
+                        return mui.toast(res.msg);
+                    }
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+    });
+</script>
+{/block}

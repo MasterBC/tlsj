@@ -1,0 +1,267 @@
+{extend name="public:base" /}
+{block name="title"}我要充值{/block}
+{block name="other_css"}
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.picker.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.poppicker.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/mui.dtpicker.css" />
+<style>
+    .wyarecoimg {
+        width: 110px;
+        min-height: 110px;
+        margin: 0px 5px 5px 5px;
+        display: inline-block;
+        position: relative;
+    }
+    .wyarecoimg img{
+        width: 110px;
+        height:130px;
+    }
+    .wyarecotxx {
+        position: absolute;
+        top:0px;
+        left:0px;
+        background: rgba(0,0,0,0.5);
+    }
+    .wyarecotxx .i {
+        font-size: 26px;
+        color:#ffffff;
+    }
+</style>
+{/block}
+{block name="body"}
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left">&#xe95b;</a>
+    <h1 class="mui-title">
+        我要充值
+    </h1>
+    <div class="mui-icon icon-font mui-pull-right likeA" data-url="{:U('MoneyAdd/addMoneyIndex')}"><img src="__STATIC__/centImages/jilu_1.png" alt="" style="height:20px;"></div>
+</header>
+<div class="mui-content">
+    <div class="neirongText">
+        <form id="contentForm" class="contentForm">
+            <div class="muiInputRowsan">
+                <div class="sanTl">汇款银行</div>
+                <div class="mui-input-row">
+                    <input type="text" id="opening_id" readonly value="{$bankArr[0]['text']}" autocomplete="off" class="mui-input-clear fx1 muiInput" placeholder="请选择汇款银行">
+                </div>
+            </div>
+            {if ($bankArr[0]['code'] != '')}
+                <div class="shkerwiBox df">
+                    <div class="fx1 shkerwimgtle">收款二维码：</div>
+                    <div class="shkerwimg">
+                        <img src="{:get_img_domain()}{$bankArr[0]['code']}" class="moneyAddCode show_img_wx_code" alt="">
+                    </div>
+                </div>
+            {/if}
+            <div class="muiInputRowsan">
+                <div class="sanTl">账号</div>
+                <div class="mui-input-row">
+                    <input type="text" disabled id="account" value="{$bankArr[0]['account']}" autocomplete="off" class="mui-input-clear fx1 muiInput">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">开户名</div>
+                <div class="mui-input-row">
+                    <input type="text" disabled id="username" value="{$bankArr[0]['username']}" autocomplete="off" class="mui-input-clear fx1 muiInput">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">充值钱包</div>
+                <div class="mui-input-row">
+                    <input type="text" id="mid" readonly value="" autocomplete="off" class="mui-input-clear fx1 muiInput" placeholder="请选择充值钱包">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">汇款金额</div>
+                <div class="mui-input-row">
+                    <input type="number" name="add_money" autocomplete="off" class="mui-input-clear fx1 muiInput" placeholder="请输入金额数量">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">汇款时间</div>
+                <div class="mui-input-row">
+                    <input type="text" readonly name="hk_time" id="hk_time" autocomplete="off" class="mui-input-clear fx1 muiInput" placeholder="汇款时间">
+                </div>
+            </div>
+            <div class="muiInputRowsan">
+                <div class="sanTl">二级密码</div>
+                <div class="mui-input-row">
+                    <input type="password" name="secpwd" value="" autocomplete="off" class="mui-input-clear muiInput" placeholder="二级密码">
+                </div>
+            </div>
+            <div class="df xjblgdaaa">
+                <div class="sanTl fx1">汇款截图</div>
+                <div class="wyarecorighan uploadImg"><i class="mui-icon mui-icon-plusempty i"></i></div>
+            </div>
+            <div class="wyarecoimgBa upload_img_show clearfix">
+            </div>
+            <!--<div class="nesaplicBox" style="margin-bottom:10px;">-->
+                <!--<div class="nesaplicTl">-->
+                    <!--<div class="nesaplicTlzi"><span class="span_1">充值截图</span></div>-->
+                <!--</div>-->
+                <!--<div class="nesaplicCont">-->
+                    <!--<div class="nesaplicConttl">上传截图清晰照 最多上传5张</div>-->
+                    <!--<div class="nesaplicscanzw clearfix">-->
+                        <!--<div class="upload_img_show">-->
+                        <!--</div>-->
+                        <!--<div class="wyarecorighan uploadImg"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="gonggButtonda">
+                <input type='file' name='img' style='display:none' class='imgup' />
+                <input type="hidden" name="opening_id" value="{$bankArr[0]['value']}" autocomplete="off" />
+                <input type="hidden" name="mid" value="" autocomplete="off" />
+                <button type="button" class="mui-btn gonggButton">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+{js href='__STATIC__/js/previewImage.js' /}
+<script src="__STATIC__/js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/js/mui.dtpicker.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    mui('body').on('tap', '.show_img_detail', function(){
+        var showImgs = [];
+        var uploadShowImgs = $('.nesaplicscanzi').find('img');
+        $(uploadShowImgs).each(function(e) {
+            showImgs.push($(uploadShowImgs[e]).attr('src'));
+        });
+        var obj = {
+            urls : showImgs,
+            current : $(this).attr('src')
+        };
+        previewImage.start(obj);
+    });
+    mui('body').on('tap', '.show_img_wx_code', function () {
+        var showImgs = [];
+        var uploadShowImgs = $('.show_img_wx_code');
+        $(uploadShowImgs).each(function (e) {
+            showImgs.push($(uploadShowImgs[e]).attr('src'));
+        });
+        var obj = {
+            urls: showImgs,
+            current: $(this).attr('src')
+        };
+        previewImage.start(obj);
+    });
+    var mask = mui.createMask();
+    var bankStr = new mui.PopPicker();
+    var str = {php}echo $bankStr{/php};
+    bankStr.setData(str);
+    mui('body').on('tap', '#opening_id', function () {
+        bankStr.show(function (obj) {
+            $('#opening_id').val($(obj)[0].text);
+            $('input[name="opening_id"]').val($(obj)[0].value);
+            $('#account').val($(obj)[0].account);
+            $('#username').val($(obj)[0].username);
+            $('.moneyAddCode').attr('src', '{:get_img_domain()}'+$(obj)[0].code);
+        });
+    });
+
+    var moneyStr = new mui.PopPicker();
+    var str = {php}echo $moneyStr{/php};
+    moneyStr.setData(str);
+    mui('body').on('tap', '#mid', function () {
+        moneyStr.show(function (obj) {
+            $('#mid').val($(obj)[0].text);
+            $('input[name="mid"]').val($(obj)[0].value);
+        });
+    });
+</script>
+<script>
+    var dtPicker = new mui.DtPicker({type:'datetime'});
+    mui('body').on('tap', '#hk_time', function(){
+        var obj = $(this);
+        dtPicker.show(function (selectItems) {
+            $(obj).val(selectItems.value);
+        })
+    });
+    var imgObj = [];
+    mui('body').on('change', '.imgup', function () {
+        var formData = new FormData();
+        var img = $(this).val();
+        if (img) {
+            formData.append("img", $(this)[0].files[0]);
+            formData.append("field", 'img');
+            mui.showLoading("上传中");
+            $.ajax({
+                url: "/uploadImg",
+                type: "post",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                async: false,
+                success: function (res) {
+                    mask.close();//关闭遮罩层
+                    mui.hideLoading();
+                    if (res.code != 1) {
+                        mui.alert(res.msg);
+                    } else {
+                        // var str = '<div class="wyarecoimg">\n' +
+                        //     '                    <div class="wyarecotxx del_img"><i class="mui-icon mui-icon-closeempty i"></i></div>\n' +
+                        //     '                    <img src="{:get_img_domain()}'+res.data.src+'" alt="">\n' +
+                        //     '                    <input type="hidden" name="img[]" value="'+res.data.src+'">\n' +
+                        //     '                </div>';
+                        // $('.upload_img_show').append(str);
+                        var str = '<div class="nesaplicscanzi">'+
+                            '<div class="nesaplicscancha del_img"><i class="mui-icon mui-icon-closeempty i"></i></div>'+
+                            '<img src="{:get_img_domain()}'+res.data.src+'" class="show_img_detail" alt="">'+
+                            '<input type="hidden" name="img[]" value="'+res.data.src+'">\n' +
+                            '</div>';
+                        $('.upload_img_show').append(str);
+                    }
+                },
+                error: function (e) {
+                    alert("网络错误，请重试！！");
+                }
+            });
+        }
+    });
+    mui('body').on('tap', '.uploadImg', function () {
+        imgObj = $(this);
+        $('.imgup').click();
+    });
+    mui('body').on('tap', '.del_img', function () {
+        $(this).parent('div').remove();
+    });
+
+    mui('body').on('tap', '.gonggButton', function () {
+        var obj = $(this);
+        var data = $('#contentForm').serialize();
+        $(obj).attr('disabled', 'true');
+        mui.showLoading("提交中","div");
+        mask.show();//显示遮罩层
+        $.ajax({
+            type: 'post',
+            url: '{:U("")}',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                mask.close();//关闭遮罩层
+                mui.hideLoading();
+                if (res.code == 1) {
+                    mui.toast('操作成功', {duration: '2000', type: 'div'});
+                    setTimeout(function () {
+                        mui.back();
+                    }, 2000);
+                } else {
+                    $(obj).removeAttr('disabled');
+                    return mui.toast(res.msg, {duration: '2000', type: 'div'});
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                return mui.toast('网络失败，请刷新页面后重试', {duration: '2000', type: 'div'});
+            }
+        });
+        $('.muiInput').blur();
+    });
+
+</script>
+{/block}

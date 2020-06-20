@@ -1,0 +1,158 @@
+{extend name="public:base" /}
+{block name="title"}分红详情{/block}
+{block name="other_css"}
+{/block}
+{block name="body"}
+<style>
+    .fhlonBox2 {
+        border-radius: 4px;
+        padding: 12px 5px 8px 5px;
+        text-align: center;
+        background: #FC60A3;
+        background: -ms-linear-gradient(left, #E7A283, #FC60A3);
+        background: -moz-linear-gradient(left, #E7A283, #FC60A3);
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E7A283), to(#FC60A3));
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E7A283), to(#FC60A3));
+        background: -webkit-linear-gradient(left, #dc83e7, #d030ec);
+        background: -o-linear-gradient(left, #E7A283, #FC60A3);
+    }
+</style>
+<header class="mui-bar mui-bar-nav myAssetTop">
+    <a class="mui-action-back mui-icon icon-font mui-pull-left likeA">&#xe95b;</a>
+    <h1 class="mui-title">
+        分红大数据
+    </h1>
+</header>
+<div class="mui-content muiContentTwo">
+    <div class="fhpartprBox">
+        <div class="fhpartprtlBox df">
+            <div class="fx1 fhpartprtl">
+                全网分红收益
+                <i class="mui-icon mui-icon-info i"></i>
+            </div>
+            <div class="fhpartprtlms">每天中午12:00核算</div>
+        </div>
+        <div class="df fhggsyOneBox">
+            <div class="fhggsyOne fx1">
+                <img src="__STATIC__/centImages/2019a071_126.png" alt="" class="bgbgimg_1">
+                <img src="__STATIC__/centImages/2019a071_126.png" alt="" class="bgbgimg_2">
+                <div class="fhggsshuj day-web-money">0.00</div>
+                <div class="fhggsshtx">全网昨日总收益</div>
+            </div>
+            <div class="fhggsygbi"></div>
+            <div class="fhggsyOne fhggsyTwo fx1">
+                <img src="__STATIC__/centImages/2019a071_126.png" alt="" class="bgbgimg_1">
+                <img src="__STATIC__/centImages/2019a071_126.png" alt="" class="bgbgimg_2">
+                <div class="fhggsshuj web-total-money">0.00</div>
+                <div class="fhggsshtx">全网历史总收益</div>
+            </div>
+        </div>
+        <div class="fhpartprtlBox df">
+            <div class="fx1 fhpartprtl fhpartprtltwo">
+                全网分红牛
+                <i class="mui-icon mui-icon-info i"></i>
+            </div>
+            <div class="fhpartprtlms">每天中午12:00自动分红</div>
+        </div>
+        <div class="fhlonBox">
+            <div class="fhggsshuj web-zuo-levle-money">0.00</div>
+            <div class="fhggsshtx">昨日收益(元/只)</div>
+            <div class="df">
+                <div class="fx1">
+                    <div class="fhggsshujxa web-totao-level">0</div>
+                    <div class="fhggsshtxxa">全网总数</div>
+                </div>
+                <div class="gsshujxagxxx"></div>
+                <div class="fx1">
+                    <div class="fhggsshujxa web-day-level">{:count($dayProduct) ?? '0'}</div>
+                    <div class="fhggsshtxxa">今日产出</div>
+                </div>
+                <div class="gsshujxagxxx"></div>
+                <div class="fx1">
+                    <div class="fhggsshujxa web-stay-level">0</div>
+                    <div class="fhggsshtxxa">待产出</div>
+                </div>
+            </div>
+        </div>
+        <div class="gsshbzzh">
+            <img src="__STATIC__/centImages/2019a071_127.png" alt="">
+        </div>
+        <ul class="gsshbzlistUl">
+            {foreach $dayProduct as $v}
+            <li class="gsshbzlistLi df">
+                <div class="fx1 gsshbzlistLitou">
+                    <div class="gsshbzlisttx">{$userNameIdArr[$v['user_id']] ?? ''}</div>
+                    <div class="gsshbzlisttx_1">{:hideStr($userIdArr[$v['user_id']],3,3,4) ?? ''}</div>
+                </div>
+                <div class="fx1">
+                    <div class="gsshbzlisttx_hd">获得1只{$productNameArr[45] ?? '牛魔王'}</div>
+                    <div class="gsshbzlisttx_1">(五福合成)</div>
+                </div>
+                <div class="fx1">
+                    <div class="gsshbzlisttx">{$v['add_time']|date="Y-m-d"}</div>
+                    <div class="gsshbzlisttx_1">{$v['add_time']|date="H:i:s"}</div>
+                </div>
+            </li>
+            {/foreach}
+        </ul>
+        <div class="fhpartprtlBox df">
+            <div class="fx1 fhpartprtl fhpartprtltwo">
+                我的分红收益
+                <i class="mui-icon mui-icon-info i"></i>
+            </div>
+            <div class="fhpartprtlms">每天中午12:00核算</div>
+        </div>
+        <div class="fhlonBox2">
+            <div class="fhggsshuj qbye">0.00</div>
+            <div class="fhggsshtx">钱包余额</div>
+            <div class="df">
+                <div class="fx1">
+                    <div class="fhggsshujxa zrsy">0</div>
+                    <div class="fhggsshtxxa">昨日收益</div>
+                </div>
+                <div class="gsshujxagxxx"></div>
+                <div class="fx1">
+                    <div class="fhggsshujxa jrsy">0</div>
+                    <div class="fhggsshtxxa">今日收益</div>
+                </div>
+                <div class="gsshujxagxxx"></div>
+                <div class="fx1">
+                    <div class="fhggsshujxa lszsy">0</div>
+                    <div class="fhggsshtxxa">历史总收益</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer"}
+{__block__}
+<script>
+    function getUserOwnedMoney() {
+        $.ajax({
+            url: "{:U('Money/getAjaxWebMoneyDay')}",
+            type: "post",
+            success: function (res) {
+                $('.day-web-money').html(res.webDayMoney['zuo_money']);
+                $('.web-total-money').html(res.webDayMoney['total_money']);
+                $('.web-zuo-levle-money').html(res.webDayMoney['zuo_levle_money']);
+                $('.web-totao-level').html(res.webDayMoney['totao_level']);
+                $('.web-day-level').html(res.webDayMoney['day_level']);
+                $('.web-stay-level').html(res.webDayMoney['stay_level']);
+                $('.qbye').html(res.userOwnedMoneyAll[3]);
+                $('.zrsy').html(res.fhsy['zrsy']);
+                $('.jrsy').html(res.fhsy['jrsy']);
+                $('.lszsy').html(res.fhsy['lszsy']);
+            },
+            error: function (e) {
+                alert("网络错误，请重试！！");
+            }
+        });
+    }
+    getUserOwnedMoney();
+    setInterval(function () {
+        getUserOwnedMoney();
+    }, 10000);
+
+</script>
+{/block}
