@@ -21,7 +21,7 @@ return [
     // 用户名
     'username'        => 'tuoluoshijie',
     // 密码
-    'password'        => '4fDzXjJcxHnk6Tkk',
+    'password'        => 'KTzi3EH476i3jfrK',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
