@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cbschuld/Browser.php.git",
-                "reference": "bdc8dce950e5014a669f310c7ed2968a9ca0673c"
+                "reference": "f5c5600237cb88b983b8c26811022e4b96523c14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cbschuld/Browser.php/zipball/bdc8dce950e5014a669f310c7ed2968a9ca0673c",
-                "reference": "bdc8dce950e5014a669f310c7ed2968a9ca0673c",
+                "url": "https://api.github.com/repos/cbschuld/Browser.php/zipball/f5c5600237cb88b983b8c26811022e4b96523c14",
+                "reference": "f5c5600237cb88b983b8c26811022e4b96523c14",
                 "shasum": ""
             },
             "type": "library",
@@ -84,7 +84,7 @@
                 "detection",
                 "user agent"
             ],
-            "time": "2019-06-19T17:24:22+00:00"
+            "time": "2019-07-09T15:57:40+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -317,16 +317,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.0.7",
+            "version": "v6.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "0c41a36d4508d470e376498c1c0c527aa36a2d59"
+                "reference": "c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/0c41a36d4508d470e376498c1c0c527aa36a2d59",
-                "reference": "0c41a36d4508d470e376498c1c0c527aa36a2d59",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3",
+                "reference": "c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3",
                 "shasum": ""
             },
             "require": {
@@ -335,13 +335,9 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "doctrine/annotations": "1.2.*",
+                "doctrine/annotations": "^1.2",
                 "friendsofphp/php-cs-fixer": "^2.2",
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "^4.8 || ^5.7",
-                "zendframework/zend-eventmanager": "3.0.*",
-                "zendframework/zend-i18n": "2.7.3",
-                "zendframework/zend-serializer": "2.7.*"
+                "phpunit/phpunit": "^4.8 || ^5.7"
             },
             "suggest": {
                 "ext-mbstring": "Needed to send email in multibyte encoding charset",
@@ -359,16 +355,16 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-2.1"
+                "LGPL-2.1-only"
             ],
             "authors": [
                 {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
-                },
-                {
                     "name": "Marcus Bointon",
                     "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
                 },
                 {
                     "name": "Andy Prevost",
@@ -379,7 +375,13 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2019-02-01T15:04:28+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/synchro",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-05-27T12:24:03+00:00"
         },
         {
             "name": "topthink/framework",
@@ -594,12 +596,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-worker.git",
-                "reference": "922d8c95e2f095e0da66d18b9e3fbbfd8de70a3f"
+                "reference": "9b1b9e7be9cf02eaedb49af855730552f7598cf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-worker/zipball/922d8c95e2f095e0da66d18b9e3fbbfd8de70a3f",
-                "reference": "922d8c95e2f095e0da66d18b9e3fbbfd8de70a3f",
+                "url": "https://api.github.com/repos/top-think/think-worker/zipball/9b1b9e7be9cf02eaedb49af855730552f7598cf3",
+                "reference": "9b1b9e7be9cf02eaedb49af855730552f7598cf3",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +638,7 @@
                 }
             ],
             "description": "workerman extend for thinkphp5.1",
-            "time": "2019-03-08T11:22:34+00:00"
+            "time": "2020-04-23T14:08:06+00:00"
         },
         {
             "name": "workerman/gateway-worker",
@@ -737,5 +739,6 @@
         "ext-mbstring": "*",
         "ext-pdo": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
